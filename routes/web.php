@@ -40,6 +40,7 @@ Route::get("/tampilsewingsample/{id}", [SewingSampleController::class, 'tampilse
 Route::post("/editsewingsample/{id}", [SewingSampleController::class, 'editsewingsample'])->name('editsewingsample');  
 Route::get("/deletesewingsample/{id}", [SewingSampleController::class, 'deletesewingsample'])->name('deletesewingsample');
 Route::get('/search', [SewingSampleController::class, 'search'])->name('search');
+Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
 
 
 

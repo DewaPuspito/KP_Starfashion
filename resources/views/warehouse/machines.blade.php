@@ -27,7 +27,6 @@
                 <option value="serial_number">Serial Number</option>
                 <option value="type">Tipe</option>
                 <option value="jenis">Jenis Mesin</option>
-                <option value="bagian">Bagian</option>
                 <option value="sparepart-diganti">Sparepart Diganti</option>
             </select>
         </div>
@@ -52,7 +51,6 @@
       <th scope="col">Tipe</th>
       <th scope="col">Jenis Mesin</th>
       <th scope="col">Merk Mesin</th>
-      <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
@@ -66,7 +64,6 @@
       <td>{{$warehouse ->tipe}}</td>
       <td>{{$warehouse ->jenis_mesin}}</td>
       <td>{{$warehouse ->merk_mesin}}</td>
-      <td>{{$warehouse ->bagian}}</td>
       <td>{{$warehouse ->tahun_pembelian}}</td>
       <td>{{$warehouse ->jenis_sparepart_yang_diganti}}</td>
       <td>{{$warehouse ->harga_sparepart}}</td>

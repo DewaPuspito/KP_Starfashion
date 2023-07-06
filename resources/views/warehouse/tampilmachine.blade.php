@@ -43,11 +43,7 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Merk Mesin</label>
       <input type="text" name="merk_mesin" class="form-control" value="{{$data_warehouse->merk_mesin}}">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Bagian</label>
-      <input type="text" name="bagian" class="form-control" value="{{$data_warehouse->bagian}}">
-      </div>
+  </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_warehouse->tahun}}">

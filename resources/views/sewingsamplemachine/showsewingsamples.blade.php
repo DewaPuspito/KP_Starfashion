@@ -39,7 +39,7 @@
         <p class="card-text">Check Tiang Benang (Bulanan) : {{ $data_sewingsample ->check_tiang_benang_bulanan }}</p>
         <p class="card-text">Check Spring Tension (Bulanan) : {{ $data_sewingsample ->check_spring_tension_bulanan }}</p>
         <p class="card-text">Check Jalur Benang (Bulanan) : {{ $data_sewingsample ->check_jalur_benang_bulanan }}</p>
-        <p class="card-text">Dicek Tanggal: {{ $data_sewingsample ->dicek_tanggal }}</p>
+        <p class="card-text">Dicek Tanggal : {{ $data_sewingsample ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_sewingsample ->tahun_pembelian }}</p>
         <p class="card-text">Jahitan Loncat (Harian) : {{ $data_sewingsample ->jahitan_loncat_harian }}</p>
         <p class="card-text">Benang Putusan (Harian): {{ $data_sewingsample ->benang_putusan_harian }}</p>
@@ -47,8 +47,8 @@
         <p class="card-text">Ganti Rotary (Harian) : {{ $data_sewingsample ->ganti_rotary_harian }}</p>
         <p class="card-text">Ganti Suttel Hook (Harian) : {{ $data_sewingsample ->ganti_suttel_hook_harian }}</p>
         <p class="card-text">Gulungan Spull (Harian) : {{ $data_sewingsample ->gulungan_spull_harian }}</p>
-        <p class="card-text">Ganti Needle Plate (Harian): {{ $data_sewingsample ->ganti_needle_plate_harian }}</p>
-        <p class="card-text">Setel Timming (Harian): {{ $data_sewingsample ->setel_timming_harian }}</p>
+        <p class="card-text">Ganti Needle Plate (Harian) : {{ $data_sewingsample ->ganti_needle_plate_harian }}</p>
+        <p class="card-text">Setel Timming (Harian) : {{ $data_sewingsample ->setel_timming_harian }}</p>
         <p class="card-text">Bersihkan Bak Mesin (Harian) : {{ $data_sewingsample ->bersihkan_bak_mesin_harian}}</p>
         <p class="card-text">Pisau Tidak Motong (Harian) : {{ $data_sewingsample ->pisau_tidak_motong_harian }}</p>
         <p class="card-text">Cek Angin Kompresor (Harian) : {{ $data_sewingsample ->cek_angin_kompresor_harian}}</p>

@@ -17,7 +17,7 @@
     <h1><center>Rewinding Pipping<center></h1>  
     <div class="container">
     <a class="btn btn-success" href="/addpipping" role="button">Add Item</a>
-    <div class="row g-3 align-items-center mt-2">
+    <div class="row g-3 align-items-center mt-2 mb-3">
     <div class="col-auto">
     <label for="input" class="col-form-label">Search Here</label>
     </div>
@@ -41,6 +41,9 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
+      <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Harga Sparepart</th>
     </tr>
   </thead>
   <tbody>
@@ -51,6 +54,9 @@
       <td>{{$pipping ->merk_mesin}}</td>
       <td>{{$pipping ->bagian}}</td>
       <td>{{$pipping ->tahun_pembelian}}</td>
+      <td>{{$pipping ->jenis_sparepart_yang_diganti}}</td>
+      <td>{{$pipping ->tanggal_sparepart_diganti}}</td>
+      <td>{{$pipping ->harga_sparepart}}</td>
       <td><a class="btn btn-info" href="/showpipping/{{$pipping->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

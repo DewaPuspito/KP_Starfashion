@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\SewingSample;
+use Illuminate\Http\Request;
+use App\Exports\SewingSampleExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SewingSampleController extends Controller
 {
@@ -79,4 +81,9 @@ class SewingSampleController extends Controller
         $data_sewingsample->delete();
         return redirect()->route('sewing-sample')->with('success', 'Data Berhasil Dihapus');
     }
+
+    public function exportsewingsample() {
+        return Excel::download(new SewingSampleExport, 'datasewingsample.xlsx');
+    }
+    
 }

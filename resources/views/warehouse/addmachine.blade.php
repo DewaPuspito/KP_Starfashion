@@ -43,10 +43,6 @@
       <input type="text" name="merk_mesin" class="form-control">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Bagian</label>
-      <input type="text" name="bagian" class="form-control">
-      </div>
-    <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control">
       </div>

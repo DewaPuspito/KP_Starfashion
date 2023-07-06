@@ -37,7 +37,10 @@
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
-    </div>
+        <div class="col-auto">
+          <a class="btn btn-success" href="/exportsewingsample" role="button">Export Excel</a>
+        </div>
+      </div>
 </form>
     <div class="row">
     @if ($message = Session::get('success'))

@@ -17,7 +17,7 @@
     <h1><center>KM Cutting Machine<center></h1>  
     <div class="container">
     <a class="btn btn-success" href="/addkmcutting" role="button">Add Item</a>
-    <div class="row g-3 align-items-center mt-2">
+    <div class="row g-3 align-items-center mt-2 mb-3">
     <div class="col-auto">
     <label for="input" class="col-form-label">Search Here</label>
     </div>
@@ -41,6 +41,9 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
+      <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Harga Sparepart</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -52,6 +55,9 @@
       <td>{{$km_cutting ->merk_mesin}}</td>
       <td>{{$km_cutting ->bagian}}</td>
       <td>{{$km_cutting ->tahun_pembelian}}</td>
+      <td>{{$km_cutting ->jenis_sparepart_yang_diganti}}</td>
+      <td>{{$km_cutting ->tanggal_sparepart_diganti}}</td>
+      <td>{{$km_cutting ->harga_sparepart}}</td>
       <td><a class="btn btn-info" href="/showkmcutting/{{$km_cutting ->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

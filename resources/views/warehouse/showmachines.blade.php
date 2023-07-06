@@ -24,7 +24,6 @@
         <p class="card-text">Label : {{ $data_warehouse ->label }}</p>
         <p class="card-text">Jenis Mesin : {{ $data_warehouse ->jenis_mesin }}</p>
         <p class="card-text">Merk Mesin : {{ $data_warehouse ->merk_mesin }}</p>
-        <p class="card-text">Bagian : {{ $data_warehouse ->bagian }}</p>
         <p class="card-text">Tahun : {{ $data_warehouse->tahun }}</p>
         <p class="card-text">Check Bobbin Case (Bulanan) : {{ $data_warehouse ->check_bobin_chase_bulanan }}</p>
         <p class="card-text">Needle Guard (Bulanan) : {{ $data_warehouse ->needle_guard_bulanan }}</p>

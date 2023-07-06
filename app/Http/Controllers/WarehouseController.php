@@ -30,8 +30,6 @@ class WarehouseController extends Controller
             $data_warehouse = Warehouse::where('tipe', 'LIKE', '%' . $searchTerm . '%')->get();
         } elseif ($searchType === 'jenis') {
             $data_warehouse = Warehouse::where('jenis_mesin', 'LIKE', '%' . $searchTerm . '%')->get();
-        } elseif ($searchType === 'bagian') {
-            $data_warehouse = Warehouse::where('bagian', 'LIKE', '%' . $searchTerm . '%')->get();
         } elseif ($searchType === 'sparepart-diganti') {
             $data_warehouse = Warehouse::where('jenis_sparepart_yang_diganti', 'LIKE', '%' . $searchTerm . '%')->get();
         } elseif ($searchType === 'harga_sparepart') {

@@ -16,7 +16,7 @@
   <body>
     <h1><center>Plotter Machine<center></h1>  
     <div class="container">
-    <a class="btn btn-success" href="/addplotter" role="button">Add Item</a>
+    <a class="btn btn-success mt-2 mb-3" href="/addplotter" role="button">Add Item</a>
     <div class="row">
       @if ($message = Session::get('success'))
       <div class="alert alert-success" role="alert">
@@ -31,6 +31,9 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
+      <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Harga Sparepart</th>
     </tr>
   </thead>
   <tbody>
@@ -41,6 +44,9 @@
       <td>{{$plotter->merk_mesin}}</td>
       <td>{{$plotter->bagian}}</td>
       <td>{{$plotter ->tahun_pembelian}}</td>
+      <td>{{$plotter ->jenis_sparepart_yang_diganti}}</td>
+      <td>{{$plotter ->tanggal_sparepart_diganti}}</td>
+      <td>{{$plotter ->harga_sparepart}}</td>
       <td><a class="btn btn-info" href="/showplotter/{{$plotter->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach
