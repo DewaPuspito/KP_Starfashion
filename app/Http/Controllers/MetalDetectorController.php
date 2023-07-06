@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MetalDetector;
+use App\Exports\MetalDetectorExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MetalDetectorController extends Controller
 {
@@ -57,5 +59,9 @@ class MetalDetectorController extends Controller
         $data_metaldetector = MetalDetector::find($serial_number);
         $data_metaldetector->delete();
         return redirect()->route('metal-detector')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportmetaldetector() {
+        return Excel::download(new MetalDetectorExport, 'datametaldetector.xlsx');
     }
 }

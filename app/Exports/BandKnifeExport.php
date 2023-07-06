@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\BandKnife;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class BandKnifeExport implements FromCollection
+class BandKnifeExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

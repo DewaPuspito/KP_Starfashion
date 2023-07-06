@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\Pipping;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class PippingExport implements FromCollection
+class PippingExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

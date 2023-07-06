@@ -109,16 +109,6 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Mechanic Warehouse</h5>
-        <p class="card-text text-center">Warehouse for Broken Machine</p>
-        <a href="/warehouse" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-sm-6 mb-3">
-    <div class="card">
-      <div class="card-body">
         <h5 class="card-title text-center">Fabric Warehouse</h5>
         <p class="card-text text-center">Warehouse for Checking Fabric</p>
         <a href="/fabric" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>

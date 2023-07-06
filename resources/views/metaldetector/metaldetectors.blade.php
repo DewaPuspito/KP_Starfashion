@@ -16,23 +16,21 @@
   <body>
     <h1><center>Metal Detector<center></h1>  
     <div class="container">
-    <a class="btn btn-success" href="/addmetaldetector" role="button">Add Item</a>
     <div class="row g-3 align-items-center mt-2 mb-3">
     <div class="col-auto">
-    <label for="input" class="col-form-label">Search Here</label>
+    <a class="btn btn-success" href="/addmetaldetector" role="button">Add Item</a>
     </div>
-    <div class="col-auto">
-    <form action="/metal-detector" method='GET'>
-      <input type="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
-    </form>
+      <div class="col-auto">
+        <a class="btn btn-success" href="/exportmetaldetector" role="button">Export Excel</a>
+      </div>
     </div>
-    </div>
-    <div class="row">
+  
     @if ($message = Session::get('success'))
       <div class="alert alert-success" role="alert">
         {{ $message }}
       </div>
       @endif
+
     <table class="table table-bordered table-hover">
   <thead>
     <tr>

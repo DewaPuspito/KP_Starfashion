@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Fuse;
+use App\Exports\FuseExport;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class FuseController extends Controller
 {
@@ -57,5 +59,9 @@ class FuseController extends Controller
         $data_fuse = Fuse::find($serial_number);
         $data_fuse->delete();               
         return redirect()->route('fuse')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportfuse() {
+        return Excel::download(new FuseExport, 'datafuse.xlsx');
     }
 }

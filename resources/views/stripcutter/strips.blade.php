@@ -16,16 +16,13 @@
   <body>
     <h1><center>Strip Cutter<center></h1>  
     <div class="container">
-    <a class="btn btn-success" href="/addstrip" role="button">Add Item</a>
     <div class="row g-3 align-items-center mt-2 mb-3">
     <div class="col-auto">
-    <label for="input" class="col-form-label">Search Here</label>
+    <a class="btn btn-success" href="/addstrip" role="button">Add Item</a>
     </div>
-    <div class="col-auto">
-    <form action="/strip" method='GET'>
-      <input type="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
-    </form>
-    </div>
+      <div class="col-auto">
+        <a class="btn btn-success" href="/exportstrip" role="button">Export Excel</a>
+      </div>
     </div>
     <div class="row">
     @if ($message = Session::get('success'))

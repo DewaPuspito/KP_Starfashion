@@ -1,17 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\PlotterController;
-use App\Http\Controllers\SewingSampleController;
-use App\Http\Controllers\FuseController;
 use App\Http\Controllers\KMController;
-use App\Http\Controllers\MetalDetectorController;
+use App\Http\Controllers\FuseController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\StripController;
+use App\Http\Controllers\FabricController;
 use App\Http\Controllers\PatternController;
 use App\Http\Controllers\PippingController;
-use App\Http\Controllers\StripController;
+use App\Http\Controllers\PlotterController;
 use App\Http\Controllers\BandKnifeController;
-use App\Http\Controllers\WarehouseController;
+use App\Http\Controllers\SewingSampleController;
+use App\Http\Controllers\MetalDetectorController;
 
 
 /*
@@ -51,8 +51,8 @@ Route::post("/insertfuse", [FuseController::class, 'insertfuse'])->name('insertf
 Route::get("/showfuse/{id}", [FuseController::class, 'showfuse'])->name('showfuse');
 Route::get("/tampilfuse/{id}", [FuseController::class, 'tampilfuse'])->name('tampilfuse'); 
 Route::post("/editfuse/{id}", [FuseController::class, 'editfuse'])->name('editfuse');  
-Route::get("/deletefuse/{id}", [FuseController::class, 'deletefuse'])->name('deletefuse');  
-Route::get('/search', [FuseController::class, 'search'])->name('search');
+Route::get("/deletefuse/{id}", [FuseController::class, 'deletefuse'])->name('deletefuse'); 
+Route::get("/exportfuse", [FuseController::class, 'exportfuse'])->name('exportfuse'); 
 
 // KM Cutting Machine
 Route::get("/km-cutting", [KMController::class, 'index'])->name('km-cutting');
@@ -62,7 +62,7 @@ Route::get("/showkmcutting/{id}", [KMController::class, 'showkmcutting'])->name(
 Route::get("/tampilkmcutting/{id}", [KMController::class, 'tampilkmcutting'])->name('tampilkmcutting'); 
 Route::post("/editkmcutting/{id}", [KMController::class, 'editkmcutting'])->name('editkmcutting');  
 Route::get("/deletekmcutting/{id}", [KMController::class, 'deletekmcutting'])->name('deletekmcutting');  
-Route::get('/search', [KMController::class, 'search'])->name('search');
+Route::get("/exportkmcutting", [KMController::class, 'exportkmcutting'])->name('exportkmcutting');
 
 // Band Knife Machine
 Route::get("/band-knife", [BandKnifeController::class, 'index'])->name('band-knife');
@@ -72,7 +72,7 @@ Route::get("/showbandknife/{id}", [BandKnifeController::class, 'showbandknife'])
 Route::get("/tampilbandknife/{id}", [BandKnifeController::class, 'tampilbandknife'])->name('tampilbandknife'); 
 Route::post("/editbandknife/{id}", [BandKnifeController::class, 'editbandknife'])->name('editbandknife');  
 Route::get("/deletebandknife/{id}", [BandKnifeController::class, 'deletebandknife'])->name('deletebandknife');  
-Route::get('/search', [BandKnifeController::class, 'search'])->name('search');
+Route::get("/exportbandknife", [BandKnifeController::class, 'exportbandknife'])->name('exportbandknife');
 
 // Plotter
 Route::get("/plotter", [PlotterController::class, 'index'])->name('plotter');
@@ -82,7 +82,7 @@ Route::get("/showplotter/{id}", [PlotterController::class, 'showplotter'])->name
 Route::get("/tampilplotter/{id}", [PlotterController::class, 'tampilplotter'])->name('tampilplotter'); 
 Route::post("/editplotter/{id}", [PlotterController::class, 'editplotter'])->name('editplotter');  
 Route::get("/deleteplotter/{id}", [PlotterController::class, 'deleteplotter'])->name('deleteplotter');  
-Route::get('/search', [PlotterController::class, 'search'])->name('search');
+Route::get("/exportplotter", [PlotterController::class, 'exportplotter'])->name('exportplotter');
 
 // Metal Detector
 Route::get("/metal-detector", [MetalDetectorController::class, 'index'])->name('metal-detector');
@@ -92,7 +92,7 @@ Route::get("/showmetaldetector/{id}", [MetalDetectorController::class, 'showmeta
 Route::get("/tampilmetaldetector/{id}", [MetalDetectorController::class, 'tampilmetaldetector'])->name('tampilmetaldetector'); 
 Route::post("/editmetaldetector/{id}", [MetalDetectorController::class, 'editmetaldetector'])->name('editmetaldetector');  
 Route::get("/deletemetaldetector/{id}", [MetalDetectorController::class, 'deletemetaldetector'])->name('deletemetaldetector');  
-Route::get('/search', [MetalDetectorController::class, 'search'])->name('search');
+Route::get("/exportmetaldetector", [MetalDetectorController::class, 'exportmetaldetector'])->name('exportmetaldetector');
 
 // Cutter Pattern
 Route::get("/pattern", [PatternController::class, 'index'])->name('pattern');
@@ -102,7 +102,7 @@ Route::get("/showpattern/{id}", [PatternController::class, 'showpattern'])->name
 Route::get("/tampilpattern/{id}", [PatternController::class, 'tampilpattern'])->name('tampilpattern'); 
 Route::post("/editpattern/{id}", [PatternController::class, 'editpattern'])->name('editpattern');  
 Route::get("/deletepattern/{id}", [PatternController::class, 'deletepattern'])->name('deletepattern');  
-Route::get('/search', [PatternController::class, 'search'])->name('search');
+Route::get("/exportpattern", [PatternController::class, 'exportpattern'])->name('exportpattern');
 
 // Rewinding Pipping
 Route::get("/pipping", [PippingController::class, 'index'])->name('pipping');
@@ -112,7 +112,7 @@ Route::get("/showpipping/{id}", [PippingController::class, 'showpipping'])->name
 Route::get("/tampilpipping/{id}", [PippingController::class, 'tampilpipping'])->name('tampilpipping'); 
 Route::post("/editpipping/{id}", [PippingController::class, 'editpipping'])->name('editpipping');  
 Route::get("/deletepipping/{id}", [PippingController::class, 'deletepipping'])->name('deletepipping');  
-Route::get('/search', [PippingController::class, 'search'])->name('search');
+Route::get("/exportpipping", [PippingController::class, 'exportpipping'])->name('exportpipping');
 
 // Strip Cutter
 Route::get("/strip", [StripController::class, 'index'])->name('strip');
@@ -122,14 +122,14 @@ Route::get("/showstrip/{id}", [StripController::class, 'showstrip'])->name('show
 Route::get("/tampilstrip/{id}", [StripController::class, 'tampilstrip'])->name('tampilstrip'); 
 Route::post("/editstrip/{id}", [StripController::class, 'editstrip'])->name('editstrip');  
 Route::get("/deletestrip/{id}", [StripController::class, 'deletestrip'])->name('deletestrip');
-Route::get('/search', [StripController::class, 'search'])->name('search');
+Route::get("/exportstrip", [StripController::class, 'exportstrip'])->name('exportstrip');
 
-// Warehouse
-Route::get("/warehouse", [WarehouseController::class, 'index'])->name('warehouse');
-Route::get("/addwarehouse", [WarehouseController::class, 'addwarehouse'])->name('addwarehouse');
-Route::post("/insertwarehouse", [WarehouseController::class, 'insertwarehouse'])->name('insertwarehouse');
-Route::get("/showwarehouse/{id}", [WarehouseController::class, 'showwarehouse'])->name('showwarehouse');
-Route::get("/tampilwarehouse/{id}", [WarehouseController::class, 'tampilwarehouse'])->name('tampilwarehouse'); 
-Route::post("/editwarehouse/{id}", [WarehouseController::class, 'editwarehouse'])->name('editwarehouse');  
-Route::get("/deletewarehouse/{id}", [WarehouseController::class, 'deletewarehouse'])->name('deletewarehouse');
-Route::get('/search', [WarehouseController::class, 'search'])->name('search');
+// Fabric Warehouse
+Route::get("/fabric", [FabricController::class, 'index'])->name('fabric');
+Route::get("/addfabric", [FabricController::class, 'addfabric'])->name('addfabric');
+Route::post("/insertfabric", [FabricController::class, 'insertfabric'])->name('insertfabric');
+Route::get("/showfabric/{id}", [FabricController::class, 'showfabric'])->name('showfabric');
+Route::get("/tampilfabric/{id}", [FabricController::class, 'tampilfabric'])->name('tampilfabric'); 
+Route::post("/editfabric/{id}", [FabricController::class, 'editfabric'])->name('editfabric');  
+Route::get("/deletefabric/{id}", [FabricController::class, 'deletefabric'])->name('deletefabric');
+Route::get("/exportfabric", [FabricController::class, 'exportfabric'])->name('exportfabric');

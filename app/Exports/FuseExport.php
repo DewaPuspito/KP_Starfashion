@@ -4,8 +4,10 @@ namespace App\Exports;
 
 use App\Models\Fuse;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class FuseExport implements FromCollection
+
+class FuseExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

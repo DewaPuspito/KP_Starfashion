@@ -22,10 +22,13 @@
     <label for="input" class="col-form-label">Search Here</label>
     </div>
     <div class="col-auto">
-    <form action="/km-cutting" method='GET'>
-      <input type="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
-    </form>
-    </div>
+        <form action="/km-cutting" method='GET' class="d-flex">
+          <input type="search" name="search" class="form-control" aria-describedby="passwordHelpInline">
+        </form>
+      </div>
+      <div class="col-auto">
+        <a class="btn btn-success" href="/exportkmcutting" role="button">Export Excel</a>
+      </div>
     </div>
     <div class="row">
     @if ($message = Session::get('success'))

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BandKnife;
+use Illuminate\Http\Request;
+use App\Exports\BandKnifeExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BandKnifeController extends Controller
 {
@@ -57,5 +59,9 @@ class BandKnifeController extends Controller
         $data_bandknife = BandKnife::find($serial_number);
         $data_bandknife->delete();
         return redirect()->route('band-knife')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportbandknife() {
+        return Excel::download(new BandKnifeExport, 'databandknife.xlsx');
     }
 }

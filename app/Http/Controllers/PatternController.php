@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Pattern;
+use Illuminate\Http\Request;
+use App\Exports\PatternExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PatternController extends Controller
 {
@@ -57,5 +59,9 @@ class PatternController extends Controller
         $data_pattern = Pattern::find($serial_number);
         $data_pattern->delete();
         return redirect()->route('pattern')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportpattern() {
+        return Excel::download(new PatternExport, 'datapattern.xlsx');
     }
 }

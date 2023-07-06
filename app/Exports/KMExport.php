@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\KM;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class KMExport implements FromCollection
+class KMExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

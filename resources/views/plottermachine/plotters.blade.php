@@ -16,7 +16,14 @@
   <body>
     <h1><center>Plotter Machine<center></h1>  
     <div class="container">
-    <a class="btn btn-success mt-2 mb-3" href="/addplotter" role="button">Add Item</a>
+    <div class="row g-3 align-items-center mt-2 mb-3">
+    <div class="col-auto">
+    <a class="btn btn-success" href="/addplotter" role="button">Add Item</a>
+    </div>
+      <div class="col-auto">
+        <a class="btn btn-success" href="/exportplotter" role="button">Export Excel</a>
+      </div>
+    </div>
     <div class="row">
       @if ($message = Session::get('success'))
       <div class="alert alert-success" role="alert">

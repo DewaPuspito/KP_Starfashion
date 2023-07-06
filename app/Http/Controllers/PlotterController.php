@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Plotter; 
+use Illuminate\Http\Request;
+use App\Exports\PlotterExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PlotterController extends Controller
 {
@@ -57,5 +59,9 @@ class PlotterController extends Controller
         $data_plotter = Plotter::find($serial_number);
         $data_plotter->delete();
         return redirect()->route('plotter')->with('success', 'Data Berhasil Dihapus');
+    }
+    
+    public function exportplotter() {
+        return Excel::download(new PlotterExport, 'dataplotter.xlsx');
     }
 }

@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\Pattern;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class PatternExport implements FromCollection
+class PatternExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -39,7 +40,6 @@ class PatternExport implements FromCollection
         'Ganti Instalasi Kelistrikan (Harian)', 
         'Ganti Vacum (Harian)', 
         'Ganti Belt (Harian)', 
-        'Setel Timming (Harian)', 
         'Kebersihan Mesin (Harian)', 
         'Jenis Sparepart yang Diganti', 
         'Tanggal Sparepart Diganti', 

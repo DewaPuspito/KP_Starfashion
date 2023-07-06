@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\KM;
+use App\Exports\KMExport;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KMController extends Controller
 {
@@ -57,5 +59,9 @@ class KMController extends Controller
         $data_km_cutting = KM::find($serial_number);
         $data_km_cutting->delete();               
         return redirect()->route('km-cutting')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportkmcutting() {
+        return Excel::download(new KMExport, 'datakmcutting.xlsx');
     }
 }

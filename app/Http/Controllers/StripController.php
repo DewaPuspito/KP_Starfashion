@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Strip;
+use App\Exports\StripExport;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StripController extends Controller
 {
@@ -57,5 +59,9 @@ class StripController extends Controller
         $data_strip = Strip::find($serial_number);
         $data_strip->delete();
         return redirect()->route('strip')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportstrip() {
+        return Excel::download(new StripExport, 'datastrip.xlsx');
     }
 }

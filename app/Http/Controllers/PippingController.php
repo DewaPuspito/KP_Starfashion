@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Pipping;
+use Illuminate\Http\Request;
+use App\Exports\PippingExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PippingController extends Controller
 {
@@ -57,5 +59,9 @@ class PippingController extends Controller
         $data_pipping = Pipping::find($serial_number);
         $data_pipping->delete();
         return redirect()->route('pipping')->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function exportpipping() {
+        return Excel::download(new PippingExport, 'datapipping.xlsx');
     }
 }
