@@ -10,6 +10,7 @@ use App\Http\Controllers\PatternController;
 use App\Http\Controllers\PippingController;
 use App\Http\Controllers\PlotterController;
 use App\Http\Controllers\BandKnifeController;
+use App\Http\Controllers\SparepartController;
 use App\Http\Controllers\SewingSampleController;
 use App\Http\Controllers\MetalDetectorController;
 
@@ -133,3 +134,13 @@ Route::get("/tampilfabric/{id}", [FabricController::class, 'tampilfabric'])->nam
 Route::post("/editfabric/{id}", [FabricController::class, 'editfabric'])->name('editfabric');  
 Route::get("/deletefabric/{id}", [FabricController::class, 'deletefabric'])->name('deletefabric');
 Route::get("/exportfabric", [FabricController::class, 'exportfabric'])->name('exportfabric');
+
+// Sparepart
+Route::get("/sparepart", [SparepartController::class, 'index'])->name('sparepart');
+Route::get("/addsparepart", [SparepartController::class, 'addsparepart'])->name('addsparepart');
+Route::post("/insertsparepart", [SparepartController::class, 'insertsparepart'])->name('insertsparepart');
+Route::get("/showsparepart/{id}", [SparepartController::class, 'showsparepart'])->name('showsparepart');
+Route::get("/tampilsparepart/{id}", [SparepartController::class, 'tampilsparepart'])->name('tampilsparepart'); 
+Route::post("/editsparepart/{id}", [SparepartController::class, 'editsparepart'])->name('editsparepart');  
+Route::get("/deletesparepart/{id}", [SparepartController::class, 'deletesparepart'])->name('deletesparepart');
+Route::get("/exportsparepart", [SparepartController::class, 'exportsparepart'])->name('exportsparepart');

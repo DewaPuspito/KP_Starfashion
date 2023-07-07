@@ -30,9 +30,10 @@ return new class extends Migration
             $table->date('perbaikan_gear_box_harian');
             $table->date('ganti_oli_gear_box_harian');
             $table->date('perbaikan_tegangan_rantai_harian');
-            $table->date('perbaikan_electrical_dan_motorharian');
+            $table->date('perbaikan_electrical_dan_motor_harian');
             $table->date('kebersihan_mesin_harian');
             $table->date('pemberian_grease_pada_roller_harian');
+            $table->date('penggantian_karet_roller_harian');
             $table->date('komponen_lainnya_harian');
             $table->string('jenis_sparepart_yang_diganti');
             $table->date('tanggal_sparepart_diganti');
