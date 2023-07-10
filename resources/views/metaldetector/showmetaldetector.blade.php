@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/metal-detector">Checklist Mesin</a>
@@ -41,12 +43,36 @@
         <p class="card-text">Perbaikan Sensifitas Metal (Harian) : {{ $data_metaldetector ->perbaikan_sensitifitas_metal_harian }}</p>
         <p class="card-text">Check Spare Parts Lainnya (Harian) : {{ $data_metaldetector ->check_spareparts_lainnya_harian }}</p>
         <p class="card-text">Kebersihan Mesin (Harian): {{ $data_metaldetector ->kebersihan_mesin_harian }}</p>
-        <p class="card-text">Jenis Sparepart yang Diganti : {{$data_metaldetector->jenis_sparepart_yang_diganti}}</p>
-        <p class="card-text">Harga Sparepart : {{$data_metaldetector->harga_sparepart}}</p>
+        <p class="card-text">Jenis Sparepart yang Diganti : {{$data_metaldetector ->sparepart->nama_sparepart ?? 'N/A'}}</p>
+        <p class="card-text">Harga Sparepart : {{$data_metaldetector ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <div class=text-center>
-        <td><a class="btn btn-warning" href="/tampilmetaldetector/{{$data_metaldetector ->serial_number}}" role="button">Edit</a>
-        <a class="btn btn-danger" href="/deletemetaldetector/{{$data_metaldetector ->serial_number}}" role="button">Delete</a></td>
-  </div>
+        <td><a class="btn btn-warning" href="/tampilmetaldetector/{{$data_metaldetector ->serial_number}}" role="button">Update</a>
+        <a class="btn btn-danger delete" data-id="{{$data_metaldetector ->serial_number}}" href="#" role="button">Delete</a></td>
+      </div>
     </hr>
   </div>
 </div>
+</body>
+<script>
+  $('.delete').click(function(){
+    var serial_number = $(this).attr('data-id')
+    swal({
+      title: "Yakin ingin menghapus?",
+      text: "Setelah dihapus, data tidak akan bisa dikembalikan lagi!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = "/deletemetaldetector/"+serial_number+""
+        swal("Data berhasil dihapus", {
+        icon: "success",
+    });
+      } else {
+        swal("Data tidak jadi dihapus");
+      }
+    });
+  });
+</script>
+</html>

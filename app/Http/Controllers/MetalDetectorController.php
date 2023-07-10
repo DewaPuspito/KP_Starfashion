@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Models\MetalDetector;
 use App\Exports\MetalDetectorExport;
@@ -44,7 +45,8 @@ class MetalDetectorController extends Controller
     public function tampilmetaldetector(string $serial_number)
     {
         $data_metaldetector = MetalDetector::find($serial_number);
-        return view('metaldetector.tampilmetaldetector', compact('data_metaldetector'));
+        $data_sparepart = Sparepart::all();
+        return view('metaldetector.tampilmetaldetector', compact('data_metaldetector', 'data_sparepart'));
     }
 
     public function editmetaldetector(Request $request, string $serial_number)

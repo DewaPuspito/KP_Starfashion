@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KM;
 use App\Exports\KMExport;
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -44,7 +45,8 @@ class KMController extends Controller
     public function tampilkmcutting(string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
-        return view('kmcutting.tampilkmcutting', compact('data_km_cutting'));
+        $data_sparepart = Sparepart::all();
+        return view('kmcutting.tampilkmcutting', compact('data_km_cutting', 'data_sparepart'));
     }
 
     public function editkmcutting(Request $request, string $serial_number)

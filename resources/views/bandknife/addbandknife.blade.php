@@ -41,82 +41,14 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control">
-      </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Electrical Instalasi (Bulanan)</label>
-      <input type="text" name="check_electrical_instalasi_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Motor Bearing Pully (Bulanan)</label>
-      <input type="text" name="check_motor_bearing_pully_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Kekencangan Pisau (Bulanan)</label>
-      <input type="text" name="check_kekencangan_pisau_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Pully Atas Bearing (Bulanan)</label>
-      <input type="text" name="check_pullyatas_bearing_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Gerinda/Asahan Pisau (Bulanan)</label>
-      <input type="text" name="check_gerinda_asahan_pisau_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Dinamo Kompresor (Bulanan)</label>
-      <input type="text" name="check_dinamo_kompresor_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
-      <input type="date" name="dicek_tanggal" class="form-control">
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control">
-      </div>
-      <div class="mb-3">
-      <label for="Input" class="form-label">Perbaikan Electrical Instalasi (Harian)</label>
-      <input type="date" name="perbaikan_electrical_instalasi_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti/Perbaikan Motor Bearing Pully (Harian)</label>
-      <input type="date" name="ganti_perbaikan_motor_bearing_pully_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti/Perbaikan Pully Atas Bearing (Harian)</label>
-      <input type="date" name="ganti_perbaikan_pullyatas_bearing_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Gerinda/Asahan Pisau (Harian)</label>
-      <input type="date" name="ganti_gerinda_asahan_pisau_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti/Perbaikan Dinamo Kompresor (Harian)</label>
-      <input type="date" name="ganti_perbaikan_dinamo_kompresor_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Servis Bersihkan Mesin (Harian)</label>
-      <input type="date" name="servis_bersihkan_mesin_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Sparepart Lainnya (Harian)</label>
-      <input type="date" name="ganti_sparepart_lainnya_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
-      <input type="text" name="jenis_sparepart_yang_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Harga Sparepart</label>
-      <input type="number" name="harga_sparepart" class="form-control">
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

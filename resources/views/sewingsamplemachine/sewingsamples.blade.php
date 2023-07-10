@@ -57,8 +57,8 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
-      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
       <th scope="col"></th>
     </tr>
@@ -72,9 +72,9 @@
       <td>{{$sewingsample ->merk_mesin}}</td>
       <td>{{$sewingsample ->bagian}}</td>
       <td>{{$sewingsample ->tahun_pembelian}}</td>
-      <td>{{$sewingsample ->jenis_sparepart_yang_diganti}}</td>
       <td>{{$sewingsample ->tanggal_sparepart_diganti}}</td>
-      <td>{{$sewingsample ->harga_sparepart}}</td>
+      <td>{{$sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</td>
+      <td>{{$sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</td>
       <td><a class="btn btn-info" href="/showsewingsample/{{$sewingsample->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

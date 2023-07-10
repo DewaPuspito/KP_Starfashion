@@ -11,6 +11,7 @@ use App\Http\Controllers\PippingController;
 use App\Http\Controllers\PlotterController;
 use App\Http\Controllers\BandKnifeController;
 use App\Http\Controllers\SparepartController;
+use App\Http\Controllers\CuttingMenuController;
 use App\Http\Controllers\SewingSampleController;
 use App\Http\Controllers\MetalDetectorController;
 
@@ -31,6 +32,7 @@ Route::get('/', function () {
 });
 
 Route::get("/main-menu", [MainController::class, 'index'])->name('main-menu');
+Route::get("/cutting-menu", [CuttingMenuController::class, 'cuttingindex'])->name('cutting-menu');
 
 // Sewing and Sample
 Route::get("/sewing-sample", [SewingSampleController::class, 'index'])->name('sewing-sample');

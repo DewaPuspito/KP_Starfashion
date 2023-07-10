@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sparepart;
 use App\Models\BandKnife;
 use Illuminate\Http\Request;
 use App\Exports\BandKnifeExport;
@@ -44,7 +45,8 @@ class BandKnifeController extends Controller
     public function tampilbandknife(string $serial_number)
     {
         $data_bandknife = BandKnife::find($serial_number);
-        return view('bandknife.tampilbandknife', compact('data_bandknife'));
+        $data_sparepart = Sparepart::all();
+        return view('bandknife.tampilbandknife', compact('data_bandknife', 'data_sparepart'));
     }
 
     public function editbandknife(Request $request, string $serial_number)

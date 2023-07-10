@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/fuse">Checklist Mesin</a>
@@ -52,12 +54,36 @@
         <p class="card-text">Ganti Kontrol Temperatur (Harian) : {{ $data_fuse ->ganti_kontrol_temperatur_harian}}</p>
         <p class="card-text">Servis dan Bersihkan Mesin (Harian) : {{ $data_fuse ->servis_dan_bersihkan_mesin_harian}}</p>
         <p class="card-text">Komponen Lainnya (Harian) : {{ $data_fuse ->komponen_lainnya_harian}}</p>
-        <p class="card-text">Jenis Sparepart yang Diganti : {{ $data_fuse ->jenis_sparepart_yang_diganti}}</p>
-        <p class="card-text">Harga Sparepart : {{ $data_fuse ->harga_sparepart}}</p>
+        <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fuse ->sparepart->nama_sparepart ?? 'N/A'}}</p>
+        <p class="card-text">Harga Sparepart : {{$data_fuse ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <div class= text-center>
-        <td><a class="btn btn-warning" href="/tampilfuse/{{$data_fuse->serial_number}}" role="button">Edit</a>
-        <a class="btn btn-danger" href="/deletefuse/{{$data_fuse->serial_number}}" role="button">Delete</a></td>
-  </div>
+        <td><a class="btn btn-warning" href="/tampilfuse/{{$data_fuse->serial_number}}" role="button">Update</a>
+        <a class="btn btn-danger delete" data-id="{{ $data_fuse ->serial_number }}" href="#" role="button">Delete</a></td>
+      </div>
     </hr>
   </div>
 </div>
+</body>
+<script>
+  $('.delete').click(function(){
+    var serial_number = $(this).attr('data-id')
+    swal({
+      title: "Yakin ingin menghapus?",
+      text: "Setelah dihapus, data tidak akan bisa dikembalikan lagi!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = "/deletefuse/"+serial_number+""
+        swal("Data berhasil dihapus", {
+        icon: "success",
+    });
+      } else {
+        swal("Data tidak jadi dihapus");
+      }
+    });
+  });
+</script>
+</html>

@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="/sewing-sample">Checklist Mesin</a>
+    <a class="navbar-brand" href="/sparepart">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
     </div>
   </div>
@@ -35,12 +35,24 @@
       <input type="number" name="harga_sparepart" class="form-control" id="Input">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Jumlah Sparepart yang Masuk</label>
+      <input type="number" name="jumlah_sparepart_masuk" class="form-control" id="Input">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Tanggal Masuk</label>
       <input type="date" name="sparepart_masuk" class="form-control" id="Input">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Jumlah Sparepart yang Keluar</label>
+      <input type="number" name="jumlah_sparepart_keluar" class="form-control" id="Input">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Tanggal Keluar</label>
       <input type="date" name="sparepart_keluar" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Sisa Sparepart</label>
+      <input type="number" name="sisa_sparepart" class="form-control" id="Input">
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

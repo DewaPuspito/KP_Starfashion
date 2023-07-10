@@ -41,90 +41,14 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control">
-      </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Pemberian Minyak pada Ril (Bulanan)</label>
-      <input type="text" name="pemberian_minyak_pada_ril_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Pulpen (Bulanan)</label>
-      <input type="text" name="check_pulpen_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Pisau (Bulanan)</label>
-      <input type="text" name="check_pisau_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Elektro (Bulanan)</label>
-      <input type="text" name="check_elektro_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Instalasi Kelistrikan (Bulanan)</label>
-      <input type="text" name="check_instalasi_kelistrikan_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Vacum (Bulanan)</label>
-      <input type="text" name="check_vacum_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Belt (Bulanan)</label>
-      <input type="text" name="check_belt_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
-      <input type="date" name="dicek_tanggal" class="form-control">
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control">
-      </div>
-      <div class="mb-3">
-      <label for="Input" class="form-label">Pemberian Minyak pada Ril (Harian)</label>
-      <input type="date" name="pemberian_minyak_pada_ril_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Pulpen (Harian)</label>
-      <input type="date" name="ganti_pulpen_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Pisau (Harian)</label>
-      <input type="date" name="ganti_pisau_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Komponen Elektro (Harian)</label>
-      <input type="date" name="ganti_komponen_elektro_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Instalasi Kelistrikan (Harian)</label>
-      <input type="date" name="ganti_instalasi_kelistrikan_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Vacum (Harian)</label>
-      <input type="date" name="ganti_vacum_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Belt (Harian)</label>
-      <input type="date" name="ganti_belt_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Kebersihan Mesin (Harian)</label>
-      <input type="date" name="kebersihan_mesin_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
-      <input type="text" name="jenis_sparepart_yang_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Harga Sparepart</label>
-      <input type="number" name="harga_sparepart" class="form-control">
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

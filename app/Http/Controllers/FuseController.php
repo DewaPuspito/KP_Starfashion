@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fuse;
+use App\Models\Sparepart;
 use App\Exports\FuseExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,7 +45,8 @@ class FuseController extends Controller
     public function tampilfuse(string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
-        return view('fusemachine.tampilfuse', compact('data_fuse'));
+        $data_sparepart = Sparepart::all();
+        return view('fusemachine.tampilfuse', compact('data_fuse', 'data_sparepart'));
     }
 
     public function editfuse(Request $request, string $serial_number)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plotter; 
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PlotterExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,7 +45,8 @@ class PlotterController extends Controller
     public function tampilplotter(string $serial_number)
     {
         $data_plotter = Plotter::find($serial_number);
-        return view('plottermachine.tampilplotter', compact('data_plotter'));
+        $data_sparepart = Sparepart::all();
+        return view('plottermachine.tampilplotter', compact('data_plotter', 'data_sparepart'));
     }
 
     public function editplotter(Request $request, string $serial_number)

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Fabric;
+use App\Models\Sparepart;
+use Illuminate\Http\Request;
 use App\Exports\FabricExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -39,7 +40,8 @@ class FabricController extends Controller
     public function tampilfabric(string $serial_number)
     {
         $data_fabric = Fabric::find($serial_number);
-        return view('fabric.tampilfabric', compact('data_fabric'));
+        $data_sparepart = Sparepart::all();
+        return view('fabric.tampilfabric', compact('data_fabric', 'data_sparepart'));
     }
 
     public function editfabric(Request $request, string $serial_number)

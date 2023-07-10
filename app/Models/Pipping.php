@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Sparepart;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pipping extends Model
 {
@@ -13,4 +14,9 @@ class Pipping extends Model
     protected $keyType = 'string';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function sparepart()
+    {
+        return $this->belongsTo(Sparepart::class,'id_sparepart', 'id_sparepart');
+    }
 }

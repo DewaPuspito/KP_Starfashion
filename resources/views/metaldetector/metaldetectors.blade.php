@@ -39,8 +39,8 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
-      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
       <th scope="col"></th>
     </tr>
@@ -53,9 +53,9 @@
       <td>{{$metaldetector ->merk_mesin}}</td>
       <td>{{$metaldetector ->bagian}}</td>
       <td>{{$metaldetector ->tahun_pembelian}}</td>
-      <td>{{$metaldetector ->jenis_sparepart_yang_diganti}}</td>
       <td>{{$metaldetector ->tanggal_sparepart_diganti}}</td>
-      <td>{{$metaldetector ->harga_sparepart}}</td>
+      <td>{{$metaldetector ->sparepart->nama_sparepart ?? 'N/A'}}</td>
+      <td>{{$metaldetector ->sparepart->harga_sparepart ?? 'N/A'}}</td>
       <td><a class="btn btn-info" href="/showmetaldetector/{{$metaldetector ->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pipping;
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PippingExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,7 +45,8 @@ class PippingController extends Controller
     public function tampilpipping(string $serial_number)
     {
         $data_pipping = Pipping::find($serial_number);
-        return view('rewindingpipping.tampilpipping', compact('data_pipping'));
+        $data_sparepart = Sparepart::all();
+        return view('rewindingpipping.tampilpipping', compact('data_pipping', 'data_sparepart'));
     }
 
     public function editpipping(Request $request, string $serial_number)

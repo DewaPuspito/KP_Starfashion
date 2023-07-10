@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sparepart;
 use App\Models\SewingSample;
 use Illuminate\Http\Request;
 use App\Exports\SewingSampleExport;
@@ -65,7 +66,8 @@ class SewingSampleController extends Controller
     public function tampilsewingsample(string $serial_number)
     {
         $data_sewingsample = SewingSample::find($serial_number);
-        return view('sewingsamplemachine.tampilsewingsample', compact('data_sewingsample'));
+        $data_sparepart = Sparepart::all();
+        return view('sewingsamplemachine.tampilsewingsample', compact('data_sewingsample', 'data_sparepart'));
     }
 
     public function editsewingsample(Request $request, string $serial_number)

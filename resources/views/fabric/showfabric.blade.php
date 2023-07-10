@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/fabric">Checklist Mesin</a>
@@ -42,12 +44,36 @@
         <p class="card-text">Pemberian Grease pada Roller (Harian) : {{ $data_fabric ->pemberian_grease_pada_roller_harian }}</p>
         <p class="card-text">Ganti Karet Roller (Harian) : {{ $data_fabric ->penggantian_karet_roller_harian}}</p>
         <p class="card-text">Komponen Lainnya (Harian) : {{ $data_fabric ->komponen_lainnya_harian}}</p>
-        <p class="card-text">Jenis Sparepart yang Diganti : {{ $data_fabric ->jenis_sparepart_yang_diganti}}</p>
-        <p class="card-text">Harga Sparepart : {{ $data_fabric ->harga_sparepart}}</p>
+        <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fabric ->sparepart->nama_sparepart ?? 'N/A'}}</p>
+        <p class="card-text">Harga Sparepart : {{$data_fabric ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <div class= text-center>
-        <td><a class="btn btn-warning" href="/tampilfabric/{{$data_fabric->serial_number}}" role="button">Edit</a>
-        <a class="btn btn-danger" href="/deletefabric/{{$data_fabric->serial_number}}" role="button">Delete</a></td>
-  </div>
+        <td><a class="btn btn-warning" href="/tampilfabric/{{$data_fabric->serial_number}}" role="button">Update</a>
+        <a class="btn btn-danger delete" data-id = "{{ $data_fabric ->serial_number }}" href="#" role="button">Delete</a></td>
+      </div>
     </hr>
   </div>
 </div>
+</body>
+<script>
+  $('.delete').click(function(){
+    var serial_number = $(this).attr('data-id')
+    swal({
+      title: "Yakin ingin menghapus?",
+      text: "Setelah dihapus, data tidak akan bisa dikembalikan lagi!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location = "/deletefabric/"+serial_number+""
+        swal("Data berhasil dihapus", {
+        icon: "success",
+    });
+      } else {
+        swal("Data tidak jadi dihapus");
+      }
+    });
+  });
+</script>
+</html>

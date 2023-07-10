@@ -143,16 +143,17 @@
       <input type="date" name="kebersihan_mesin_harian" class="form-control" value="{{$data_plotter->kebersihan_mesin_harian}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
-      <input type="text" name="jenis_sparepart_yang_diganti" class="form-control" value="{{$data_plotter->jenis_sparepart_yang_diganti}}">
-    </div>
-    <div class="mb-3">
       <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control" value="{{$data_plotter->tanggal_sparepart_diganti}">
+      <input type="date" name="tanggal_sparepart_diganti" class="form-control" value="{{$data_plotter->tanggal_sparepart_diganti}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Harga Sparepart</label>
-      <input type="number" name="harga_sparepart" class="form-control" value="{{$data_plotter->harga_sparepart}}">
+      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
+      <select class="form-select" name="id_sparepart" aria-label="Default select example">
+        <option selected></option>
+        @foreach ($data_sparepart as $sparepart )
+        <option value="{{$sparepart->id_sparepart}}">{{$sparepart->nama_sparepart}}</option>
+        @endforeach
+      </select>
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

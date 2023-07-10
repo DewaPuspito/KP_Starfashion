@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Strip;
+use App\Models\Sparepart;
 use App\Exports\StripExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,7 +45,8 @@ class StripController extends Controller
     public function tampilstrip(string $serial_number)
     {
         $data_strip = Strip::find($serial_number);
-        return view('stripcutter.tampilstrip', compact('data_strip'));
+        $data_sparepart = Sparepart::all();
+        return view('stripcutter.tampilstrip', compact('data_strip', 'data_sparepart'));
     }
 
     public function editstrip(Request $request, string $serial_number)

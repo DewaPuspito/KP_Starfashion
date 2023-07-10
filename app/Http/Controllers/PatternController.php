@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pattern;
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PatternExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,7 +45,8 @@ class PatternController extends Controller
     public function tampilpattern(string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
-        return view('pattern.tampilpattern', compact('data_pattern'));
+        $data_sparepart = Sparepart::all();
+        return view('pattern.tampilpattern', compact('data_pattern', 'data_sparepart'));
     }
 
     public function editpattern(Request $request, string $serial_number)

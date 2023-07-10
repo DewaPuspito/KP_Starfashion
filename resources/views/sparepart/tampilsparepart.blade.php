@@ -35,12 +35,24 @@
       <input type="number" name="harga_sparepart" class="form-control" id="Input" value ="{{$data_sparepart->harga_sparepart}}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Jumlah Sparepart yang Masuk</label>
+      <input type="number" name="jumlah_sparepart_masuk" class="form-control" id="Input">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Tanggal Masuk</label>
       <input type="date" name="sparepart_masuk" class="form-control" id="Input" value ="{{$data_sparepart->sparepart_masuk}}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Jumlah Sparepart yang Keluar</label>
+      <input type="number" name="jumlah_sparepart_keluar" class="form-control" id="Input">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Tanggal Keluar</label>
       <input type="date" name="sparepart_keluar" class="form-control" value ="{{$data_sparepart->sparepart_keluar}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Sisa Sparepart</label>
+      <input type="number" name="sisa_sparepart" class="form-control" id="Input">
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

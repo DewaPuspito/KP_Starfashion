@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="/main-menu">Checklist Mesin</a>
+    <a class="navbar-brand" href="/cutting-menu">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
     </div>
   </div>
@@ -38,8 +38,8 @@
       <th scope="col">Merk Mesin</th>
       <th scope="col">Bagian</th>
       <th scope="col">Tahun Pembelian</th>
-      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Tanggal Sparepart Diganti</th>
+      <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
       <th scope="col"></th>
     </tr>
@@ -52,9 +52,9 @@
       <td>{{$strip ->merk_mesin}}</td>
       <td>{{$strip ->bagian}}</td>
       <td>{{$strip ->tahun_pembelian}}</td>
-      <td>{{$strip ->jenis_sparepart_yang_diganti}}</td>
       <td>{{$strip ->tanggal_sparepart_diganti}}</td>
-      <td>{{$strip ->harga_sparepart}}</td>
+      <td>{{$strip ->sparepart->nama_sparepart ?? 'N/A'}}</td>
+      <td>{{$strip ->sparepart->harga_sparepart ?? 'N/A'}}</td>
       <td><a class="btn btn-info" href="/showstrip/{{$strip->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

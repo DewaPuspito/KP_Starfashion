@@ -41,106 +41,14 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control">
-      </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Automatic Cut Out Switch (Bulanan)</label>
-      <input type="text" name="automatic_cutout_switch_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Insulate Plate (Bulanan)</label>
-      <input type="text" name="insulate_plate_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Oil Tank (Bulanan)</label>
-      <input type="text" name="oil_tank_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Oil Tank Cap (Bulanan)</label>
-      <input type="text" name="oil_tank_cap_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">RH Guide (Bulanan)</label>
-      <input type="text" name="rh_guide_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">LH Guide (Bulanan)</label>
-      <input type="text" name="lh_guide_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Bellcrank with Pin and Bushing (Bulanan)</label>
-      <input type="text" name="bellcrank_with_pin_and_bushing_bulanan" class="form-control">
-      </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Gear and Shaft (Bulanan)</label>
-      <input type="text" name="gear_and_shaft_bulanan" class="form-control">
-      </div>
-      <div class="mb-3">
-    <label for="Input" class="form-label">Screwshaft LH RH Extension (Bulanan)</label>
-    <input type="text" name="screwshaft_lh_rh_extension_bulanan" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">LH Square Shaft (Bulanan)</label>
-      <input type="text" name="lh_square_shaft_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Thread Guide (Bulanan)</label>
-      <input type="text" name="thread_guide_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Sparepart Lainnya (Bulanan)</label>
-      <input type="text" name="sparepart_lainnya_bulanan" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
-      <input type="date" name="dicek_tanggal" class="form-control">
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control">
-      </div>
-      <div class="mb-3">
-      <label for="Input" class="form-label">Pisau Tumpul (Harian)</label>
-      <input type="date" name="pisau_tumpul_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Minyak Habis (Harian)</label>
-      <input type="date" name="minyak_habis_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Ganti Abrasif (Harian)</label>
-      <input type="date" name="ganti_abrasif_harian" class="form-control"> 
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Instalasi Kabel (Harian)</label>
-      <input type="date" name="check_instalasi_kabel_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Kebersihan Mesin (Harian)</label>
-      <input type="date" name="kebersihan_mesin_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Check Kondisi Mesin (Harian)</label>
-      <input type="date" name="check_kondisi_mesin_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Komponen Lainnya (Harian)</label>
-      <input type="date" name="komponen_lainnya_harian" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
-      <input type="text" name="jenis_sparepart_yang_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Harga Sparepart</label>
-      <input type="number" name="harga_sparepart" class="form-control">
     </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>

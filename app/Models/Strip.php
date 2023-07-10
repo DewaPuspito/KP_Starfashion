@@ -13,4 +13,9 @@ class Strip extends Model
     protected $keyType = 'string';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function sparepart()
+    {
+        return $this->belongsTo(Sparepart::class,'id_sparepart', 'id_sparepart');
+    }
 }
