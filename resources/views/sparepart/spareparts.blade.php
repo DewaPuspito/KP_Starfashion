@@ -1,22 +1,24 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="/main-menu">Checklist Mesin</a>
-    <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
-    </div>
-  </div>
-</nav>
-    <title>Checklist Mesin</title>
-  </head>
-  <body>
-    <h1><center>Sparepart<center></h1>  
+@extends('layout.admin')
+
+@section('content')
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Sparepart</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/main-menu">Back to Menu</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      
     <div class="container">
     <div class="row g-3 align-items-center mt-2 mb-3">
     <div class="col-auto">
@@ -67,7 +69,9 @@
 </table>
 </div>
 </div>
-</body>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
 <script>
   $('.delete').click(function(){
     var id_sparepart = $(this).attr('data-id')
@@ -90,4 +94,4 @@
     });
   });
   </script>
-</html>
+@endsection

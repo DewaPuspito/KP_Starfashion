@@ -50,7 +50,32 @@
           <p class="card-text">Perbaikan Connection Cable (Harian) : {{ $data_plotter->perbaikan_connection_cable_harian}}</p>
           <p class="card-text">Perbaikan/Ganti Print Head (Harian) : {{ $data_plotter->perbaikan_ganti_print_head_harian }}</p>
           <p class="card-text">Kebersihan Mesin (Harian) : {{ $data_plotter->kebersihan_mesin_harian}}</p>
-          $data_plotter
+          <h2><center>History Log<center></h2>
+        @if($audits->isEmpty())
+        <p>No history found</p>
+        @else
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Changed By</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Old Values</th>
+                    <th scope="col">New Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($audits as $audit)
+                    <tr>
+                        <td>{{ $audit->user->name }}</td>
+                        <td>{{ $audit->event }}</td>
+                        <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
+                        <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </form>
+        @endif
           <div class=text-center>
           <td><a class="btn btn-warning" href="/tampilplotter/{{$data_plotter->serial_number}}" role="button">Update</a>
           <a class="btn btn-danger delete" data-id="{{$data_plotter ->serial_number}}" href="#" role="button">Delete</a></td>

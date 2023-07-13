@@ -7,6 +7,7 @@ use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PippingExport;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class PippingController extends Controller
 {
@@ -39,7 +40,8 @@ class PippingController extends Controller
     public function showpipping(string $serial_number)
     {
         $data_pipping= Pipping::find($serial_number);
-        return view ('rewindingpipping.showpipping', compact('data_pipping'));
+        $audits = $data_pipping->audits; // Retrieve audits for the sewing sample
+        return view ('rewindingpipping.showpipping', compact('data_pipping', 'audits'));
     }
 
     public function tampilpipping(string $serial_number)

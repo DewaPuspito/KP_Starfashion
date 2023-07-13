@@ -7,6 +7,7 @@ use App\Models\Sparepart;
 use App\Exports\StripExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class StripController extends Controller
 {
@@ -39,7 +40,8 @@ class StripController extends Controller
     public function showstrip(string $serial_number)
     {
         $data_strip= Strip::find($serial_number);
-        return view ('stripcutter.showstrip', compact('data_strip'));
+        $audits = $data_strip->audits; // Retrieve audits for the sewing sample
+        return view ('stripcutter.showstrip', compact('data_strip', 'audits'));
     }
 
     public function tampilstrip(string $serial_number)

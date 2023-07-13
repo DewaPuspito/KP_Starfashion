@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Sparepart;
 use App\Models\SewingSample;
 use Illuminate\Http\Request;
+use OwenIt\Auditing\Models\Audit;
 use App\Exports\SewingSampleExport;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Facades\Auditor;
 
 class SewingSampleController extends Controller
 {
@@ -60,7 +62,8 @@ class SewingSampleController extends Controller
     public function showsewingsample(string $serial_number)
     {
         $data_sewingsample = SewingSample::find($serial_number);
-        return view ('sewingsamplemachine.showsewingsamples', compact('data_sewingsample'));
+        $audits = $data_sewingsample->audits; // Retrieve audits for the sewing sample
+        return view('sewingsamplemachine.showsewingsamples', compact('data_sewingsample', 'audits'));
     }
 
     public function tampilsewingsample(string $serial_number)

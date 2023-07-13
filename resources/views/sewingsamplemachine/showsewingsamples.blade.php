@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/sewing-sample">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
@@ -59,6 +59,32 @@
         <p class="card-text">Ganti Sparepart Lainnya (Harian) : {{ $data_sewingsample ->ganti_sparepart_lainnya_harian }}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</p>
+        <h2><center>History Log<center></h2>
+        @if($audits->isEmpty())
+        <p>No history found</p>
+        @else
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Changed By</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Old Values</th>
+                    <th scope="col">New Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($audits as $audit)
+                    <tr>
+                        <td>{{ $audit->user->name }}</td>
+                        <td>{{ $audit->event }}</td>
+                        <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
+                        <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </form>
+        @endif
         <div class= text-center>
         <td><a class="btn btn-warning" href="/tampilsewingsample/{{$data_sewingsample->serial_number}}" role="button">Update</a>
         <a class="btn btn-danger delete" data-id = "{{ $data_sewingsample->serial_number }}" href="#" role="button">Delete</a></td>

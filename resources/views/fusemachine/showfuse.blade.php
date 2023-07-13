@@ -56,6 +56,32 @@
         <p class="card-text">Komponen Lainnya (Harian) : {{ $data_fuse ->komponen_lainnya_harian}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fuse ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_fuse ->sparepart->harga_sparepart ?? 'N/A'}}</p>
+        <h2><center>History Log<center></h2>
+        @if($audits->isEmpty())
+        <p>No history found</p>
+        @else
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Changed By</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Old Values</th>
+                    <th scope="col">New Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($audits as $audit)
+                    <tr>
+                        <td>{{ $audit->user->name }}</td>
+                        <td>{{ $audit->event }}</td>
+                        <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
+                        <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </form>
+        @endif
         <div class= text-center>
         <td><a class="btn btn-warning" href="/tampilfuse/{{$data_fuse->serial_number}}" role="button">Update</a>
         <a class="btn btn-danger delete" data-id="{{ $data_fuse ->serial_number }}" href="#" role="button">Delete</a></td>

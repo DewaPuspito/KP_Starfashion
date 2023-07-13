@@ -7,6 +7,7 @@ use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PatternExport;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class PatternController extends Controller
 {
@@ -39,7 +40,8 @@ class PatternController extends Controller
     public function showpattern(string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
-        return view ('pattern.showpattern', compact('data_pattern'));
+        $audits = $data_pattern->audits; // Retrieve audits for the sewing sample
+        return view ('pattern.showpattern', compact('data_pattern', 'audits'));
     }
 
     public function tampilpattern(string $serial_number)

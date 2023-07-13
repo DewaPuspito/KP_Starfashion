@@ -7,6 +7,7 @@ use App\Models\Sparepart;
 use App\Exports\FuseExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class FuseController extends Controller
 {
@@ -39,7 +40,8 @@ class FuseController extends Controller
     public function showfuse(string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
-        return view ('fusemachine.showfuse', compact('data_fuse'));
+        $audits = $data_fuse->audits; // Retrieve audits for the sewing sample
+        return view ('fusemachine.showfuse', compact('data_fuse', 'audits'));
     }
 
     public function tampilfuse(string $serial_number)

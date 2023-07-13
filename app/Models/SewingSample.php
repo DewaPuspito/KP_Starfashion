@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use App\Models\Sparepart;
-use KyslikColumnSortableSortable;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
+use OwenIt\Auditing\Auditable as AuditableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class SewingSample extends Model
+class SewingSample extends Model implements Auditable
 {
-    use HasFactory;
+    use HasFactory, AuditableTrait;
     protected $table = 'sewing_line_and_sample_check';
     protected $primaryKey = 'serial_number';
     protected $keyType = 'string';

@@ -7,6 +7,8 @@ use App\Exports\KMExport;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
+use OwenIt\Auditing\Facades\Auditor;
 
 class KMController extends Controller
 {
@@ -39,7 +41,8 @@ class KMController extends Controller
     public function showkmcutting(string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
-        return view ('kmcutting.showkmcutting', compact('data_km_cutting'));
+        $audits = $data_km_cutting->audits; // Retrieve audits for the sewing sample
+        return view ('kmcutting.showkmcutting', compact('data_km_cutting', 'audits'));
     }
 
     public function tampilkmcutting(string $serial_number)

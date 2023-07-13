@@ -7,6 +7,7 @@ use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\FabricExport;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class FabricController extends Controller
 {
@@ -34,7 +35,8 @@ class FabricController extends Controller
     public function showfabric(string $serial_number)
     {
         $data_fabric = Fabric::find($serial_number);
-        return view ('fabric.showfabric', compact('data_fabric'));
+        $audits = $data_fabric->audits; // Retrieve audits for the sewing sample
+        return view ('fabric.showfabric', compact('data_fabric', 'audits'));
     }
 
     public function tampilfabric(string $serial_number)

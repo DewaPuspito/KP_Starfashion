@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/sewing-sample">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
@@ -169,12 +169,19 @@
       <input type="date" name="tanggal_sparepart_diganti" class="form-control" value="{{$data_sewingsample->tanggal_sparepart_diganti}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
       <select class="form-select" name="id_sparepart" aria-label="Default select example">
-        <option selected></option>
+        <option selected>Jenis Sparepart yang Diganti</option>
         @foreach ($data_sparepart as $sparepart )
         <option value="{{$sparepart->id_sparepart}}">{{$sparepart->nama_sparepart}}</option>
         @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Indikator Kesehatan Mesin</option>
+        <option value="1"></option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
       </select>
     </div>
     <div class=text-center>

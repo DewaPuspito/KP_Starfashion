@@ -7,6 +7,7 @@ use App\Models\BandKnife;
 use Illuminate\Http\Request;
 use App\Exports\BandKnifeExport;
 use Maatwebsite\Excel\Facades\Excel;
+use OwenIt\Auditing\Models\Audit;
 
 class BandKnifeController extends Controller
 {
@@ -39,7 +40,8 @@ class BandKnifeController extends Controller
     public function showbandknife(string $serial_number)
     {
         $data_bandknife = BandKnife::find($serial_number);
-        return view ('bandknife.showbandknife', compact('data_bandknife'));
+        $audits = $data_bandknife->audits; // Retrieve audits for the sewing sample
+        return view ('bandknife.showbandknife', compact('data_bandknife', 'audits'));
     }
 
     public function tampilbandknife(string $serial_number)
