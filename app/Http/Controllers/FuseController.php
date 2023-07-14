@@ -6,8 +6,9 @@ use App\Models\Fuse;
 use App\Models\Sparepart;
 use App\Exports\FuseExport;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class FuseController extends Controller
 {
@@ -40,7 +41,8 @@ class FuseController extends Controller
     public function showfuse(string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
-        $audits = $data_fuse->audits; // Retrieve audits for the sewing sample
+        $audits = $data_fuse->audits;
+        Session::put('url', request()->fullUrl());
         return view ('fusemachine.showfuse', compact('data_fuse', 'audits'));
     }
 
@@ -55,7 +57,10 @@ class FuseController extends Controller
     {
         $data_fuse = Fuse::find($serial_number);
         $data_fuse->update($request->all());
-        return redirect()->route('fuse')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('fuse');
     }
 
     public function deletefuse(string $serial_number)

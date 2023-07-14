@@ -6,6 +6,8 @@ use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\SparepartExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 class SparepartController extends Controller
 {
@@ -17,9 +19,9 @@ class SparepartController extends Controller
     public function index(Request $request)
     {
         if($request->has('search')) {
-            $data_sparepart = Sparepart::where('id_sparepart','LIKE', '%' .$request->search.'%')->get();
+            $data_sparepart = Sparepart::where('nama_sparepart','LIKE', '%' .$request->search.'%')->paginate(10);
         } else {
-        $data_sparepart = Sparepart::all();
+        $data_sparepart = Sparepart::paginate(10);
         }
         return view ('sparepart.spareparts', compact('data_sparepart'));
     }

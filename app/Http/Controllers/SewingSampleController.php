@@ -9,6 +9,7 @@ use OwenIt\Auditing\Models\Audit;
 use App\Exports\SewingSampleExport;
 use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Facades\Auditor;
+use Illuminate\Support\Facades\Session;
 
 class SewingSampleController extends Controller
 {
@@ -62,7 +63,8 @@ class SewingSampleController extends Controller
     public function showsewingsample(string $serial_number)
     {
         $data_sewingsample = SewingSample::find($serial_number);
-        $audits = $data_sewingsample->audits; // Retrieve audits for the sewing sample
+        $audits = $data_sewingsample->audits;
+        Session::put('url', request()->fullUrl());
         return view('sewingsamplemachine.showsewingsamples', compact('data_sewingsample', 'audits'));
     }
 
@@ -77,7 +79,10 @@ class SewingSampleController extends Controller
     {
         $data_sewingsample = SewingSample::find($serial_number);
         $data_sewingsample->update($request->all());
-        return redirect()->route('sewing-sample')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('sewing-sample');
     }
 
     public function deletesewingsample(string $serial_number)

@@ -18,6 +18,7 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
+    
     <div class="container">
     <a class="btn btn-success" href="/addsewingsample" role="button">Add Item</a>
     <form action="/search" method="GET">
@@ -86,4 +87,6 @@
 </div>
 </div>
 </body>
+<script>
+</script>
 </html>

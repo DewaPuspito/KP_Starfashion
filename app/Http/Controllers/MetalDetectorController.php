@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Models\MetalDetector;
+use OwenIt\Auditing\Models\Audit;
 use App\Exports\MetalDetectorExport;
 use Maatwebsite\Excel\Facades\Excel;
-use OwenIt\Auditing\Models\Audit;
+use Illuminate\Support\Facades\Session;
 
 class MetalDetectorController extends Controller
 {
@@ -40,7 +41,8 @@ class MetalDetectorController extends Controller
     public function showmetaldetector(string $serial_number)
     {
         $data_metaldetector = MetalDetector::find($serial_number);
-        $audits = $data_metaldetector->audits; // Retrieve audits for the sewing sample
+        $audits = $data_metaldetector->audits;
+        Session::put('url', request()->fullUrl());
         return view ('metaldetector.showmetaldetector', compact('data_metaldetector', 'audits'));
     }
 
@@ -55,7 +57,10 @@ class MetalDetectorController extends Controller
     {
         $data_metaldetector = MetalDetector::find($serial_number);
         $data_metaldetector->update($request->all());
-        return redirect()->route('metal-detector')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('metal-detector');
     }
 
     public function deletemetaldetector(string $serial_number)

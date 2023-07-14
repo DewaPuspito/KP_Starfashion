@@ -6,8 +6,9 @@ use App\Models\Fabric;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\FabricExport;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class FabricController extends Controller
 {
@@ -36,6 +37,7 @@ class FabricController extends Controller
     {
         $data_fabric = Fabric::find($serial_number);
         $audits = $data_fabric->audits; // Retrieve audits for the sewing sample
+        Session::put('url', request()->fullUrl());
         return view ('fabric.showfabric', compact('data_fabric', 'audits'));
     }
 
@@ -50,7 +52,10 @@ class FabricController extends Controller
     {
         $data_fabric = Fabric::find($serial_number);
         $data_fabric->update($request->all());
-        return redirect()->route('fabric')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('fabric');
     }
 
     public function deletefabric(string $serial_number)

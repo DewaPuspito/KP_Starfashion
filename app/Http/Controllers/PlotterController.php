@@ -6,8 +6,9 @@ use App\Models\Plotter;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PlotterExport;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class PlotterController extends Controller
 {
@@ -40,7 +41,8 @@ class PlotterController extends Controller
     public function showplotter(string $serial_number)
     {
         $data_plotter = Plotter::find($serial_number);
-        $audits = $data_plotter->audits; // Retrieve audits for the sewing sample
+        $audits = $data_plotter->audits;
+        Session::put('url', request()->fullUrl());
         return view ('plottermachine.showplotter', compact('data_plotter', 'audits'));
     }
 
@@ -55,6 +57,9 @@ class PlotterController extends Controller
     {
         $data_plotter = Plotter::find($serial_number);
         $data_plotter->update($request->all());
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
         return redirect()->route('plotter')->with('success', 'Data Berhasil Diperbarui');
     }
 

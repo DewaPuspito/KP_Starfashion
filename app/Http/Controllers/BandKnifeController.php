@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sparepart;
 use App\Models\BandKnife;
+use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\BandKnifeExport;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class BandKnifeController extends Controller
 {
@@ -41,6 +42,7 @@ class BandKnifeController extends Controller
     {
         $data_bandknife = BandKnife::find($serial_number);
         $audits = $data_bandknife->audits; // Retrieve audits for the sewing sample
+        Session::put('url', request()->fullUrl());
         return view ('bandknife.showbandknife', compact('data_bandknife', 'audits'));
     }
 
@@ -55,7 +57,10 @@ class BandKnifeController extends Controller
     {
         $data_bandknife = BandKnife::find($serial_number);
         $data_bandknife->update($request->all());
-        return redirect()->route('band-knife')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('band-knife');
     }
 
     public function deletebandknife(string $serial_number)

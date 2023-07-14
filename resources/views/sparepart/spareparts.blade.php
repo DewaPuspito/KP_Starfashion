@@ -28,6 +28,17 @@
         <a class="btn btn-success" href="/exportsparepart" role="button">Export Excel</a>
       </div>
     </div>
+    <div class="row g-3 align-items-center mt-2 mb-3">
+  <div class="col-auto">
+    <label for="input" class="col-form-label">Search</label>
+  </div>
+  <div class="col-auto">
+    <form action="/sparepart" method="GET">
+    <input type="text" id="input" name="search" class="form-control">
+    </form>
+  </div>
+  </div>
+</div>
     
     <div class="row">
     @if ($message = Session::get('success'))
@@ -67,6 +78,7 @@
     @endforeach
   </tbody>
 </table>
+{{ $data_sparepart->links() }}
 </div>
 </div>
 </div>

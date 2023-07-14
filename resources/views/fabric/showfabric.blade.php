@@ -17,6 +17,12 @@
   </head>
   <body>
   <h1><center>Fabric Warehouse<center></h1>
+  <div class="row">
+    @if ($message = Session::get('success'))
+      <div class="alert alert-success" role="alert">
+        {{ $message }}
+      </div>
+      @endif
 <div class="card" style="margin:20px;">
   <div class="card-header">Details</div>
   <div class="card-body">

@@ -6,8 +6,9 @@ use App\Models\Pattern;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use App\Exports\PatternExport;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class PatternController extends Controller
 {
@@ -40,7 +41,8 @@ class PatternController extends Controller
     public function showpattern(string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
-        $audits = $data_pattern->audits; // Retrieve audits for the sewing sample
+        $audits = $data_pattern->audits;
+        Session::put('url', request()->fullUrl());
         return view ('pattern.showpattern', compact('data_pattern', 'audits'));
     }
 
@@ -55,7 +57,10 @@ class PatternController extends Controller
     {
         $data_pattern = Pattern::find($serial_number);
         $data_pattern->update($request->all());
-        return redirect()->route('pattern')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('pattern');
     }
 
     public function deletepattern(string $serial_number)

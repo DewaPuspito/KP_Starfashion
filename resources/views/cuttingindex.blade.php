@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="main-menu">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -24,8 +24,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">KM Cutting Machine</h5>
-        <p class="card-text text-center">KM Machine for Cutting Process</p>
+        <p class="card-text text-center">KM Machine</p>
         <a href="/km-cutting" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -33,8 +32,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Band Knife Machine</h5>
-        <p class="card-text text-center">Band Knife Machine for Cutting Process</p>
+        <p class="card-text text-center">Band Knife Machine</p>
         <a href="/band-knife" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -44,8 +42,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Plotter</h5>
-        <p class="card-text text-center">Plotter for Cutting Process</p>
+        <p class="card-text text-center">Plotter</p>
         <a href="/plotter" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -53,8 +50,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Fuse Machine</h5>
-        <p class="card-text text-center">Fuse Machine for Cutting Process</p>
+        <p class="card-text text-center">Fuse Machine</p>
         <a href="/fuse" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -64,8 +60,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Rewinding Pipping</h5>
-        <p class="card-text text-center">Rewinding Pipping for Cutting Process</p>
+        <p class="card-text text-center">Rewinding Pipping</p>
         <a href="/pipping" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -73,8 +68,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Strip Cutter</h5>
-        <p class="card-text text-center">Strip Cutter for Cutting Process</p>
+        <p class="card-text text-center">Strip Cutter</p>
         <a href="/strip" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>

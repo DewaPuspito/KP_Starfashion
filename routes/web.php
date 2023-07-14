@@ -15,6 +15,7 @@ use App\Http\Controllers\SparepartController;
 use App\Http\Controllers\CuttingMenuController;
 use App\Http\Controllers\SewingSampleController;
 use App\Http\Controllers\MetalDetectorController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -32,6 +33,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Dashboard
+Route::get("/dashboards", [DashboardController::class, 'dashboardindex'])->name('dashboards');
+
+// Main Menu
 Route::group(['middleware' => 'auth'], function ()  {
 Route::get("/main-menu", [MainController::class, 'index'])->name('main-menu');
 Route::get("/cutting-menu", [CuttingMenuController::class, 'cuttingindex'])->name('cutting-menu');

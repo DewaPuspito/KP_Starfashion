@@ -41,7 +41,8 @@ class KMController extends Controller
     public function showkmcutting(string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
-        $audits = $data_km_cutting->audits; // Retrieve audits for the sewing sample
+        $audits = $data_km_cutting->audits;
+        Session::put('url', request()->fullUrl());
         return view ('kmcutting.showkmcutting', compact('data_km_cutting', 'audits'));
     }
 
@@ -56,7 +57,10 @@ class KMController extends Controller
     {
         $data_km_cutting = KM::find($serial_number);
         $data_km_cutting->update($request->all());
-        return redirect()->route('km-cutting')->with('success', 'Data Berhasil Diperbarui');
+        if(session('url')){
+            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('km-cutting');
     }
 
     public function deletekmcutting(string $serial_number)

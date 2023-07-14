@@ -29,7 +29,7 @@ class LoginController extends Controller
 
     public function postlogin(Request $request){
        if(Auth::attempt($request->only('email', 'password'))){
-        return redirect ('/');  
+        return redirect ('/main-menu');  
        } else {
         return \redirect('login');
        }

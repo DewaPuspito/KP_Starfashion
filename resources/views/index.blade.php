@@ -23,8 +23,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Sewing Line and Sample Machines</h5>
-        <p class="card-text text-center">Machines Used for Sewing and Sampling Process</p>
+        <p class="card-text text-center">Sewing Line and Sample Machines</p>
         <a href="/sewing-sample" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -32,8 +31,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Cutting Machines</h5>
-        <p class="card-text text-center">Machines Used for Cutting Process</p>
+        <p class="card-text text-center">Cutting Machines</p>
         <a href="/cutting-menu" class="btn btn-primary d-flex justify-content-center">Click Here to View More Options</a>
       </div>
     </div>
@@ -43,8 +41,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Metal Detector</h5>
-        <p class="card-text text-center">Metal Detector for Finishing Process</p>
+        <p class="card-text text-center">Metal Detector</p>
         <a href="/metal-detector" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -52,8 +49,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Cutter Pattern</h5>
-        <p class="card-text text-center">Cutter Pattern for Sampling Process</p>
+        <p class="card-text text-center">Cutter Pattern</p>
         <a href="/pattern" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -63,8 +59,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Fabric Warehouse</h5>
-        <p class="card-text text-center">Warehouse for Checking Fabric</p>
+        <p class="card-text text-center">Fabric Warehouse</p>
         <a href="/fabric" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -72,8 +67,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Spareparts</h5>
-        <p class="card-text text-center">Sparepart Collection</p>
+        <p class="card-text text-center">Spareparts</p>
         <a href="/sparepart" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
