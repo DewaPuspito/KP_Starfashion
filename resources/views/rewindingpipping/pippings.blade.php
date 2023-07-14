@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/main-menu">Back to Menu</a></li>
+              <li class="breadcrumb-item"><a href="/cutting-menu">Back to Menu</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -44,6 +44,7 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
+      <th scope="col">Indikator Kesehatan Mesin</th>
     </tr>
   </thead>
   <tbody>
@@ -54,9 +55,10 @@
       <td>{{$pipping ->merk_mesin}}</td>
       <td>{{$pipping ->bagian}}</td>
       <td>{{$pipping ->tahun_pembelian}}</td>
-      <td>{{$pipping ->tanggal_sparepart_diganti}}</td>
+      <td>{{$pipping ->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$pipping ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$pipping ->sparepart->harga_sparepart ?? 'N/A'}}</td>
+      <td>{{$pipping ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showpipping/{{$pipping->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

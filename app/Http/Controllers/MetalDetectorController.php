@@ -41,9 +41,8 @@ class MetalDetectorController extends Controller
     public function showmetaldetector(string $serial_number)
     {
         $data_metaldetector = MetalDetector::find($serial_number);
-        $audits = $data_metaldetector->audits;
         Session::put('url', request()->fullUrl());
-        return view ('metaldetector.showmetaldetector', compact('data_metaldetector', 'audits'));
+        return view ('metaldetector.showmetaldetector', compact('data_metaldetector'));
     }
 
     public function tampilmetaldetector(string $serial_number)
@@ -72,5 +71,12 @@ class MetalDetectorController extends Controller
 
     public function exportmetaldetector() {
         return Excel::download(new MetalDetectorExport, 'datametaldetector.xlsx');
+    }
+
+    public function historymetaldetector(string $serial_number)
+    {
+        $data_metaldetector = MetalDetector::find($serial_number);
+        $audits = $data_metaldetector->audits;
+        return view('metaldetector.historymetaldetector', compact('audits'));
     }
 }

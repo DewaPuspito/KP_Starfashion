@@ -107,16 +107,21 @@
       <input type="date" name="ganti_sparepart_lainnya_harian" class="form-control" value="{{$data_bandknife->ganti_sparepart_lainnya_harian}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control" value="{{$data_bandknife->tanggal_sparepart_diganti}}">
-    </div>
-    <div class="mb-3">
       <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>
       <select class="form-select" name="id_sparepart" aria-label="Default select example">
         <option selected></option>
         @foreach ($data_sparepart as $sparepart )
         <option value="{{$sparepart->id_sparepart}}">{{$sparepart->nama_sparepart}}</option>
         @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
+    <label for="Input" class="form-label">Indikator Kesehatan Mesin</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected></option>
+        <option value="Sehat">Sehat</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Tidak Sehat">Tidak Sehat</option>
       </select>
     </div>
     <div class=text-center>

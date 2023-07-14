@@ -41,9 +41,8 @@ class PatternController extends Controller
     public function showpattern(string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
-        $audits = $data_pattern->audits;
         Session::put('url', request()->fullUrl());
-        return view ('pattern.showpattern', compact('data_pattern', 'audits'));
+        return view ('pattern.showpattern', compact('data_pattern'));
     }
 
     public function tampilpattern(string $serial_number)
@@ -72,5 +71,12 @@ class PatternController extends Controller
 
     public function exportpattern() {
         return Excel::download(new PatternExport, 'datapattern.xlsx');
+    }
+
+    public function historypattern(string $serial_number)
+    {
+        $data_pattern = Pattern::find($serial_number);
+        $audits = $data_pattern->audits;
+        return view('pattern.historypattern', compact('audits'));
     }
 }

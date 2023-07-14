@@ -45,6 +45,7 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
+      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -56,9 +57,10 @@
       <td>{{$fabric ->merk_mesin}}</td>
       <td>{{$fabric ->bagian}}</td>
       <td>{{$fabric ->tahun_pembelian}}</td>
-      <td>{{$fabric ->tanggal_sparepart_diganti}}</td>
+      <td>{{$fabric->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$fabric ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$fabric ->sparepart->harga_sparepart ?? 'N/A'}}</td>
+      <td>{{$fabric ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showfabric/{{$fabric->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

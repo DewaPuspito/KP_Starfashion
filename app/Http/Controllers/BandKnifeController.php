@@ -41,9 +41,8 @@ class BandKnifeController extends Controller
     public function showbandknife(string $serial_number)
     {
         $data_bandknife = BandKnife::find($serial_number);
-        $audits = $data_bandknife->audits; // Retrieve audits for the sewing sample
         Session::put('url', request()->fullUrl());
-        return view ('bandknife.showbandknife', compact('data_bandknife', 'audits'));
+        return view ('bandknife.showbandknife', compact('data_bandknife'));
     }
 
     public function tampilbandknife(string $serial_number)
@@ -72,5 +71,12 @@ class BandKnifeController extends Controller
 
     public function exportbandknife() {
         return Excel::download(new BandKnifeExport, 'databandknife.xlsx');
+    }
+
+    public function historybandknife(string $serial_number)
+    {
+        $data_bandknife = BandKnife::find($serial_number);
+        $audits = $data_bandknife->audits;
+        return view('bandknife.historybandknife', compact('audits'));
     }
 }

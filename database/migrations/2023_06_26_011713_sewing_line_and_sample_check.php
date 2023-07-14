@@ -49,9 +49,6 @@ return new class extends Migration
             $table->date('kebersihan_mesin_harian');
             $table->date('cek_kondisi_minyak_mesin_harian');
             $table->date('ganti_sparepart_lainnya_harian');
-            $table->string('jenis_sparepart_yang_diganti');
-            $table->date('tanggal_sparepart_diganti');
-            $table->double('harga_sparepart', $precision = 12, $scale = 12);
         });
     }
 

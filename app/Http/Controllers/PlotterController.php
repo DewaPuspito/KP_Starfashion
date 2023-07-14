@@ -41,9 +41,8 @@ class PlotterController extends Controller
     public function showplotter(string $serial_number)
     {
         $data_plotter = Plotter::find($serial_number);
-        $audits = $data_plotter->audits;
         Session::put('url', request()->fullUrl());
-        return view ('plottermachine.showplotter', compact('data_plotter', 'audits'));
+        return view ('plottermachine.showplotter', compact('data_plotter'));
     }
 
     public function tampilplotter(string $serial_number)
@@ -72,5 +71,12 @@ class PlotterController extends Controller
     
     public function exportplotter() {
         return Excel::download(new PlotterExport, 'dataplotter.xlsx');
+    }
+
+    public function historyplotter(string $serial_number)
+    {
+        $data_plotter = Plotter::find($serial_number);
+        $audits = $data_plotter->audits;
+        return view('plottermachine.historyplotter', compact('audits'));
     }
 }

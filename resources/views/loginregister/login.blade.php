@@ -45,7 +45,7 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
+              <input type="checkbox" name="remember" id="remember">
               <label for="remember">
                 Remember Me
               </label>
@@ -58,6 +58,9 @@
           <!-- /.col -->
         </div>
       </form>
+      <p class="mb-1">
+        <a href="forgot-password.html">I forgot my password</a>
+      </p>
       <p class="mb-0">
         <a href="/register" class="text-center">Register new account</a>
       </p>

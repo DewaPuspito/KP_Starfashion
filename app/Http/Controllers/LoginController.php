@@ -28,10 +28,12 @@ class LoginController extends Controller
     }
 
     public function postlogin(Request $request){
-       if(Auth::attempt($request->only('email', 'password'))){
+        $remember = $request->has('remember');
+
+        if(Auth::attempt($request->only('email', 'password'), $remember)){
         return redirect ('/main-menu');  
        } else {
-        return \redirect('login');
+        return redirect('login')->with('error', 'Invalid credentials');    
        }
     }
 

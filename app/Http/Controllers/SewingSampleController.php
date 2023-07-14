@@ -39,10 +39,10 @@ class SewingSampleController extends Controller
         } elseif ($searchType === 'bagian') {
             $data_sewingsample = SewingSample::where('bagian', 'LIKE', '%' . $searchTerm . '%')->get();
         } elseif ($searchType === 'sparepart-diganti') {
-            $data_sewingsample = SewingSample::where('jenis_sparepart_yang_diganti', 'LIKE', '%' . $searchTerm . '%')->get();
-        } elseif ($searchType === 'harga_sparepart') {
-            $data_sewingsample = SewingSample::where('harga_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
-    } else {
+            $data_sparepart = Sparepart::where('nama_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
+        }  elseif ($searchType === 'indikator-mesin') {
+            $data_sewingsample = SewingSample::where('indikator_mesin', 'LIKE', '%' . $searchTerm . '%')->get();      
+        } else {
         $data_sewingsample = SewingSample::all();
     }
     return view('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));
@@ -63,9 +63,8 @@ class SewingSampleController extends Controller
     public function showsewingsample(string $serial_number)
     {
         $data_sewingsample = SewingSample::find($serial_number);
-        $audits = $data_sewingsample->audits;
         Session::put('url', request()->fullUrl());
-        return view('sewingsamplemachine.showsewingsamples', compact('data_sewingsample', 'audits'));
+        return view('sewingsamplemachine.showsewingsamples', compact('data_sewingsample'));
     }
 
     public function tampilsewingsample(string $serial_number)
@@ -95,5 +94,11 @@ class SewingSampleController extends Controller
     public function exportsewingsample() {
         return Excel::download(new SewingSampleExport, 'datasewingsample.xlsx');
     }
-    
+
+    public function historysewingsample(string $serial_number)
+    {
+        $data_sewingsample = SewingSample::find($serial_number);
+        $audits = $data_sewingsample->audits;
+        return view('sewingsamplemachine.historysewingsample', compact('audits'));
+    }
 }

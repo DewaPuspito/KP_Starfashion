@@ -41,9 +41,8 @@ class StripController extends Controller
     public function showstrip(string $serial_number)
     {
         $data_strip= Strip::find($serial_number);
-        $audits = $data_strip->audits;
         Session::put('url', request()->fullUrl());
-        return view ('stripcutter.showstrip', compact('data_strip', 'audits'));
+        return view ('stripcutter.showstrip', compact('data_strip'));
     }
 
     public function tampilstrip(string $serial_number)
@@ -72,5 +71,12 @@ class StripController extends Controller
 
     public function exportstrip() {
         return Excel::download(new StripExport, 'datastrip.xlsx');
+    }
+    
+    public function historystrip(string $serial_number)
+    {
+        $data_strip = Strip::find($serial_number);
+        $audits = $data_strip->audits;
+        return view('stripcutter.historystrip', compact('audits'));
     }
 }

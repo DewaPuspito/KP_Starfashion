@@ -41,9 +41,8 @@ class FuseController extends Controller
     public function showfuse(string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
-        $audits = $data_fuse->audits;
         Session::put('url', request()->fullUrl());
-        return view ('fusemachine.showfuse', compact('data_fuse', 'audits'));
+        return view ('fusemachine.showfuse', compact('data_fuse'));
     }
 
     public function tampilfuse(string $serial_number)
@@ -72,5 +71,12 @@ class FuseController extends Controller
 
     public function exportfuse() {
         return Excel::download(new FuseExport, 'datafuse.xlsx');
+    }
+
+    public function historyfuse(string $serial_number)
+    {
+        $data_fuse = Fuse::find($serial_number);
+        $audits = $data_fuse->audits;
+        return view('fusemachine.historyfuse', compact('audits'));
     }
 }

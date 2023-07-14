@@ -6,9 +6,10 @@ use App\Models\KM;
 use App\Exports\KMExport;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Models\Audit;
+use Maatwebsite\Excel\Facades\Excel;
 use OwenIt\Auditing\Facades\Auditor;
+use Illuminate\Support\Facades\Session;
 
 class KMController extends Controller
 {
@@ -41,9 +42,8 @@ class KMController extends Controller
     public function showkmcutting(string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
-        $audits = $data_km_cutting->audits;
         Session::put('url', request()->fullUrl());
-        return view ('kmcutting.showkmcutting', compact('data_km_cutting', 'audits'));
+        return view ('kmcutting.showkmcutting', compact('data_km_cutting'));
     }
 
     public function tampilkmcutting(string $serial_number)
@@ -72,5 +72,12 @@ class KMController extends Controller
 
     public function exportkmcutting() {
         return Excel::download(new KMExport, 'datakmcutting.xlsx');
+    }
+
+    public function historykmcutting(string $serial_number)
+    {
+        $data_km_cutting = KM::find($serial_number);
+        $audits = $data_km_cutting->audits;
+        return view('kmcutting.historykmcutting', compact('audits'));
     }
 }

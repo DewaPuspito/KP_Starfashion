@@ -155,6 +155,15 @@
         @endforeach
       </select>
     </div>
+    <div class="mb-3">
+    <label for="Input" class="form-label">Indikator Kesehatan Mesin</label>
+      <select class="form-select" name="indikator_mesin" aria-label="Default select example">
+        <option selected>{{ $data_plotter ->indikator_mesin }}</option>
+        <option value="Sehat">Sehat</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Tidak Sehat">Tidak Sehat</option>
+      </select>
+    </div>
     <div class=text-center>
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>

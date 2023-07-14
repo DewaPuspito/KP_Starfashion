@@ -41,9 +41,8 @@ class PippingController extends Controller
     public function showpipping(string $serial_number)
     {
         $data_pipping= Pipping::find($serial_number);
-        $audits = $data_pipping->audits;
         Session::put('url', request()->fullUrl());
-        return view ('rewindingpipping.showpipping', compact('data_pipping', 'audits'));
+        return view ('rewindingpipping.showpipping', compact('data_pipping'));
     }
 
     public function tampilpipping(string $serial_number)
@@ -72,5 +71,12 @@ class PippingController extends Controller
 
     public function exportpipping() {
         return Excel::download(new PippingExport, 'datapipping.xlsx');
+    }
+
+    public function historypipping(string $serial_number)
+    {
+        $data_pipping = Pipping::find($serial_number);
+        $audits = $data_pipping->audits;
+        return view('rewindingpipping.historypipping', compact('audits'));
     }
 }

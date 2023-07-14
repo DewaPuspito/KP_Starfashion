@@ -55,34 +55,10 @@
         <p class="card-text">Kebersihan Mesin (Harian): {{ $data_pipping ->kebersihan_mesin_harian }}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_pipping->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_pipping ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <h2><center>History Log<center></h2>
-        @if($audits->isEmpty())
-        <p>No audit logs found for this sewing sample.</p>
-        @else
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Changed By</th>
-                    <th scope="col">Event</th>
-                    <th scope="col">Old Values</th>
-                    <th scope="col">New Values</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($audits as $audit)
-                    <tr>
-                        <td>{{ $audit->user->name }}</td>
-                        <td>{{ $audit->event }}</td>
-                        <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
-                        <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </form>
-        @endif
+        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_pipping ->indikator_mesin }}</p>
         <div class= text-center>
-        <td><a class="btn btn-warning" href="/tampilpipping/{{$data_pipping->serial_number}}" role="button">Update</a>
+        <td><a class="btn btn-secondary" href="/historypipping/{{$data_pipping->serial_number}}" role="button">See History</a>
+        <a class="btn btn-warning" href="/tampilpipping/{{$data_pipping->serial_number}}" role="button">Update</a>
         <a class="btn btn-danger delete" data-id="{{$data_pipping->serial_number}}" href="#" role="button">Delete</a></td>
       </div>
     </hr>

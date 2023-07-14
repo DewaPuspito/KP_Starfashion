@@ -68,4 +68,11 @@ class FabricController extends Controller
     public function exportfabric() {
         return Excel::download(new FabricExport, 'datafabric.xlsx');
     }
+
+    public function historyfabric(string $serial_number)
+    {
+        $data_fabric = Fabric::find($serial_number);
+        $audits = $data_fabric->audits;
+        return view('fabric.historyfabric', compact('audits'));
+    }
 }

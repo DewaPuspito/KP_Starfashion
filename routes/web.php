@@ -51,11 +51,13 @@ Route::post("/postregister", [LoginController::class, 'postregister'])->name('po
 
 // Sewing and Sample
 Route::group(['middleware' => 'auth'], function () {
+Route::get("/sewing-sample", [SewingSampleController::class, 'index'])->name('sewing-sample');
 Route::get("/addsewingsample", [SewingSampleController::class, 'addsewingsample'])->name('addsewingsample');
 Route::post("/insertsewingsample", [SewingSampleController::class, 'insertsewingsample'])->name('insertsewingsample');
 Route::get("/deletesewingsample/{id}", [SewingSampleController::class, 'deletesewingsample'])->name('deletesewingsample');
 Route::get('/search', [SewingSampleController::class, 'search'])->name('search');
 Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
+Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');
 });
 Route::get("/sewing-sample", [SewingSampleController::class, 'index'])->name('sewing-sample');
 Route::get("/showsewingsample/{id}", [SewingSampleController::class, 'showsewingsample'])->name('showsewingsample');
@@ -71,6 +73,7 @@ Route::get("/addfuse", [FuseController::class, 'addfuse'])->name('addfuse');
 Route::post("/insertfuse", [FuseController::class, 'insertfuse'])->name('insertfuse');
 Route::get("/deletefuse/{id}", [FuseController::class, 'deletefuse'])->name('deletefuse'); 
 Route::get("/exportfuse", [FuseController::class, 'exportfuse'])->name('exportfuse'); 
+Route::get("/historyfuse/{id}", [FuseController::class, 'historyfuse'])->name('historyfuse');
 });
 Route::get("/showfuse/{id}", [FuseController::class, 'showfuse'])->name('showfuse');
 Route::get("/tampilfuse/{id}", [FuseController::class, 'tampilfuse'])->name('tampilfuse'); 
@@ -83,6 +86,7 @@ Route::get("/addkmcutting", [KMController::class, 'addkmcutting'])->name('addkmc
 Route::post("/insertkmcutting", [KMController::class, 'insertkmcutting'])->name('insertkmcutting');
 Route::get("/deletekmcutting/{id}", [KMController::class, 'deletekmcutting'])->name('deletekmcutting');  
 Route::get("/exportkmcutting", [KMController::class, 'exportkmcutting'])->name('exportkmcutting');
+Route::get("/historykmcutting/{id}", [KMController::class, 'historykmcutting'])->name('historykmcutting');
 });
 Route::get("/showkmcutting/{id}", [KMController::class, 'showkmcutting'])->name('showkmcutting');
 Route::get("/tampilkmcutting/{id}", [KMController::class, 'tampilkmcutting'])->name('tampilkmcutting'); 
@@ -96,6 +100,7 @@ Route::get("/addbandknife", [BandKnifeController::class, 'addbandknife'])->name(
 Route::post("/insertbandknife", [BandKnifeController::class, 'insertbandknife'])->name('insertbandknife');
 Route::get("/deletebandknife/{id}", [BandKnifeController::class, 'deletebandknife'])->name('deletebandknife');  
 Route::get("/exportbandknife", [BandKnifeController::class, 'exportbandknife'])->name('exportbandknife');
+Route::get("/historybandknife/{id}", [BandKnifeController::class, 'historybandknife'])->name('historybandknife');
 });
 Route::get("/showbandknife/{id}", [BandKnifeController::class, 'showbandknife'])->name('showbandknife');
 Route::get("/tampilbandknife/{id}", [BandKnifeController::class, 'tampilbandknife'])->name('tampilbandknife'); 
@@ -108,6 +113,7 @@ Route::get("/addplotter", [PlotterController::class, 'addplotter'])->name('addpl
 Route::post("/insertplotter", [PlotterController::class, 'insertplotter'])->name('insertplotter');
 Route::get("/deleteplotter/{id}", [PlotterController::class, 'deleteplotter'])->name('deleteplotter');  
 Route::get("/exportplotter", [PlotterController::class, 'exportplotter'])->name('exportplotter');
+Route::get("/historyplotter/{id}", [PlotterController::class, 'historyplotter'])->name('historyplotter');
 });
 Route::get("/showplotter/{id}", [PlotterController::class, 'showplotter'])->name('showplotter');
 Route::get("/tampilplotter/{id}", [PlotterController::class, 'tampilplotter'])->name('tampilplotter'); 
@@ -115,11 +121,12 @@ Route::post("/editplotter/{id}", [PlotterController::class, 'editplotter'])->nam
 
 // Metal Detector
 Route::group(['middleware' => 'auth'], function () {
-Route::get("/metal-detector", [MetalDetectorController::class, 'index'])->name('metal-detector')->middleware('auth');
-Route::get("/addmetaldetector", [MetalDetectorController::class, 'addmetaldetector'])->name('addmetaldetector')->middleware('auth');
-Route::post("/insertmetaldetector", [MetalDetectorController::class, 'insertmetaldetector'])->name('insertmetaldetector')->middleware('auth');
-Route::get("/deletemetaldetector/{id}", [MetalDetectorController::class, 'deletemetaldetector'])->name('deletemetaldetector')->middleware('auth');  
-Route::get("/exportmetaldetector", [MetalDetectorController::class, 'exportmetaldetector'])->name('exportmetaldetector')->middleware('auth');
+Route::get("/metal-detector", [MetalDetectorController::class, 'index'])->name('metal-detector');
+Route::get("/addmetaldetector", [MetalDetectorController::class, 'addmetaldetector'])->name('addmetaldetector');
+Route::post("/insertmetaldetector", [MetalDetectorController::class, 'insertmetaldetector'])->name('insertmetaldetector');
+Route::get("/deletemetaldetector/{id}", [MetalDetectorController::class, 'deletemetaldetector'])->name('deletemetaldetector');  
+Route::get("/exportmetaldetector", [MetalDetectorController::class, 'exportmetaldetector'])->name('exportmetaldetector');
+Route::get("/historymetaldetector/{id}", [MetalDetectorController::class, 'historymetaldetector'])->name('historymetaldetector');
 });
 Route::get("/showmetaldetector/{id}", [MetalDetectorController::class, 'showmetaldetector'])->name('showmetaldetector');
 Route::get("/tampilmetaldetector/{id}", [MetalDetectorController::class, 'tampilmetaldetector'])->name('tampilmetaldetector'); 
@@ -132,6 +139,7 @@ Route::get("/addpattern", [PatternController::class, 'addpattern'])->name('addpa
 Route::post("/insertpattern", [PatternController::class, 'insertpattern'])->name('insertpattern');
 Route::get("/deletepattern/{id}", [PatternController::class, 'deletepattern'])->name('deletepattern');  
 Route::get("/exportpattern", [PatternController::class, 'exportpattern'])->name('exportpattern');
+Route::get("/historypattern/{id}", [PatternController::class, 'historypattern'])->name('historypattern');
 });
 Route::get("/showpattern/{id}", [PatternController::class, 'showpattern'])->name('showpattern');
 Route::get("/tampilpattern/{id}", [PatternController::class, 'tampilpattern'])->name('tampilpattern'); 
@@ -144,6 +152,7 @@ Route::get("/addpipping", [PippingController::class, 'addpipping'])->name('addpi
 Route::post("/insertpipping", [PippingController::class, 'insertpipping'])->name('insertpipping');
 Route::get("/deletepipping/{id}", [PippingController::class, 'deletepipping'])->name('deletepipping');  
 Route::get("/exportpipping", [PippingController::class, 'exportpipping'])->name('exportpipping');
+Route::get("/historypipping/{id}", [PippingController::class, 'historypipping'])->name('historypipping');
 });
 Route::get("/showpipping/{id}", [PippingController::class, 'showpipping'])->name('showpipping');
 Route::get("/tampilpipping/{id}", [PippingController::class, 'tampilpipping'])->name('tampilpipping'); 
@@ -156,6 +165,7 @@ Route::get("/addstrip", [StripController::class, 'addstrip'])->name('addstrip');
 Route::post("/insertstrip", [StripController::class, 'insertstrip'])->name('insertstrip');
 Route::get("/deletestrip/{id}", [StripController::class, 'deletestrip'])->name('deletestrip');
 Route::get("/exportstrip", [StripController::class, 'exportstrip'])->name('exportstrip');
+Route::get("/historystrip/{id}", [StripController::class, 'historystrip'])->name('historystrip');
 });
 Route::get("/showstrip/{id}", [StripController::class, 'showstrip'])->name('showstrip');
 Route::get("/tampilstrip/{id}", [StripController::class, 'tampilstrip'])->name('tampilstrip'); 
@@ -168,6 +178,7 @@ Route::get("/addfabric", [FabricController::class, 'addfabric'])->name('addfabri
 Route::post("/insertfabric", [FabricController::class, 'insertfabric'])->name('insertfabric');
 Route::get("/deletefabric/{id}", [FabricController::class, 'deletefabric'])->name('deletefabric');
 Route::get("/exportfabric", [FabricController::class, 'exportfabric'])->name('exportfabric');
+Route::get("/historyfabric/{id}", [FabricController::class, 'historyfabric'])->name('historyfabric');
 });
 Route::get("/showfabric/{id}", [FabricController::class, 'showfabric'])->name('showfabric');
 Route::get("/tampilfabric/{id}", [FabricController::class, 'tampilfabric'])->name('tampilfabric'); 

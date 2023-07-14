@@ -42,20 +42,22 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
+      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     @foreach ($data_km_cutting as $km_cutting)
     <tr>
-      <th scope="row">{{$km_cutting->serial_number}}</th>
-      <td>{{$km_cutting->tipe}}</td>
+      <th scope="row">{{$km_cutting ->serial_number}}</th>
+      <td>{{$km_cutting ->tipe}}</td>
       <td>{{$km_cutting ->merk_mesin}}</td>
       <td>{{$km_cutting ->bagian}}</td>
       <td>{{$km_cutting ->tahun_pembelian}}</td>
-      <td>{{$km_cutting ->tanggal_sparepart_diganti}}</td>
+      <td>{{$km_cutting ->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$km_cutting ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$km_cutting ->sparepart->harga_sparepart ?? 'N/A'}}</td>
+      <td>{{$km_cutting ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showkmcutting/{{$km_cutting ->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

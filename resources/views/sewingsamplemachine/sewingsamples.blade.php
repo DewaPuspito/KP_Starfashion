@@ -18,7 +18,8 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class="container">
     <a class="btn btn-success" href="/addsewingsample" role="button">Add Item</a>
     <form action="/search" method="GET">
@@ -33,6 +34,7 @@
                 <option value="jenis">Jenis Mesin</option>
                 <option value="bagian">Bagian</option>
                 <option value="sparepart-diganti">Sparepart Diganti</option>
+                <option value="indikator-mesin">Indikator Mesin</option>
             </select>
         </div>
         <div class="col-auto">
@@ -64,6 +66,7 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
+      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -76,9 +79,10 @@
       <td>{{$sewingsample ->merk_mesin}}</td>
       <td>{{$sewingsample ->bagian}}</td>
       <td>{{$sewingsample ->tahun_pembelian}}</td>
-      <td>{{$sewingsample ->tanggal_sparepart_diganti}}</td>
+      <td>{{$sewingsample ->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</td>
+      <td>{{$sewingsample ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showsewingsample/{{$sewingsample->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach
@@ -87,6 +91,4 @@
 </div>
 </div>
 </body>
-<script>
-</script>
 </html>
