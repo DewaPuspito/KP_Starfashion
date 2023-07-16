@@ -23,7 +23,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">KM Machine</p>
+        <p class="card-text text-center"><strong>KM Machine</strong></p>
         <a href="/km-cutting" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -31,7 +31,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Band Knife Machine</p>
+        <p class="card-text text-center"><strong>Band Knife Machine</strong></p>
         <a href="/band-knife" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -41,7 +41,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Plotter</p>
+        <p class="card-text text-center"><strong>Plotter</strong></p>
         <a href="/plotter" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -49,7 +49,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Fuse Machine</p>
+        <p class="card-text text-center"><strong>Fuse Machine</strong></p>
         <a href="/fuse" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -59,7 +59,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Rewinding Pipping</p>
+        <p class="card-text text-center"><strong>Rewinding Pipping</strong></p>
         <a href="/pipping" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -67,7 +67,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Strip Cutter</p>
+        <p class="card-text text-center"><strong>Strip Cutter</strong></p>
         <a href="/strip" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>

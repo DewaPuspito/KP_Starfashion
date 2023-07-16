@@ -20,7 +20,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Sewing Line and Sample Machines</p>
+      <p class="card-text text-center"><strong>Sewing Line and Sample Machines</strong></p>
         <a href="/sewing-sample" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -28,7 +28,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Cutting Machines</p>
+        <p class="card-text text-center"><strong>Cutting Machines</strong></p>
         <a href="/cutting-menu" class="btn btn-primary d-flex justify-content-center">Click Here to View More Options</a>
       </div>
     </div>
@@ -38,7 +38,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Metal Detector</p>
+        <p class="card-text text-center"><strong>Metal Detector</strong></p>
         <a href="/metal-detector" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -46,7 +46,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Cutter Pattern</p>
+        <p class="card-text text-center"><strong>Cutter Pattern</strong></p>
         <a href="/pattern" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -56,7 +56,7 @@
   <div class="col-sm-6 mb-3">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Fabric Warehouse</p>
+        <p class="card-text text-center"><strong>Fabric Warehouse</strong></p>
         <a href="/fabric" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
@@ -64,7 +64,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <p class="card-text text-center">Spareparts</p>
+        <p class="card-text text-center"><strong>Spareparts</strong></p>
         <a href="/sparepart" class="btn btn-primary d-flex justify-content-center">Click Here to View, Add or Update</a>
       </div>
     </div>
