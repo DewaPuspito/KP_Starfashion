@@ -44,11 +44,19 @@
                         <td>{{ $audit->event }}</td>
                         <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
                         <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
+                        <td>
+                            <form action="{{ route('deletehistory', $audit->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this history log?')">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-    </form>
-        @endif
+        </div>
+    </div>
+@endif
 </body>
 </html>

@@ -35,6 +35,8 @@ Route::get('/', function () {
 
 // Dashboard
 Route::get("/dashboards", [DashboardController::class, 'dashboardindex'])->name('dashboards');
+Route::get('/dashboardexport', [DashboardController::class, 'dashboardexport'])->name('dashboardexport');
+
 
 // Main Menu
 Route::group(['middleware' => 'auth'], function ()  {
@@ -59,7 +61,6 @@ Route::get('/search', [SewingSampleController::class, 'search'])->name('search')
 Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
 Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');
 });
-Route::get("/sewing-sample", [SewingSampleController::class, 'index'])->name('sewing-sample');
 Route::get("/showsewingsample/{id}", [SewingSampleController::class, 'showsewingsample'])->name('showsewingsample');
 Route::get("/tampilsewingsample/{id}", [SewingSampleController::class, 'tampilsewingsample'])->name('tampilsewingsample'); 
 Route::post("/editsewingsample/{id}", [SewingSampleController::class, 'editsewingsample'])->name('editsewingsample');  
@@ -191,6 +192,8 @@ Route::get("/addsparepart", [SparepartController::class, 'addsparepart'])->name(
 Route::post("/insertsparepart", [SparepartController::class, 'insertsparepart'])->name('insertsparepart');
 Route::get("/deletesparepart/{id}", [SparepartController::class, 'deletesparepart'])->name('deletesparepart');
 Route::get("/exportsparepart", [SparepartController::class, 'exportsparepart'])->name('exportsparepart');
+Route::get("/historysparepart/{id}", [SparepartController::class, 'historysparepart'])->name('historysparepart');
+Route::delete("/deletehistory/{id}", [SparepartController::class, 'deletehistory'])->name('deletehistory');
 });
 Route::get("/showsparepart/{id}", [SparepartController::class, 'showsparepart'])->name('showsparepart');
 Route::get("/tampilsparepart/{id}", [SparepartController::class, 'tampilsparepart'])->name('tampilsparepart'); 
