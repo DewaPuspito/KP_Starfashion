@@ -48,7 +48,7 @@
         <p class="card-text">Ganti/Perbaikan Dinamo Kompresor (Harian) : {{ $data_bandknife ->ganti_perbaikan_dinamo_kompresor_harian }}</p>
         <p class="card-text">Servis Bersihkan Mesin (Harian) : {{ $data_bandknife ->servis_bersihkan_mesin_harian }}</p>
         <p class="card-text">Ganti Sparepart Lainnya (Harian): {{ $data_bandknife ->ganti_sparepart_lainnya_harian }}</p>
-        <p class="card-text">Tanggal Sparepart Diganti : {{$bandknife->sparepart->sparepart_keluar ?? 'N/A'}}</p>
+        <p class="card-text">Tanggal Sparepart Diganti : {{$data_bandknife->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_bandknife ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_bandknife ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Indikator Kesehatan Mesin : {{ $data_bandknife ->indikator_mesin }}</p>

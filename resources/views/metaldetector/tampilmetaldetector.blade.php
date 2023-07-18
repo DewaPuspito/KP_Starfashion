@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/metal-detector">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
@@ -109,10 +109,6 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Kebersihan Mesin (Harian)</label>
       <input type="date" name="kebersihan_mesin_harian" class="form-control" value = "{{$data_metaldetector->kebersihan_mesin_harian}}">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control" value = "{{$data_metaldetector->tanggal_sparepart_diganti}}">
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>

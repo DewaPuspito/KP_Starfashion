@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
     <a class="navbar-brand" href="/metal-detector">Checklist Mesin</a>
     <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
@@ -49,6 +49,7 @@
         <p class="card-text">Perbaikan Sensifitas Metal (Harian) : {{ $data_metaldetector ->perbaikan_sensitifitas_metal_harian }}</p>
         <p class="card-text">Check Spare Parts Lainnya (Harian) : {{ $data_metaldetector ->check_spareparts_lainnya_harian }}</p>
         <p class="card-text">Kebersihan Mesin (Harian): {{ $data_metaldetector ->kebersihan_mesin_harian }}</p>
+        <p class="card-text">Tanggal Sparepart Diganti : {{$data_metaldetector->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_metaldetector ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_metaldetector ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Indikator Kesehatan Mesin : {{ $data_metaldetector ->indikator_mesin }}</p>

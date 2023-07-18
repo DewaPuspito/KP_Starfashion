@@ -50,6 +50,7 @@
         <p class="card-text">Pemberian Grease pada Roller (Harian) : {{ $data_fabric ->pemberian_grease_pada_roller_harian }}</p>
         <p class="card-text">Ganti Karet Roller (Harian) : {{ $data_fabric ->penggantian_karet_roller_harian}}</p>
         <p class="card-text">Komponen Lainnya (Harian) : {{ $data_fabric ->komponen_lainnya_harian}}</p>
+        <p class="card-text">Tanggal Sparepart Diganti : {{$data_fabric->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fabric ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_fabric ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Indikator Kesehatan Mesin : {{ $data_fabric ->indikator_mesin }}</p>

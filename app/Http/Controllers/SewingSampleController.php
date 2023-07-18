@@ -20,8 +20,25 @@ class SewingSampleController extends Controller
      */
     public function index(Request $request)
     {
+    $jumlahGantiRotary = $request->query('rotary');
+    $jumlahGantiSuttelHook = $request->query('hook');
+
+    if ($jumlahGantiRotary) {
+        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiRotary)
+            ->whereMonth($jumlahGantiRotary, now()->format('m'))
+            ->whereYear($jumlahGantiRotary, now()->format('Y'))
+            ->get();
+
+    } elseif ($jumlahGantiSuttelHook) {
+        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiSuttelHook)
+            ->whereMonth($jumlahGantiSuttelHook, now()->format('m'))
+            ->whereYear($jumlahGantiSuttelHook, now()->format('Y'))
+            ->get();
+    } else {
         $data_sewingsample = SewingSample::all();
-        return view ('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));
+    }
+
+    return view('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));
     }
 
     public function search(Request $request)
