@@ -33,10 +33,6 @@
     ->whereMonth('pisau_tidak_motong_harian', $dateNow->format('m'))
     ->whereYear('pisau_tidak_motong_harian', $dateNow->format('Y'))
     ->count();
-    $jumlahKebersihanMesin = \App\Models\SewingSample::whereNotNull('kebersihan_mesin_harian')
-    ->whereMonth('kebersihan_mesin_harian', $dateNow->format('m'))
-    ->whereYear('kebersihan_mesin_harian', $dateNow->format('Y'))
-    ->count();
     $jumlahKondisiMinyakMesin = \App\Models\SewingSample::whereNotNull('cek_kondisi_minyak_mesin_harian')
     ->whereMonth('cek_kondisi_minyak_mesin_harian', $dateNow->format('m'))
     ->whereYear('cek_kondisi_minyak_mesin_harian', $dateNow->format('Y'))
@@ -312,7 +308,6 @@
       $jumlahGantiSuttelHook = 0;
       $jumlahBakMesin = 0;
       $jumlahPisauTidakMotong = 0;
-      $jumlahKebersihanMesin = 0;
       $jumlahKondisiMinyakMesin = 0;
       $jumlahGantiSparepartLainnya = 0;
       $jumlahElectricalInstalasi = 0;
@@ -408,7 +403,7 @@
                 <h3>{{ $jumlahJahitanLoncat }}</h3>
                   <p>Jahitan Loncat (Sewing)</p>
                 </div>
-              <a href="/sewing-sample?jenis=jahitan_loncat_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/sewing-sample?jahitan=jahitan_loncat_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -418,7 +413,7 @@
                 <h3>{{ $jumlahBenangPutusan }}</h3>
                   <p>Benang Putusan (Sewing)</p>
             </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="/sewing-sample?benang=benang_putusan_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -428,7 +423,7 @@
                 <h3>{{ $jumlahGantiGuntingPisau }}</h3>
                   <p>Ganti Gunting/Pisau (Sewing)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/sewing-sample?gunting-pisau=ganti_gunting_pisau_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -459,7 +454,7 @@
                 <h3>{{ $jumlahBakMesin }}</h3>
                   <p>Bersihkan Bak Mesin (Sewing)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/sewing-sample?bak=bersihkan_bak_mesin_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -469,41 +464,30 @@
                 <h3>{{ $jumlahPisauTidakMotong }}</h3>
                   <p>Pisau Tidak Motong (Sewing)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/sewing-sample?pisau=pisau_tidak_motong_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
-      <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>{{ $jumlahKebersihanMesin }}</h3>
-                  <p>Kebersihan Mesin (Sewing)</p>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-      </div>
-      </div>
-      <div class="row">
           <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
+            <div class="small-box bg-danger">
               <div class="inner">
               <h3>{{ $jumlahKondisiMinyakMesin }}</h3>
                   <p>Cek Kondisi Minyak Mesin (Sewing)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/sewing-sample?minyak=cek_kondisi_minyak_mesin_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
+      <div class="row">
       <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
+            <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{ $jumlahGantiSparepartLainnya }}</h3>
                   <p>Ganti Sparepart Lainnya (Sewing)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/sewing-sample?sparepart-lainnya=ganti_sparepart_lainnya_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-      </div> 
         <!-- /.row -->
       <section class="content">
         <div class="container-fluid">
@@ -587,7 +571,7 @@
                 <h3>{{ $jumlahMinyakRil }}</h3>
                   <p>Pemberian Minyak pada Ril (Pattern)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -597,7 +581,7 @@
                 <h3>{{ $jumlahPulpen }}</h3>
                   <p>Ganti Pulpen (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -607,7 +591,7 @@
                 <h3>{{ $jumlahPisau }}</h3>
                   <p>Ganti Pisau (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -617,7 +601,7 @@
                 <h3>{{ $jumlahKomponenElektro }}</h3>
                   <p>Ganti Komponen Elektro (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -628,7 +612,7 @@
                 <h3>{{ $jumlahInstalasiKelistrikan }}</h3>
                   <p>Ganti Instalasi Kelistrikan (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -638,7 +622,7 @@
                 <h3>{{ $jumlahVacum }}</h3>
                   <p>Ganti Vacum (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -648,7 +632,7 @@
                 <h3>{{ $jumlahBelt }}</h3>
                   <p>Ganti Belt (Pattern)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pattern" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
@@ -933,7 +917,7 @@
                 <h3>{{ $jumlahPlotterHead }}</h3>
                   <p>Perbaikan Plotter Head (Plotter)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -943,7 +927,7 @@
                 <h3>{{ $jumlahStandPole }}</h3>
                   <p>Perbaikan Stand Pole (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -953,7 +937,7 @@
                 <h3>{{ $jumlahFootBar }}</h3>
                   <p>Perbaikan Foot Bar (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -963,7 +947,7 @@
                 <h3>{{ $jumlahRollingPaper }}</h3>
                   <p>Perbaikan Rolling Paper Role (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -974,7 +958,7 @@
                 <h3>{{ $jumlahSendingPaper }}</h3>
                   <p>Perbaikan Sending Paper Role (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -984,7 +968,7 @@
                 <h3>{{ $jumlahBalancing }}</h3>
                   <p>Perbaikan Balancing Pole (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -994,7 +978,7 @@
                 <h3>{{ $jumlahPuiling }}</h3>
                   <p>Perbaikan Puiling Pole (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1004,7 +988,7 @@
                 <h3>{{ $jumlahRollerHoop }}</h3>
                   <p>Perbaikan Paper Roller Hoop (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -1015,7 +999,7 @@
               <h3>{{ $jumlahConnection }}</h3>
                   <p>Perbaikan Connection Cable (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1025,7 +1009,7 @@
                 <h3>{{ $jumlahPrintHead }}</h3>
                   <p>Perbaikan/Ganti Print Head (Plotter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/plotter" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -1038,7 +1022,7 @@
                 <h3>{{ $jumlahRollpress }}</h3>
                   <p>Perbaikan Rollpress (Rewinding Pipping)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -1048,7 +1032,7 @@
                 <h3>{{ $jumlahCounter }}</h3>
                   <p>Ganti Counter (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1058,7 +1042,7 @@
                 <h3>{{ $jumlahPisauPotong }}</h3>
                   <p>Ganti Pisau Potong (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1068,7 +1052,7 @@
                 <h3>{{ $jumlahMotorPenggerak }}</h3>
                   <p>Ganti Motor Penggerak (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -1079,7 +1063,7 @@
                 <h3>{{ $jumlahKompresor }}</h3>
                   <p>Perbaikan Motor Kompresor (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1089,7 +1073,7 @@
                 <h3>{{ $jumlahGreaseRoller }}</h3>
                   <p>Perbaikan Grease pada Roller (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1099,7 +1083,7 @@
                 <h3>{{ $jumlahEmergency }}</h3>
                   <p>Perbaikan Emergency Auto Stop (Rewinding Pipping)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/pipping" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
@@ -1111,7 +1095,7 @@
                 <h3>{{ $jumlahRollpresss }}</h3>
                   <p>Perbaikan Rollpress (Strip Cutter)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -1121,7 +1105,7 @@
                 <h3>{{ $jumlahAsahan }}</h3>
                   <p>Ganti Asahan (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1131,7 +1115,7 @@
                 <h3>{{ $jumlahPotong }}</h3>
                   <p>Ganti Pisau Potong (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1141,7 +1125,7 @@
                 <h3>{{ $jumlahPenggerak }}</h3>
                   <p>Ganti Motor Penggerak (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -1152,7 +1136,7 @@
                 <h3>{{ $jumlahVakum }}</h3>
                   <p>Perbaikan Motor Vakum (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1162,7 +1146,7 @@
                 <h3>{{ $jumlahRoller }}</h3>
                   <p>Pemberian Grease pada Roller (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -1172,7 +1156,7 @@
                 <h3>{{ $jumlahAutostop }}</h3>
                   <p>Perbaikan Emergency Auto Stop (Strip Cutter)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/strip" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div> 
 @endsection

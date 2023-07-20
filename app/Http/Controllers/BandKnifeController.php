@@ -19,6 +19,8 @@ class BandKnifeController extends Controller
      */
     public function index(Request $request)
     {
+        $searchTerm = $request->input('search');
+        
         if($request->has('search')) {
             $data_bandknife = BandKnife::where('serial_number','LIKE', '%' .$request->search.'%')->get();
         } else {

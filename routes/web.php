@@ -60,8 +60,15 @@ Route::get("/deletesewingsample/{id}", [SewingSampleController::class, 'deletese
 Route::get('/search', [SewingSampleController::class, 'search'])->name('search');
 Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
 Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');
+Route::get('/sewing-sample/{jahitan}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{benang}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{gunting-pisau}', [SewingSampleController::class, 'showMachinesByCheckType']);
 Route::get('/sewing-sample/{rotary}', [SewingSampleController::class, 'showMachinesByCheckType']);
 Route::get('/sewing-sample/{hook}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{bak}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{pisau}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{minyak}', [SewingSampleController::class, 'showMachinesByCheckType']);
+Route::get('/sewing-sample/{sparepart-lainnya}', [SewingSampleController::class, 'showMachinesByCheckType']);
 });
 Route::get("/showsewingsample/{id}", [SewingSampleController::class, 'showsewingsample'])->name('showsewingsample');
 Route::get("/tampilsewingsample/{id}", [SewingSampleController::class, 'tampilsewingsample'])->name('tampilsewingsample'); 
