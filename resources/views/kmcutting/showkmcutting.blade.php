@@ -45,7 +45,7 @@
         <p class="card-text">LH Square Shaft (Bulanan) : {{ $data_km_cutting ->lh_square_shaft_bulanan }}</p>
         <p class="card-text">Thread Guide (Bulanan) : {{ $data_km_cutting ->thread_guide_bulanan }}</p>
         <p class="card-text">Sparepart Lainnya (Bulanan) : {{ $data_km_cutting ->sparepart_lainnya_bulanann }}</p>  
-        <p class="card-text">Dicek Tanggal: {{ $data_km_cutting ->dicek_tanggal }}</p>
+        <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_km_cutting ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_km_cutting ->tahun_pembelian }}</p>
         <p class="card-text">Pisau Tumpul (Harian) : {{ $data_km_cutting ->pisau_tumpul_harian }}</p>
         <p class="card-text">Minyak Habis (Harian): {{ $data_km_cutting ->minyak_habis_harian }}</p>

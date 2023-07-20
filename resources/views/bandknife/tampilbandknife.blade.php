@@ -71,7 +71,7 @@
       <input type="text" name="check_dinamo_kompresor_bulanan" class="form-control" value="{{$data_bandknife->check_dinamo_kompresor_bulanan}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
+      <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_bandknife->dicek_tanggal}}">
     </div>
     <div class="mb-3">

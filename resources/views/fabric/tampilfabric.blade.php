@@ -75,7 +75,7 @@
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value="{{$data_fabric->komponen_lainnya_bulanan}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
+      <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_fabric->dicek_tanggal}}">
     </div>
     <div class="mb-3">
@@ -113,10 +113,6 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Komponen Lainnya (Harian)</label>
       <input type="date" name="komponen_lainnya_harian" class="form-control" value="{{$data_fabric->komponen_lainnya_harian}}">
-    </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tanggal Sparepart Diganti</label>
-      <input type="date" name="tanggal_sparepart_diganti" class="form-control" value="{{$data_fabric->tanggal_sparepart_diganti}}">
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Jenis Sparepart yang Diganti</label>

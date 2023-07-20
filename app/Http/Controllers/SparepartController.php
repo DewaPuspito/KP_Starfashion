@@ -87,11 +87,12 @@ class SparepartController extends Controller
     $audits = $data_sparepart->audits;
     return view('sparepart.historysparepart', compact('audits'));
   }
-  public function deletehistory(string $id)
-{
+  
+  public function deletehistorysparepart(string $id)
+  {
     $audit = Audit::findOrFail($id);
     $audit->delete();
     return redirect()->back()->with('success', 'History Log Deleted Successfully');
-}
+  }
 
 }

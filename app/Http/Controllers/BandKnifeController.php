@@ -19,15 +19,60 @@ class BandKnifeController extends Controller
      */
     public function index(Request $request)
     {
-        $searchTerm = $request->input('search');
+        $jumlahElectricalInstalasi = $request->query('electric');
+        $jumlahMotorBearingPully = $request->query('bearing');
+        $jumlahPullyAtasBearing = $request->query('pully');
+        $jumlahGantiGerindaAsahanPisau = $request->query('gerinda');
+        $jumlahDinamoKompresor = $request->query('kompresor');
+        $jumlahGantiSparepartKnife = $request->query('sparepart-knife');
         
-        if($request->has('search')) {
-            $data_bandknife = BandKnife::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // if($request->has('search')) {
+        //     $data_bandknife = BandKnife::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } 
+        
+        if ($jumlahElectricalInstalasi) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahElectricalInstalasi)
+                ->whereMonth($jumlahElectricalInstalasi, now()->format('m'))
+                ->whereYear($jumlahElectricalInstalasi, now()->format('Y'))
+                ->get();
+
+        } elseif ($jumlahMotorBearingPully) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahMotorBearingPully)
+                ->whereMonth($jumlahMotorBearingPully, now()->format('m'))
+                ->whereYear($jumlahMotorBearingPully, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahPullyAtasBearing) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahPullyAtasBearing)
+                ->whereMonth($jumlahPullyAtasBearing, now()->format('m'))
+                ->whereYear($jumlahPullyAtasBearing, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahGantiGerindaAsahanPisau) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahGantiGerindaAsahanPisau)
+                ->whereMonth($jumlahGantiGerindaAsahanPisau, now()->format('m'))
+                ->whereYear($jumlahGantiGerindaAsahanPisau, now()->format('Y'))
+                ->get();
+
+        } elseif ($jumlahDinamoKompresor) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahDinamoKompresor)
+                ->whereMonth($jumlahDinamoKompresor, now()->format('m'))
+                ->whereYear($jumlahDinamoKompresor, now()->format('Y'))
+                ->get();
+
+        } elseif ($jumlahGantiSparepartKnife) {
+            $data_bandknife = BandKnife::whereNotNull($jumlahGantiSparepartKnife)
+                ->whereMonth($jumlahGantiSparepartKnife, now()->format('m'))
+                ->whereYear($jumlahGantiSparepartKnife, now()->format('Y'))
+                ->get();
+                
         } else {
         $data_bandknife = BandKnife::all();
         }
+        // }
         return view ('bandknife.bandknives', compact('data_bandknife'));
     }
+    
 
     public function addbandknife()
     {
@@ -80,5 +125,12 @@ class BandKnifeController extends Controller
         $data_bandknife = BandKnife::find($serial_number);
         $audits = $data_bandknife->audits;
         return view('bandknife.historybandknife', compact('audits'));
+    }
+
+    public function deletehistoryknife(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

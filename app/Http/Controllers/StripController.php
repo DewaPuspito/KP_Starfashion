@@ -19,11 +19,11 @@ class StripController extends Controller
     */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_strip = Strip::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_strip = Strip::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_strip = Strip::all();
-        }
+        // }
         return view ('stripcutter.strips', compact('data_strip'));
     }
 
@@ -78,5 +78,12 @@ class StripController extends Controller
         $data_strip = Strip::find($serial_number);
         $audits = $data_strip->audits;
         return view('stripcutter.historystrip', compact('audits'));
+    }
+
+    public function deletehistorystrip(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

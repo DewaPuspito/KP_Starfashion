@@ -95,7 +95,7 @@
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value= "{{ $data_fuse ->komponen_lainnya_bulanan }}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
+      <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value= "{{ $data_fuse ->dicek_tanggal }}">
     </div>
     <div class="mb-3">

@@ -40,7 +40,7 @@
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_fabric ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pemberian Grease pada Roller (Bulanan) : {{ $data_fabric ->pemberian_grease_pada_roller_bulanan }}</p>
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_fabric ->komponen_lainnya_bulanan }}</p>  
-        <p class="card-text">Dicek Tanggal: {{ $data_fabric ->dicek_tanggal }}</p>
+        <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_fabric ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_fabric ->tahun_pembelian }}</p>
         <p class="card-text">Perbaikan Gear Box (Harian) : {{ $data_fabric ->perbaikan_gear_box_harian }}</p>
         <p class="card-text">Ganti Oli Gear Box (Harian): {{ $data_fabric ->ganti_oli_gear_box_harian}}</p>

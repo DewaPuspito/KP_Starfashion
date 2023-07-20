@@ -60,6 +60,7 @@ Route::get("/deletesewingsample/{id}", [SewingSampleController::class, 'deletese
 Route::get('/search', [SewingSampleController::class, 'search'])->name('search');
 Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
 Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');
+Route::delete("/deletehistorysewing/{id}", [SewingSampleController::class, 'deletehistorysewing'])->name('deletehistorysewing');
 Route::get('/sewing-sample/{jahitan}', [SewingSampleController::class, 'showMachinesByCheckType']);
 Route::get('/sewing-sample/{benang}', [SewingSampleController::class, 'showMachinesByCheckType']);
 Route::get('/sewing-sample/{gunting-pisau}', [SewingSampleController::class, 'showMachinesByCheckType']);
@@ -84,6 +85,7 @@ Route::post("/insertfuse", [FuseController::class, 'insertfuse'])->name('insertf
 Route::get("/deletefuse/{id}", [FuseController::class, 'deletefuse'])->name('deletefuse'); 
 Route::get("/exportfuse", [FuseController::class, 'exportfuse'])->name('exportfuse'); 
 Route::get("/historyfuse/{id}", [FuseController::class, 'historyfuse'])->name('historyfuse');
+Route::delete("/deletehistoryfuse/{id}", [FuseController::class, 'deletehistoryfuse'])->name('deletehistoryfuse');
 });
 Route::get("/showfuse/{id}", [FuseController::class, 'showfuse'])->name('showfuse');
 Route::get("/tampilfuse/{id}", [FuseController::class, 'tampilfuse'])->name('tampilfuse'); 
@@ -97,6 +99,7 @@ Route::post("/insertkmcutting", [KMController::class, 'insertkmcutting'])->name(
 Route::get("/deletekmcutting/{id}", [KMController::class, 'deletekmcutting'])->name('deletekmcutting');  
 Route::get("/exportkmcutting", [KMController::class, 'exportkmcutting'])->name('exportkmcutting');
 Route::get("/historykmcutting/{id}", [KMController::class, 'historykmcutting'])->name('historykmcutting');
+Route::delete("/deletehistorykm/{id}", [KMController::class, 'deletehistorykm'])->name('deletehistorykm');
 });
 Route::get("/showkmcutting/{id}", [KMController::class, 'showkmcutting'])->name('showkmcutting');
 Route::get("/tampilkmcutting/{id}", [KMController::class, 'tampilkmcutting'])->name('tampilkmcutting'); 
@@ -111,6 +114,13 @@ Route::post("/insertbandknife", [BandKnifeController::class, 'insertbandknife'])
 Route::get("/deletebandknife/{id}", [BandKnifeController::class, 'deletebandknife'])->name('deletebandknife');  
 Route::get("/exportbandknife", [BandKnifeController::class, 'exportbandknife'])->name('exportbandknife');
 Route::get("/historybandknife/{id}", [BandKnifeController::class, 'historybandknife'])->name('historybandknife');
+Route::delete("/deletehistoryknife/{id}", [BandKnifeController::class, 'deletehistoryknife'])->name('deletehistoryknife');
+Route::get('/band-knife/{electric}', [BandKnifeController::class, 'showMachinesByCheckType']);
+Route::get('/band-knife/{bearing}', [BandKnifeController::class, 'showMachinesByCheckType']);
+Route::get('/band-knife/{pully}', [BandKnifeController::class, 'showMachinesByCheckType']);
+Route::get('/band-knife/{gerinda}', [BandKnifeController::class, 'showMachinesByCheckType']);
+Route::get('/band-knife/{kompresor}', [BandKnifeController::class, 'showMachinesByCheckType']);
+Route::get('/band-knife/{sparepart-knife}', [BandKnifeController::class, 'showMachinesByCheckType']);
 });
 Route::get("/showbandknife/{id}", [BandKnifeController::class, 'showbandknife'])->name('showbandknife');
 Route::get("/tampilbandknife/{id}", [BandKnifeController::class, 'tampilbandknife'])->name('tampilbandknife'); 
@@ -124,6 +134,7 @@ Route::post("/insertplotter", [PlotterController::class, 'insertplotter'])->name
 Route::get("/deleteplotter/{id}", [PlotterController::class, 'deleteplotter'])->name('deleteplotter');  
 Route::get("/exportplotter", [PlotterController::class, 'exportplotter'])->name('exportplotter');
 Route::get("/historyplotter/{id}", [PlotterController::class, 'historyplotter'])->name('historyplotter');
+Route::delete("/deletehistoryplotter/{id}", [PlotterController::class, 'deletehistoryplotter'])->name('deletehistoryplotter');
 });
 Route::get("/showplotter/{id}", [PlotterController::class, 'showplotter'])->name('showplotter');
 Route::get("/tampilplotter/{id}", [PlotterController::class, 'tampilplotter'])->name('tampilplotter'); 
@@ -137,6 +148,7 @@ Route::post("/insertmetaldetector", [MetalDetectorController::class, 'insertmeta
 Route::get("/deletemetaldetector/{id}", [MetalDetectorController::class, 'deletemetaldetector'])->name('deletemetaldetector');  
 Route::get("/exportmetaldetector", [MetalDetectorController::class, 'exportmetaldetector'])->name('exportmetaldetector');
 Route::get("/historymetaldetector/{id}", [MetalDetectorController::class, 'historymetaldetector'])->name('historymetaldetector');
+Route::delete("/deletehistorymetal/{id}", [MetalDetectorController::class, 'deletehistorymetal'])->name('deletehistorymetal');
 });
 Route::get("/showmetaldetector/{id}", [MetalDetectorController::class, 'showmetaldetector'])->name('showmetaldetector');
 Route::get("/tampilmetaldetector/{id}", [MetalDetectorController::class, 'tampilmetaldetector'])->name('tampilmetaldetector'); 
@@ -150,6 +162,7 @@ Route::post("/insertpattern", [PatternController::class, 'insertpattern'])->name
 Route::get("/deletepattern/{id}", [PatternController::class, 'deletepattern'])->name('deletepattern');  
 Route::get("/exportpattern", [PatternController::class, 'exportpattern'])->name('exportpattern');
 Route::get("/historypattern/{id}", [PatternController::class, 'historypattern'])->name('historypattern');
+Route::delete("/deletehistorypattern/{id}", [PatternController::class, 'deletehistorypattern'])->name('deletehistorypattern');
 });
 Route::get("/showpattern/{id}", [PatternController::class, 'showpattern'])->name('showpattern');
 Route::get("/tampilpattern/{id}", [PatternController::class, 'tampilpattern'])->name('tampilpattern'); 
@@ -163,6 +176,7 @@ Route::post("/insertpipping", [PippingController::class, 'insertpipping'])->name
 Route::get("/deletepipping/{id}", [PippingController::class, 'deletepipping'])->name('deletepipping');  
 Route::get("/exportpipping", [PippingController::class, 'exportpipping'])->name('exportpipping');
 Route::get("/historypipping/{id}", [PippingController::class, 'historypipping'])->name('historypipping');
+Route::delete("/deletehistorypipping/{id}", [PippingController::class, 'deletehistorypipping'])->name('deletehistorypipping');
 });
 Route::get("/showpipping/{id}", [PippingController::class, 'showpipping'])->name('showpipping');
 Route::get("/tampilpipping/{id}", [PippingController::class, 'tampilpipping'])->name('tampilpipping'); 
@@ -176,6 +190,7 @@ Route::post("/insertstrip", [StripController::class, 'insertstrip'])->name('inse
 Route::get("/deletestrip/{id}", [StripController::class, 'deletestrip'])->name('deletestrip');
 Route::get("/exportstrip", [StripController::class, 'exportstrip'])->name('exportstrip');
 Route::get("/historystrip/{id}", [StripController::class, 'historystrip'])->name('historystrip');
+Route::delete("/deletehistorystrip/{id}", [StripController::class, 'deletehistorystrip'])->name('deletehistorystrip');
 });
 Route::get("/showstrip/{id}", [StripController::class, 'showstrip'])->name('showstrip');
 Route::get("/tampilstrip/{id}", [StripController::class, 'tampilstrip'])->name('tampilstrip'); 
@@ -189,6 +204,7 @@ Route::post("/insertfabric", [FabricController::class, 'insertfabric'])->name('i
 Route::get("/deletefabric/{id}", [FabricController::class, 'deletefabric'])->name('deletefabric');
 Route::get("/exportfabric", [FabricController::class, 'exportfabric'])->name('exportfabric');
 Route::get("/historyfabric/{id}", [FabricController::class, 'historyfabric'])->name('historyfabric');
+Route::delete("/deletehistoryfabric/{id}", [FabricController::class, 'deletehistoryfabric'])->name('deletehistoryfabric');
 });
 Route::get("/showfabric/{id}", [FabricController::class, 'showfabric'])->name('showfabric');
 Route::get("/tampilfabric/{id}", [FabricController::class, 'tampilfabric'])->name('tampilfabric'); 
@@ -202,7 +218,7 @@ Route::post("/insertsparepart", [SparepartController::class, 'insertsparepart'])
 Route::get("/deletesparepart/{id}", [SparepartController::class, 'deletesparepart'])->name('deletesparepart');
 Route::get("/exportsparepart", [SparepartController::class, 'exportsparepart'])->name('exportsparepart');
 Route::get("/historysparepart/{id}", [SparepartController::class, 'historysparepart'])->name('historysparepart');
-Route::delete("/deletehistory/{id}", [SparepartController::class, 'deletehistory'])->name('deletehistory');
+Route::delete("/deletehistorysparepart/{id}", [SparepartController::class, 'deletehistorysparepart'])->name('deletehistorysparepart');
 });
 Route::get("/showsparepart/{id}", [SparepartController::class, 'showsparepart'])->name('showsparepart');
 Route::get("/tampilsparepart/{id}", [SparepartController::class, 'tampilsparepart'])->name('tampilsparepart'); 

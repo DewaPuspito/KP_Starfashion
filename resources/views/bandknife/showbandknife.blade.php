@@ -39,7 +39,7 @@
         <p class="card-text">Check Pully Atas Bearing (Bulanan) : {{ $data_bandknife ->check_pullyatas_bearing_bulanan }}</p>
         <p class="card-text">Check Gerinda/Asahan Pisau (Bulanan) : {{ $data_bandknife ->check_gerinda_asahan_pisau_bulanan }}</p>
         <p class="card-text">Check Dinamo Kompresor (Bulanan) : {{ $data_bandknife ->check_dinamo_kompresor_bulanan }}</p> 
-        <p class="card-text">Dicek Tanggal: {{ $data_bandknife ->dicek_tanggal }}</p>
+        <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_bandknife ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_bandknife ->tahun_pembelian }}</p>
         <p class="card-text">Perbaikan Electrical Instalasi (Harian) : {{ $data_bandknife ->perbaikan_electrical_instalasi_harian }}</p>
         <p class="card-text">Ganti/Perbaikan Motor Bearing Pully (Harian): {{ $data_bandknife ->ganti_perbaikan_motor_bearing_pully_harian }}</p>

@@ -20,11 +20,11 @@ class KMController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_km_cutting = KM::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_km_cutting = KM::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_km_cutting = KM::all();
-        }
+        // }
         return view ('kmcutting.kmcuttings', compact('data_km_cutting'));
     }
 
@@ -79,5 +79,12 @@ class KMController extends Controller
         $data_km_cutting = KM::find($serial_number);
         $audits = $data_km_cutting->audits;
         return view('kmcutting.historykmcutting', compact('audits'));
+    }
+
+    public function deletehistorykm(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

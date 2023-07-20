@@ -19,11 +19,11 @@ class PippingController extends Controller
     */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_pipping = Pipping::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_pipping = Pipping::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_pipping = Pipping::all();
-        }
+        // }
         return view ('rewindingpipping.pippings', compact('data_pipping'));
     }
 
@@ -78,5 +78,12 @@ class PippingController extends Controller
         $data_pipping = Pipping::find($serial_number);
         $audits = $data_pipping->audits;
         return view('rewindingpipping.historypipping', compact('audits'));
+    }
+
+    public function deletehistorypipping(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

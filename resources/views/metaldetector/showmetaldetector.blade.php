@@ -40,7 +40,7 @@
         <p class="card-text">Check Sensifitas Metal (Bulanan) : {{ $data_metaldetector ->check_sensitifitas_metal_bulanan }}</p>
         <p class="card-text">Check Spare Parts Lainnya (Bulanan) : {{ $data_metaldetector ->check_spare_parts_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_metaldetector ->kebersihan_mesin_bulanan }}</p>
-        <p class="card-text">Dicek Tanggal: {{ $data_metaldetector ->dicek_tanggal }}</p>
+        <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_metaldetector ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_metaldetector ->tahun_pembelian }}</p>
         <p class="card-text">Perbaikan Instalasi Electrical (Harian) : {{ $data_metaldetector ->perbaikan_instalasi_electrical_harian }}</p>
         <p class="card-text">>Perbaikan Switch Auto Stop (Harian): {{ $data_metaldetector ->perbaikan_switch_auto_stop_harian }}</p>

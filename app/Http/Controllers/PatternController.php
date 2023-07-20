@@ -19,11 +19,11 @@ class PatternController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_pattern = Pattern::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_pattern = Pattern::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_pattern = Pattern::all();
-        }
+        // }
         return view ('pattern.patterns', compact('data_pattern'));
     }
 
@@ -78,5 +78,12 @@ class PatternController extends Controller
         $data_pattern = Pattern::find($serial_number);
         $audits = $data_pattern->audits;
         return view('pattern.historypattern', compact('audits'));
+    }
+
+    public function deletehistorypattern(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

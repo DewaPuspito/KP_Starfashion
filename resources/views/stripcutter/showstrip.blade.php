@@ -42,7 +42,7 @@
         <p class="card-text">Check Instalasi Electrical (Bulanan) : {{ $data_strip ->check_instalasi_elektrikal_bulanan}}</p>
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_strip ->komponen_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_strip ->kebersihan_mesin_bulanan }}</p>
-        <p class="card-text">Dicek Tanggal: {{ $data_strip ->dicek_tanggal }}</p>
+        <p class="card-text">Pengecekan Bulanan dilakukan Tanggal : {{ $data_strip ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_strip ->tahun_pembelian }}</p>
         <p class="card-text">Perbaikan Roll Press (Harian) : {{ $data_strip ->perbaikan_rollpress_harian }}</p>
         <p class="card-text">Ganti Asahan (Harian): {{ $data_strip ->ganti_asahan_harian }}</p>

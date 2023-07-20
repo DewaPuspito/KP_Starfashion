@@ -20,75 +20,75 @@ class SewingSampleController extends Controller
      */
     public function index(Request $request)
     {
-    $jumlahJahitanLoncat = $request->query('jahitan');
-    $jumlahBenangPutusan = $request->query('benang');
-    $jumlahGantiGuntingPisau = $request->query('gunting-pisau');
-    $jumlahGantiRotary = $request->query('rotary');
-    $jumlahGantiSuttelHook = $request->query('hook');
-    $jumlahBakMesin = $request->query('bak');
-    $jumlahPisauTidakMotong = $request->query('pisau');
-    $jumlahKondisiMinyakMesin = $request->query('minyak');
-    $jumlahGantiSparepartLainnya = $request->query('sparepart-lainnya');
+        $jumlahJahitanLoncat = $request->query('jahitan');
+        $jumlahBenangPutusan = $request->query('benang');
+        $jumlahGantiGuntingPisau = $request->query('gunting-pisau');
+        $jumlahGantiRotary = $request->query('rotary');
+        $jumlahGantiSuttelHook = $request->query('hook');
+        $jumlahBakMesin = $request->query('bak');
+        $jumlahPisauTidakMotong = $request->query('pisau');
+        $jumlahKondisiMinyakMesin = $request->query('minyak');
+        $jumlahGantiSparepartLainnya = $request->query('sparepart-lainnya');
 
-    if ($jumlahJahitanLoncat) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahJahitanLoncat)
-            ->whereMonth($jumlahJahitanLoncat, now()->format('m'))
-            ->whereYear($jumlahJahitanLoncat, now()->format('Y'))
-            ->get();
+        if ($jumlahJahitanLoncat) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahJahitanLoncat)
+                ->whereMonth($jumlahJahitanLoncat, now()->format('m'))
+                ->whereYear($jumlahJahitanLoncat, now()->format('Y'))
+                ->get();
 
-    } elseif ($jumlahBenangPutusan) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahBenangPutusan)
-            ->whereMonth($jumlahBenangPutusan, now()->format('m'))
-            ->whereYear($jumlahBenangPutusan, now()->format('Y'))
-            ->get();
-            
-    } elseif ($jumlahGantiGuntingPisau) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiGuntingPisau)
-            ->whereMonth($jumlahGantiGuntingPisau, now()->format('m'))
-            ->whereYear($jumlahGantiGuntingPisau, now()->format('Y'))
-            ->get();
-            
-    } elseif ($jumlahGantiRotary) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiRotary)
-            ->whereMonth($jumlahGantiRotary, now()->format('m'))
-            ->whereYear($jumlahGantiRotary, now()->format('Y'))
-            ->get();
+        } elseif ($jumlahBenangPutusan) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahBenangPutusan)
+                ->whereMonth($jumlahBenangPutusan, now()->format('m'))
+                ->whereYear($jumlahBenangPutusan, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahGantiGuntingPisau) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahGantiGuntingPisau)
+                ->whereMonth($jumlahGantiGuntingPisau, now()->format('m'))
+                ->whereYear($jumlahGantiGuntingPisau, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahGantiRotary) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahGantiRotary)
+                ->whereMonth($jumlahGantiRotary, now()->format('m'))
+                ->whereYear($jumlahGantiRotary, now()->format('Y'))
+                ->get();
 
-    } elseif ($jumlahGantiSuttelHook) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiSuttelHook)
-            ->whereMonth($jumlahGantiSuttelHook, now()->format('m'))
-            ->whereYear($jumlahGantiSuttelHook, now()->format('Y'))
-            ->get();
+        } elseif ($jumlahGantiSuttelHook) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahGantiSuttelHook)
+                ->whereMonth($jumlahGantiSuttelHook, now()->format('m'))
+                ->whereYear($jumlahGantiSuttelHook, now()->format('Y'))
+                ->get();
 
-    } elseif ($jumlahBakMesin) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahBakMesin)
-            ->whereMonth($jumlahBakMesin, now()->format('m'))
-            ->whereYear($jumlahBakMesin, now()->format('Y'))
-            ->get();
-            
-    } elseif ($jumlahPisauTidakMotong) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahPisauTidakMotong)
-            ->whereMonth($jumlahPisauTidakMotong, now()->format('m'))
-            ->whereYear($jumlahPisauTidakMotong, now()->format('Y'))
-            ->get();
-            
-    } elseif ($jumlahKondisiMinyakMesin) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahKondisiMinyakMesin)
-            ->whereMonth($jumlahKondisiMinyakMesin, now()->format('m'))
-            ->whereYear($jumlahKondisiMinyakMesin, now()->format('Y'))
-            ->get();
+        } elseif ($jumlahBakMesin) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahBakMesin)
+                ->whereMonth($jumlahBakMesin, now()->format('m'))
+                ->whereYear($jumlahBakMesin, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahPisauTidakMotong) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahPisauTidakMotong)
+                ->whereMonth($jumlahPisauTidakMotong, now()->format('m'))
+                ->whereYear($jumlahPisauTidakMotong, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahKondisiMinyakMesin) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahKondisiMinyakMesin)
+                ->whereMonth($jumlahKondisiMinyakMesin, now()->format('m'))
+                ->whereYear($jumlahKondisiMinyakMesin, now()->format('Y'))
+                ->get();
 
-    } elseif ($jumlahGantiSparepartLainnya) {
-        $data_sewingsample = SewingSample::whereNotNull($jumlahGantiSparepartLainnya)
-            ->whereMonth($jumlahGantiSparepartLainnya, now()->format('m'))
-            ->whereYear($jumlahGantiSparepartLainnya, now()->format('Y'))
-            ->get();
+        } elseif ($jumlahGantiSparepartLainnya) {
+            $data_sewingsample = SewingSample::whereNotNull($jumlahGantiSparepartLainnya)
+                ->whereMonth($jumlahGantiSparepartLainnya, now()->format('m'))
+                ->whereYear($jumlahGantiSparepartLainnya, now()->format('Y'))
+                ->get();
 
-    } else {
-        $data_sewingsample = SewingSample::all();
-    }
+        } else {
+            $data_sewingsample = SewingSample::all();
+        }
 
-    return view('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));
+        return view('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));
     }
 
     public function search(Request $request)
@@ -167,5 +167,12 @@ class SewingSampleController extends Controller
         $data_sewingsample = SewingSample::find($serial_number);
         $audits = $data_sewingsample->audits;
         return view('sewingsamplemachine.historysewingsample', compact('audits'));
+    }
+    
+    public function deletehistorysewing(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

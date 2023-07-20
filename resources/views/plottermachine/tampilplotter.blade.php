@@ -91,7 +91,7 @@
       <input type="text" name="check_kebersihan_bulanan" class="form-control" value="{{$data_plotter->check_kebersihan_bulanan}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Dicek Tanggal</label>
+      <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_plotter->dicek_tanggal}}">
     </div>
     <div class="mb-3">

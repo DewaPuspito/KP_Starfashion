@@ -43,7 +43,7 @@
           <p class="card-text">Check Connection Cable (Bulanan) : {{ $data_plotter->check_connection_cable_bulanan }}</p>
           <p class="card-text">Check Print Head (Bulanan) : {{ $data_plotter->check_print_head_bulanan }}</p>
           <p class="card-text">Check Kebersihan (Bulanan) : {{ $data_plotter->check_kebersihan_bulanan }}</p>
-          <p class="card-text">Dicek Tanggal: {{ $data_plotter->dicek_tanggal }}</p>
+          <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_plotter->dicek_tanggal }}</p>
           <p class="card-text">Tahun Pembelian : {{ $data_plotter->tahun_pembelian }}</p>
           <p class="card-text">Perbaikan Plotter Head (Harian) : {{ $data_plotter->perbaikan_plotter_head_harian }}</p>
           <p class="card-text">Perbaikan Stand Pole (Harian): {{ $data_plotter->perbaikan_stand_pole_harian }}</p>

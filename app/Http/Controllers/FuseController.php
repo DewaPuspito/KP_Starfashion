@@ -19,11 +19,11 @@ class FuseController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_fuse = Fuse::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_fuse = Fuse::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_fuse = Fuse::all(); 
-        }
+        // }
         return view ('fusemachine.fuses', compact('data_fuse'));
     }
 
@@ -78,5 +78,12 @@ class FuseController extends Controller
         $data_fuse = Fuse::find($serial_number);
         $audits = $data_fuse->audits;
         return view('fusemachine.historyfuse', compact('audits'));
+    }
+
+    public function deletehistoryfuse(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

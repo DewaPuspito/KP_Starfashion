@@ -14,11 +14,11 @@ class FabricController extends Controller
 {
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_fabric = Fabric::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_fabric = Fabric::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_fabric = Fabric::all(); 
-        }
+        // }
         return view ('fabric.fabrics', compact('data_fabric'));
     }
 
@@ -74,5 +74,12 @@ class FabricController extends Controller
         $data_fabric = Fabric::find($serial_number);
         $audits = $data_fabric->audits;
         return view('fabric.historyfabric', compact('audits'));
+    }
+
+    public function deletehistoryfabric(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

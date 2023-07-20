@@ -19,11 +19,11 @@ class MetalDetectorController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_metaldetector = MetalDetector::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_metaldetector = MetalDetector::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_metaldetector = MetalDetector::all();
-        }
+        // }
         return view ('metaldetector.metaldetectors', compact('data_metaldetector'));
     }
 
@@ -78,5 +78,12 @@ class MetalDetectorController extends Controller
         $data_metaldetector = MetalDetector::find($serial_number);
         $audits = $data_metaldetector->audits;
         return view('metaldetector.historymetaldetector', compact('audits'));
+    }
+
+    public function deletehistorymetal(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

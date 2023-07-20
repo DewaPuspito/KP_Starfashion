@@ -19,11 +19,11 @@ class PlotterController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')) {
-            $data_plotter = Plotter::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        } else {
+        // if($request->has('search')) {
+        //     $data_plotter = Plotter::where('serial_number','LIKE', '%' .$request->search.'%')->get();
+        // } else {
         $data_plotter = Plotter::all();
-        }
+        // }
         return view ('plottermachine.plotters', compact('data_plotter'));
     }
 
@@ -78,5 +78,12 @@ class PlotterController extends Controller
         $data_plotter = Plotter::find($serial_number);
         $audits = $data_plotter->audits;
         return view('plottermachine.historyplotter', compact('audits'));
+    }
+
+    public function deletehistoryplotter(string $id)
+    {
+    $audit = Audit::findOrFail($id);
+    $audit->delete();
+    return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

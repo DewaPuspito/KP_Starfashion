@@ -315,7 +315,6 @@
       $jumlahPullyAtasBearing = 0;
       $jumlahGantiGerindaAsahanPisau = 0;
       $jumlahDinamoKompresor = 0;
-      $jumlahBersihkanMesin = 0;
       $jumlahGantiSparepartKnife = 0;
       $jumlahMinyakRil = 0;
       $jumlahPulpen = 0;
@@ -498,7 +497,7 @@
                 <h3>{{ $jumlahElectricalInstalasi }}</h3>
                   <p>Perbaikan Electrical Instalasi (Band Knife)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/band-knife?electric=perbaikan_electrical_instalasi_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -508,7 +507,7 @@
                 <h3>{{ $jumlahMotorBearingPully }}</h3>
                   <p>Ganti/Perbaikan Motor Bearing Pully (Band Knife)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/band-knife?bearing=ganti_perbaikan_motor_bearing_pully_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -518,7 +517,7 @@
                 <h3>{{ $jumlahPullyAtasBearing }}</h3>
                   <p>Ganti/Perbaikan Pully Atas Bearing (Band Knife)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/band-knife?pully=ganti_perbaikan_pullyatas_bearing_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -528,7 +527,7 @@
                 <h3>{{ $jumlahGantiGerindaAsahanPisau }}</h3>
                   <p>Ganti Gerinda Asahan Pisau (Band Knife)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/band-knife?gerinda=ganti_gerinda_asahan_pisau_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -539,27 +538,18 @@
                 <h3>{{ $jumlahDinamoKompresor }}</h3>
                   <p>Ganti/Perbaikan Dinamo Kompresor (Band Knife)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/band-knife?kompresor=ganti_perbaikan_dinamo_kompresor_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>{{ $jumlahBersihkanMesin }}</h3>
-                  <p>Servis/Bersihkan Mesin (Band Knife)</p>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-      </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
+            <div class="small-box bg-success">
               <div class="inner">
                 <h3>{{ $jumlahGantiSparepartKnife }}</h3>
                   <p>Ganti Sparepart Lainnya (Band Knife)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/band-knife?sparepart-knife=ganti_sparepart_lainnya_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
