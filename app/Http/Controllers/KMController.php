@@ -20,11 +20,48 @@ class KMController extends Controller
      */
     public function index(Request $request)
     {
+        $jumlahPisauTumpul = $request->query('tumpul');
+        $jumlahMinyakHabis = $request->query('habis');
+        $jumlahAbrasif = $request->query('abrasif');
+        $jumlahInstalasiKabel = $request->query('kabel');
+        $jumlahKondisiMesin = $request->query('kondisi-mesin');
+        
         // if($request->has('search')) {
         //     $data_km_cutting = KM::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } else {
+        // } 
+        if ($jumlahPisauTumpul) {
+            $data_km_cutting = KM::whereNotNull($jumlahPisauTumpul)
+                ->whereMonth($jumlahPisauTumpul, now()->format('m'))
+                ->whereYear($jumlahPisauTumpul, now()->format('Y'))
+                ->get();
+
+        } elseif ($jumlahMinyakHabis) {
+            $data_km_cutting = KM::whereNotNull($jumlahMinyakHabis)
+                ->whereMonth($jumlahMinyakHabis, now()->format('m'))
+                ->whereYear($jumlahMinyakHabis, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahAbrasif) {
+            $data_km_cutting = KM::whereNotNull($jumlahAbrasif)
+                ->whereMonth($jumlahAbrasif, now()->format('m'))
+                ->whereYear($jumlahAbrasif, now()->format('Y'))
+                ->get();
+                
+        } elseif ($jumlahInstalasiKabel) {
+            $data_km_cutting = KM::whereNotNull($jumlahInstalasiKabel)
+                ->whereMonth($jumlahInstalasiKabel, now()->format('m'))
+                ->whereYear($jumlahInstalasiKabel, now()->format('Y'))
+                ->get();
+
+        } elseif ($jumlahKondisiMesin) {
+            $data_km_cutting = KM::whereNotNull($jumlahKondisiMesin)
+                ->whereMonth($jumlahKondisiMesin, now()->format('m'))
+                ->whereYear($jumlahKondisiMesin, now()->format('Y'))
+                ->get();
+
+        } else {
         $data_km_cutting = KM::all();
-        // }
+        }
         return view ('kmcutting.kmcuttings', compact('data_km_cutting'));
     }
 
@@ -83,8 +120,8 @@ class KMController extends Controller
 
     public function deletehistorykm(string $id)
     {
-    $audit = Audit::findOrFail($id);
-    $audit->delete();
-    return redirect()->back()->with('success', 'History Log Deleted Successfully');
+        $audit = Audit::findOrFail($id);
+        $audit->delete();
+        return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

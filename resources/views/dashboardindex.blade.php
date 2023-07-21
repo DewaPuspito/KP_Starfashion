@@ -634,7 +634,7 @@
                 <h3>{{ $jumlahPisauTumpul }}</h3>
                   <p>Pisau Tumpul (KM Cutting)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/km-cutting?tumpul=pisau_tumpul_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -644,7 +644,7 @@
                 <h3>{{ $jumlahMinyakHabis }}</h3>
                   <p>Minyak Habis (KM Cutting)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/km-cutting?habis=minyak_habis_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -654,7 +654,7 @@
                 <h3>{{ $jumlahAbrasif }}</h3>
                   <p>Ganti Abrasif (KM Cutting)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/km-cutting?abrasif=ganti_abrasif_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -664,7 +664,7 @@
                 <h3>{{ $jumlahInstalasiKabel }}</h3>
                   <p>Check Instalasi Kabel (KM Cutting)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/km-cutting?kabel=check_instalasi_kabel_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -675,7 +675,7 @@
                 <h3>{{ $jumlahKondisiMesin }}</h3>
                   <p>Check Kondisi Mesin (KM Cutting)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/km-cutting?kondisi-mesin=check_kondisi_mesin_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
@@ -687,7 +687,7 @@
                 <h3>{{ $jumlahBeltAtas }}</h3>
                   <p>Ganti Belt Atas (Fuse)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/fuse?belt-atas=ganti_belt_atas_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -697,7 +697,7 @@
                 <h3>{{ $jumlahBeltBawah }}</h3>
                   <p>Ganti Belt Bawah (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?belt-bawah=ganti_belt_bawah_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -707,7 +707,7 @@
                 <h3>{{ $jumlahBearingAtas }}</h3>
                   <p>Ganti Bearing Atas (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?bearing-atas=ganti_bearing_tekanan_belt_atas_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -717,7 +717,7 @@
                 <h3>{{ $jumlahBearingBawah }}</h3>
                   <p>Ganti Bearing Bawah (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?bearing-bawah=ganti_bearing_tekanan_belt_bawah_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -728,7 +728,7 @@
                 <h3>{{ $jumlahRollpressAtas }}</h3>
                   <p>Ganti Rollpress Atas (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?rollpress-atas=ganti_rollpress_atas_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -738,7 +738,7 @@
                 <h3>{{ $jumlahRollpressBawah }}</h3>
                   <p>Ganti Rollpress Bawah (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?rollpress-bawah=ganti_rollpress_bawah_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -748,7 +748,7 @@
                 <h3>{{ $jumlahSwitchKontrol }}</h3>
                   <p>Ganti Switch Kontrol Belt (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?switch=ganti_switchkontrol_belt_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -758,7 +758,7 @@
                 <h3>{{ $jumlahKontrolSpeed }}</h3>
                   <p>Ganti Kontrol Speed (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?speed=ganti_kontrol_speed_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -769,7 +769,7 @@
               <h3>{{ $jumlahTemperatur }}</h3>
                   <p>Ganti Kontrol Temperatur (Fuse)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fuse?temperatur=ganti_kontrol_temperatur_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
@@ -781,7 +781,7 @@
                 <h3>{{ $jumlahGearBox }}</h3>
                   <p>Perbaikan Gear Box (Fabric)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/fabric?gear=perbaikan_gear_box_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -791,7 +791,7 @@
                 <h3>{{ $jumlahOliGear }}</h3>
                   <p>Ganti Oli Gear Box (Fabric)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fabric?oli=ganti_oli_gear_box_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -801,7 +801,7 @@
                 <h3>{{ $jumlahRantai }}</h3>
                   <p>Perbaikan Tegangan Rantai (Fabric)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fabric?rantai=perbaikan_tegangan_rantai_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -811,7 +811,7 @@
                 <h3>{{ $jumlahMotor }}</h3>
                   <p>Perbaikan Elektrikal dan Motor (Fabric)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fabric?motor=perbaikan_electrical_dan_motor_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -822,7 +822,7 @@
                 <h3>{{ $jumlahGrease }}</h3>
                   <p>Pemberian Grease pada Roller (Fabric)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fabric?grease=pemberian_grease_pada_roller_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -832,7 +832,7 @@
                 <h3>{{ $jumlahKaret }}</h3>
                   <p>Ganti Karet Roller (Fabric)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/fabric?karet=penggantian_karet_roller_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">
@@ -844,7 +844,7 @@
                 <h3>{{ $jumlahInstalasiElectrical }}</h3>
                   <p>Perbaikan Instalasi Electrical (Metal Detector)</p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/metal-detector?electrical=perbaikan_instalasi_electrical_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
       </div>
       <!-- ./col -->
@@ -854,7 +854,7 @@
                 <h3>{{ $jumlahSwitchAutoStop }}</h3>
                   <p>Perbaikan Switch Auto Stop (Metal Detector)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/metal-detector?autostop=perbaikan_switch_auto_stop_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -864,7 +864,7 @@
                 <h3>{{ $jumlahBelts }}</h3>
                   <p>Perbaikan Belt (Metal Detector)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/metal-detector?belts=perbaikan_belt_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -874,7 +874,7 @@
                 <h3>{{ $jumlahDinamoMotor }}</h3>
                   <p>Perbaikan Dinamo Motor (Metal Detector)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/metal-detector?dinamo=perbaikan_dinamo_motor_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       </div>
@@ -885,7 +885,7 @@
                 <h3>{{ $jumlahSensitifitas }}</h3>
                   <p>Perbaikan Sensitifitas Metal (Metal Detector)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/metal-detector?sensitifitas=perbaikan_sensitifitas_metal_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -895,7 +895,7 @@
                 <h3>{{ $jumlahSparepartLainnya }}</h3>
                   <p>Check Sparepart Lainnya (Metal Detector)</p>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/metal-detector?sparepartss=check_spareparts_lainnya_harian" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <section class="content">

@@ -61,15 +61,6 @@ Route::get('/search', [SewingSampleController::class, 'search'])->name('search')
 Route::get("/exportsewingsample", [SewingSampleController::class, 'exportsewingsample'])->name('exportsewingsample');
 Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');
 Route::delete("/deletehistorysewing/{id}", [SewingSampleController::class, 'deletehistorysewing'])->name('deletehistorysewing');
-Route::get('/sewing-sample/{jahitan}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{benang}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{gunting-pisau}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{rotary}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{hook}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{bak}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{pisau}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{minyak}', [SewingSampleController::class, 'showMachinesByCheckType']);
-Route::get('/sewing-sample/{sparepart-lainnya}', [SewingSampleController::class, 'showMachinesByCheckType']);
 });
 Route::get("/showsewingsample/{id}", [SewingSampleController::class, 'showsewingsample'])->name('showsewingsample');
 Route::get("/tampilsewingsample/{id}", [SewingSampleController::class, 'tampilsewingsample'])->name('tampilsewingsample'); 
@@ -115,12 +106,6 @@ Route::get("/deletebandknife/{id}", [BandKnifeController::class, 'deletebandknif
 Route::get("/exportbandknife", [BandKnifeController::class, 'exportbandknife'])->name('exportbandknife');
 Route::get("/historybandknife/{id}", [BandKnifeController::class, 'historybandknife'])->name('historybandknife');
 Route::delete("/deletehistoryknife/{id}", [BandKnifeController::class, 'deletehistoryknife'])->name('deletehistoryknife');
-Route::get('/band-knife/{electric}', [BandKnifeController::class, 'showMachinesByCheckType']);
-Route::get('/band-knife/{bearing}', [BandKnifeController::class, 'showMachinesByCheckType']);
-Route::get('/band-knife/{pully}', [BandKnifeController::class, 'showMachinesByCheckType']);
-Route::get('/band-knife/{gerinda}', [BandKnifeController::class, 'showMachinesByCheckType']);
-Route::get('/band-knife/{kompresor}', [BandKnifeController::class, 'showMachinesByCheckType']);
-Route::get('/band-knife/{sparepart-knife}', [BandKnifeController::class, 'showMachinesByCheckType']);
 });
 Route::get("/showbandknife/{id}", [BandKnifeController::class, 'showbandknife'])->name('showbandknife');
 Route::get("/tampilbandknife/{id}", [BandKnifeController::class, 'tampilbandknife'])->name('tampilbandknife'); 
