@@ -66,8 +66,6 @@ Route::get("/showsewingsample/{id}", [SewingSampleController::class, 'showsewing
 Route::get("/tampilsewingsample/{id}", [SewingSampleController::class, 'tampilsewingsample'])->name('tampilsewingsample'); 
 Route::post("/editsewingsample/{id}", [SewingSampleController::class, 'editsewingsample'])->name('editsewingsample');  
 
-
-
 // Fuse Machine
 Route::group(['middleware' => 'auth'], function () {
 Route::get("/fuse", [FuseController::class, 'index'])->name('fuse');
