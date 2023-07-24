@@ -47,10 +47,6 @@
       <input type="text" name="bagian" class="form-control">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
-      <input type="year" name="tahun" class="form-control">
-    </div>
-    <div class="mb-3">
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control">
     </div>

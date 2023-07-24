@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value="{{$data_plotter->bagian}}">
-      </div>
+    </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_plotter->tahun_pembelian}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_plotter->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Plotter Head (Bulanan)</label>
       <input type="text" name="check_plotter_head_bulanan" class="form-control" value="{{$data_plotter->check_plotter_head_bulanan}}"> 
@@ -95,10 +99,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_plotter->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_plotter->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Perbaikan Plotter Head (Harian)</label>
       <input type="date" name="perbaikan_plotter_head_harian" class="form-control" value="{{$data_plotter->perbaikan_plotter_head_harian}}"> 
     </div>

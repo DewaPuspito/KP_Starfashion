@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value = "{{$data_metaldetector->bagian}}">
-      </div>
+    </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_metaldetector->tahun_pembelian}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value = "{{$data_metaldetector->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Instalasi Electrical (Bulanan)</label>
       <input type="text" name="check_instalasi_electrical_bulanan" class="form-control" value = "{{$data_metaldetector->check_instalasi_electrical_bulanan}}"> 
@@ -79,10 +83,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value = "{{$data_metaldetector->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_metaldetector->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Perbaikan Instalasi Electrical (Harian)</label>
       <input type="date" name="perbaikan_instalasi_electrical_harian" class="form-control" value = "{{$data_metaldetector->perbaikan_instalasi_electrical_harian}}"> 
     </div>

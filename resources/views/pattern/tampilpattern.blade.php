@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value = "{{$data_pattern->bagian}}">
-      </div>
+    </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_pattern->tahun_pembelian}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value = "{{$data_pattern->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Pemberian Minyak pada Ril (Bulanan)</label>
       <input type="text" name="pemberian_minyak_pada_ril_bulanan" class="form-control" value = "{{$data_pattern->pemberian_minyak_pada_ril_bulanan}}"> 
@@ -79,10 +83,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value = "{{$data_pattern->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_pattern->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Pemberian Minyak pada Ril (Harian)</label>
       <input type="date" name="pemberian_minyak_pada_ril_harian" class="form-control" value = "{{$data_pattern->pemberian_minyak_pada_ril_harian}}"> 
     </div>

@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value= "{{ $data_fuse ->bagian }}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value= "{{ $data_fuse ->tahun_pembelian }}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control" value= "{{ $data_fuse->tahun }}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Belt Atas (Bulanan)</label>
       <input type="text" name="check_belt_atas_bulanan" class="form-control" value= "{{ $data_fuse ->check_belt_atas_bulanan }}">  
@@ -99,10 +103,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value= "{{ $data_fuse ->dicek_tanggal }}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value= "{{ $data_fuse ->tahun_pembelian }}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Ganti Belt Atas (Harian)</label>
       <input type="date" name="ganti_belt_atas_harian" class="form-control" value= "{{ $data_fuse ->jganti_belt_atas_harian }}"> 
     </div>

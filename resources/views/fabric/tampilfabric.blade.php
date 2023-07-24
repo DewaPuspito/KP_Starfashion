@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value="{{$data_fabric->bagian}}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_fabric->tahun_pembelian}}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_fabric->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Gear Box (Bulanan)</label>
       <input type="text" name="check_gear_box_bulanan" class="form-control" value="{{$data_fabric->check_gear_box_bulanan}}"> 
@@ -79,10 +83,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_fabric->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_fabric->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Perbaikan Gear Box (Harian)</label>
       <input type="date" name="perbaikan_gear_box_harian" class="form-control" value="{{$data_fabric->perbaikan_gear_box_harian}}"> 
     </div>

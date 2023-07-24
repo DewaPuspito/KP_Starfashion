@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value="{{$data_bandknife->bagian}}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_bandknife->tahun_pembelian}}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Tahun</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_bandknife->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Electrical Instalasi (Bulanan)</label>
       <input type="text" name="check_electrical_instalasi_bulanan" class="form-control" value="{{$data_bandknife->check_electrical_instalasi_bulanan}}"> 
@@ -75,10 +79,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_bandknife->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_bandknife->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Perbaikan Electrical Instalasi (Harian)</label>
       <input type="date" name="perbaikan_electrical_instalasi_harian" class="form-control" value="{{$data_bandknife->perbaikan_electrical_instalasi_harian}}"> 
     </div>

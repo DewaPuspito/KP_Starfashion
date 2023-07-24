@@ -41,11 +41,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value = "{{$data_km_cutting->bagian}}"> 
-      </div>
+    </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_km_cutting->tahun_pembelian}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value = "{{$data_km_cutting->tahun}}">
-      </div>
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Automatic Cut Out Switch (Bulanan)</label>
       <input type="text" name="automatic_cutout_switch_bulanan" class="form-control" value = "{{$data_km_cutting->automatic_cutout_switch_bulanan}}"> 
@@ -99,10 +103,6 @@
       <input type="date" name="dicek_tanggal" class="form-control" value = "{{$data_km_cutting->dicek_tanggal}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_km_cutting->tahun_pembelian}}">
-      </div>
-      <div class="mb-3">
       <label for="Input" class="form-label">Pisau Tumpul (Harian)</label>
       <input type="date" name="pisau_tumpul_harian" class="form-control" value = "{{$data_km_cutting->pisau_tumpul_harian}}"> 
     </div>

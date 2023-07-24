@@ -45,11 +45,15 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Bagian</label>
       <input type="text" name="bagian" class="form-control" value="{{$data_sewingsample->bagian}}">
-      </div>
+    </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun</label>
+      <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_sewingsample->tahun}}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Pembelian</label>
+      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_sewingsample->tahun_pembelian}}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Check Bobbin Case (Bulanan)</label>
       <input type="text" name="check_bobin_chase_bulanan" class="form-control" value="{{$data_sewingsample->check_bobin_chase_bulanan}}"> 
@@ -106,10 +110,6 @@
       <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_sewingsample->dicek_tanggal}}">
     </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Pembelian</label>
-      <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_sewingsample->tahun_pembelian}}">
-      </div>
       <div class="mb-3">
       <label for="Input" class="form-label">Jahitan Loncat (Harian)</label>
       <input type="date" name="jahitan_loncat_harian" class="form-control" value="{{$data_sewingsample->jahitan_loncat_harian}}"> 
