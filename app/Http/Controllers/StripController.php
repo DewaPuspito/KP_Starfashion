@@ -56,8 +56,9 @@ class StripController extends Controller
     {
         $data_strip = Strip::find($serial_number);
         $data_strip->update($request->all());
-        if(session('url')){
-            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        $returnRoute = Session::pull('url', null);
+        if ($returnRoute) {
+        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
         return redirect()->route('strip')->with('success', 'Data Berhasil Diperbarui');
     }

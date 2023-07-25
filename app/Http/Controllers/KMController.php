@@ -94,8 +94,9 @@ class KMController extends Controller
     {
         $data_km_cutting = KM::find($serial_number);
         $data_km_cutting->update($request->all());
-        if(session('url')){
-            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        $returnRoute = Session::pull('url', null);
+        if ($returnRoute) {
+        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
         return redirect()->route('km-cutting');
     }

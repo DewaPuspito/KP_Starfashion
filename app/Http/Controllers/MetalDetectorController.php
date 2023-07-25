@@ -99,8 +99,9 @@ class MetalDetectorController extends Controller
     {
         $data_metaldetector = MetalDetector::find($serial_number);
         $data_metaldetector->update($request->all());
-        if(session('url')){
-            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        $returnRoute = Session::pull('url', null);
+        if ($returnRoute) {
+        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
         return redirect()->route('metal-detector');
     }

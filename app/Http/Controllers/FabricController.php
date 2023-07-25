@@ -95,8 +95,9 @@ class FabricController extends Controller
     {
         $data_fabric = Fabric::find($serial_number);
         $data_fabric->update($request->all());
-        if(session('url')){
-            return redirect(session('url'))->with('success', 'Data Berhasil Diperbarui');
+        $returnRoute = Session::pull('url', null);
+        if ($returnRoute) {
+        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
         return redirect()->route('fabric');
     }
