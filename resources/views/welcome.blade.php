@@ -62,6 +62,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        <title>StarFashion Maintenance</title>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -79,7 +80,7 @@
             
             <div class="content">
             <div class="row"> 
-            <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="100"></img>
+            <img src="/images/logo.png" alt="Logo Starfashion" width="100" height="100"></img>
             </div>
             <div class="title m-b-md" style="color: #000000;">
                 Selamat Datang!

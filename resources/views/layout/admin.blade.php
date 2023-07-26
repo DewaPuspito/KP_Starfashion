@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StarFashion | Maintenance App</title>
+  <title>StarFashion Maintenance</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,15 +31,14 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img src="/images/logo.jpg" alt="Logo Starfashion" width="500" height="100">
+    <img src="/images/logo.png" alt="Logo Starfashion" width="500" height="100">
   </div>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="/images/logo.jpg" alt="StarFashion Logo" width="100" height="24">
-      <span class="brand-text font-weight-light">Maintenance</span>
+      <span class="brand-text font-weight-light">StarFashion Maintenance</span>
     </a>
 
     <!-- Sidebar -->
@@ -679,7 +678,7 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -726,9 +725,5 @@
 <script src="{{ asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dashboard/dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dashboard/dist/js/demo.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('dashboard/dist/js/pages/dashboard.js') }}"></script>
 </body>
 </html>

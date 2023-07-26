@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StarFashion | Log in</title>
+  <title>StarFashion Maintenance</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -59,7 +59,7 @@
         </div>
       </form>
       <p class="mb-0">
-        <a href="/register" class="text-center">Register new account</a>
+        <a href="/register" class="text-center">Sign In a new account</a>
       </p>
     </div>
     <!-- /.card-body -->

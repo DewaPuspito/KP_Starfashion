@@ -8,11 +8,11 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/sparepart">Checklist Mesin</a>
+      <a class="navbar-brand" href="/sparepart">StarFashion Maintenance</a>
       <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
     </div>
   </nav>
-  <title>Checklist Mesin</title>
+  <title>StarFashion Maintenance</title>
 </head>
 
 <body>

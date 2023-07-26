@@ -44,6 +44,7 @@
                                 <td>{{ $audit->event }}</td>
                                 <td>{{ is_array($audit->old_values) ? json_encode($audit->old_values) : $audit->old_values }}</td>
                                 <td>{{ is_array($audit->new_values) ? json_encode($audit->new_values) : $audit->new_values }}</td>
+                                <td>{{ $audit->updated_at }}</td>
                                 <td>
                                     <form action="{{ route('deletehistorysparepart', $audit->id) }}" method="POST" class="d-inline">
                                         @csrf

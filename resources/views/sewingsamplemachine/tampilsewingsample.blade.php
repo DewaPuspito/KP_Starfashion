@@ -178,6 +178,7 @@
     <label for="Input" class="form-label">Indikator Kesehatan Mesin</label>
       <select class="form-select" name="indikator_mesin" aria-label="Default select example">
         <option selected>{{ $data_sewingsample ->indikator_mesin }}</option>
+        <option value=""></option>
         <option value="Sehat">Sehat</option>
         <option value="Moderate">Moderate</option>
         <option value="Tidak Sehat">Tidak Sehat</option>
