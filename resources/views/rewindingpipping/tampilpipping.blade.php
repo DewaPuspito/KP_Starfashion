@@ -22,6 +22,7 @@
     <div class="card-body">
 <form action="/editpipping/{{$data_pipping->serial_number}}" method="POST" enctype="multipart/form-data">
   @csrf
+  @if (Route::has('login') && Auth::check())
   <div class="mb-3">
     <label for="Input" class="form-label">Serial Number</label>
     <input type="text" name="serial_number" class="form-control" value = "{{$data_pipping->serial_number}}"> 
@@ -50,6 +51,7 @@
       <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value = "{{$data_pipping->tahun}}">
     </div>
+    @endif
     <div class="mb-3">
       <label for="Input" class="form-label">Pengecekan Roll Press (Bulanan)</label>
       <input type="text" name="pengecekan_rollpress_bulanan" class="form-control" value = "{{$data_pipping->pengecekan_rollpress_bulanan}}"> 

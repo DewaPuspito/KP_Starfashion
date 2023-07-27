@@ -22,6 +22,7 @@
     <div class="card-body">
 <form action="/editplotter/{{$data_plotter->serial_number}}" method="POST" enctype="multipart/form-data">
   @csrf
+  @if (Route::has('login') && Auth::check())
   <div class="mb-3">
     <label for="Input" class="form-label">Serial Number</label>
     <input type="text" name="serial_number" class="form-control" value="{{$data_plotter->serial_number}}"> 
@@ -50,6 +51,7 @@
       <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value="{{$data_plotter->tahun}}">
     </div>
+    @endif
     <div class="mb-3">
       <label for="Input" class="form-label">Check Plotter Head (Bulanan)</label>
       <input type="text" name="check_plotter_head_bulanan" class="form-control" value="{{$data_plotter->check_plotter_head_bulanan}}"> 

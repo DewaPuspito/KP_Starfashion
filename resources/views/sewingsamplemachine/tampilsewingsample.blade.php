@@ -22,6 +22,7 @@
     <div class="card-body">
 <form action="/editsewingsample/{{$data_sewingsample->serial_number}}" method="POST" enctype="multipart/form-data">
   @csrf
+  @if (Route::has('login') && Auth::check())
   <div class="mb-3">
     <label for="Input" class="form-label">Serial Number</label>
     <input type="text" name="serial_number" class="form-control" value="{{$data_sewingsample->serial_number}}"> 
@@ -47,13 +48,14 @@
       <input type="text" name="bagian" class="form-control" value="{{$data_sewingsample->bagian}}">
     </div>
     <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Terkini</label>
-      <input type="year" name="tahun" class="form-control" value="{{$data_sewingsample->tahun}}">
-    </div>
-    <div class="mb-3">
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control" value="{{$data_sewingsample->tahun_pembelian}}">
     </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Tahun Terkini</label>
+      <input type="year" name="tahun" class="form-control" value="{{$data_sewingsample->tahun}}">
+    </div>
+    @endif
     <div class="mb-3">
       <label for="Input" class="form-label">Check Bobbin Case (Bulanan)</label>
       <input type="text" name="check_bobin_chase_bulanan" class="form-control" value="{{$data_sewingsample->check_bobin_chase_bulanan}}"> 

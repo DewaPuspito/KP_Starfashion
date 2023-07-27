@@ -22,6 +22,7 @@
     <div class="card-body">
 <form action="/editmetaldetector/{{$data_metaldetector->serial_number}}" method="POST" enctype="multipart/form-data">
   @csrf
+  @if (Route::has('login') && Auth::check())
   <div class="mb-3">
     <label for="Input" class="form-label">Serial Number</label>
     <input type="text" name="serial_number" class="form-control" value = "{{$data_metaldetector->serial_number}}"> 
@@ -50,6 +51,7 @@
       <label for="Input" class="form-label">Tahun Terkini</label>
       <input type="year" name="tahun" class="form-control" value = "{{$data_metaldetector->tahun}}">
     </div>
+    @endif
     <div class="mb-3">
       <label for="Input" class="form-label">Check Instalasi Electrical (Bulanan)</label>
       <input type="text" name="check_instalasi_electrical_bulanan" class="form-control" value = "{{$data_metaldetector->check_instalasi_electrical_bulanan}}"> 
