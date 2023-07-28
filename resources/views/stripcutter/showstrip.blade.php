@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_strip ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_strip ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_strip ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_strip ->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_strip ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_strip ->tahun }}</p>
         <p class="card-text">Check Pisau Potong (Bulanan) : {{ $data_strip ->check_pisau_potong_bulanan }}</p>
         <p class="card-text">Check Asahan (Bulanan) : {{ $data_strip ->check_asahan_bulanan }}</p>
         <p class="card-text">Check Fungsi Jalur Air Asahan (Bulanan): {{ $data_strip ->check_fungsi_jalur_air_asahan_bulanan }}</p>
@@ -43,7 +44,6 @@
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_strip ->komponen_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_strip ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal : {{ $data_strip ->dicek_tanggal }}</p>
-        <p class="card-text">Tahun Pembelian : {{ $data_strip ->tahun_pembelian }}</p>
         <p class="card-text">Perbaikan Roll Press (Harian) : {{ $data_strip ->perbaikan_rollpress_harian }}</p>
         <p class="card-text">Ganti Asahan (Harian): {{ $data_strip ->ganti_asahan_harian }}</p>
         <p class="card-text">Ganti Pisau Potong (Harian) : {{ $data_strip ->ganti_pisau_potong_harian }}</p>
@@ -53,6 +53,7 @@
         <p class="card-text">Perbaikan Emergency Auto Stop (Harian): {{ $data_strip ->perbaikan_emergency_autostop_harian }}</p>
         <p class="card-text">Komponen Lainnya (Harian): {{ $data_strip ->komponen_lainnya_harian }}</p>
         <p class="card-text">Bersihkan Bak Mesin (Harian) : {{ $data_strip ->kebersihan_mesin_harian}}</p>
+        <p class="card-text">Tanggal Sparepart Diganti : {{$data_strip->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_strip->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_strip ->sparepart->harga_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Indikator Kesehatan Mesin : {{ $data_strip ->indikator_mesin }}</p>

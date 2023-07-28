@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_km_cutting ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_km_cutting ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_km_cutting ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_km_cutting ->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_km_cutting ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_km_cutting ->tahun }}</p>
         <p class="card-text">Automatic Cut Out Switch (Bulanan) : {{ $data_km_cutting ->automatic_cutout_switch_bulanan}}</p>
         <p class="card-text">Insulate Plate (Bulanan) : {{ $data_km_cutting ->insulate_plate_bulanan }}</p>
         <p class="card-text">Oil Tank (Bulanan): {{ $data_km_cutting ->oil_tank_bulanan }}</p>
@@ -46,7 +47,6 @@
         <p class="card-text">Thread Guide (Bulanan) : {{ $data_km_cutting ->thread_guide_bulanan }}</p>
         <p class="card-text">Sparepart Lainnya (Bulanan) : {{ $data_km_cutting ->sparepart_lainnya_bulanann }}</p>  
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_km_cutting ->dicek_tanggal }}</p>
-        <p class="card-text">Tahun Pembelian : {{ $data_km_cutting ->tahun_pembelian }}</p>
         <p class="card-text">Pisau Tumpul (Harian) : {{ $data_km_cutting ->pisau_tumpul_harian }}</p>
         <p class="card-text">Minyak Habis (Harian): {{ $data_km_cutting ->minyak_habis_harian }}</p>
         <p class="card-text">Ganti Abrasif (Harian) : {{ $data_km_cutting ->ganti_abrasif_harian }}</p>

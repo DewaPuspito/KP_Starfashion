@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_fabric ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_fabric ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_fabric ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_fabric->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_fabric ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_fabric->tahun }}</p>
         <p class="card-text">Check Gear Box (Bulanan) : {{ $data_fabric ->check_gear_box_bulanan }}</p>
         <p class="card-text">Ganti Oli Gear Box (Bulanan) : {{ $data_fabric ->ganti_oli_gear_box_bulanan }}</p>
         <p class="card-text">Check Tegangan Rantai (Bulanan): {{ $data_fabric ->check_tegangan_rantai_bulanan }}</p>

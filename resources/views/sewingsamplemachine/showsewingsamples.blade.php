@@ -8,12 +8,12 @@
       <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
       <nav class="navbar navbar-dark bg-secondary">
       <div class="container-fluid">
-      <a class="navbar-brand" href="/sewing-sample">Checklist Mesin</a>
+      <a class="navbar-brand" href="/sewing-sample">StarFashion Maintenance</a>
       <img src="/images/logo.jpg" alt="Logo Starfashion" width="100" height="24">
       </div>
     </div>
   </nav>
-  <title>Checklist Mesin</title>
+  <title>StarFashion Maintenance</title>
     </head>
     <body>
     <h1><center>Sewing Line and Sample Machines<center></h1>
@@ -33,7 +33,8 @@
           <p class="card-text">Jenis Mesin : {{ $data_sewingsample ->jenis_mesin }}</p>
           <p class="card-text">Merk Mesin : {{ $data_sewingsample ->merk_mesin }}</p>
           <p class="card-text">Bagian : {{ $data_sewingsample ->bagian }}</p>
-          <p class="card-text">Tahun : {{ $data_sewingsample->tahun }}</p>
+          <p class="card-text">Tahun Pembelian : {{ $data_sewingsample ->tahun_pembelian }}</p>
+          <p class="card-text">Tahun Terkini : {{ $data_sewingsample->tahun }}</p>
           <p class="card-text">Check Bobbin Case (Bulanan) : {{ $data_sewingsample ->check_bobin_chase_bulanan }}</p>
           <p class="card-text">Needle Guard (Bulanan) : {{ $data_sewingsample ->needle_guard_bulanan }}</p>
           <p class="card-text">Check Belt Cover (Bulanan): {{ $data_sewingsample ->check_belt_cover_bulanan }}</p>
@@ -48,7 +49,6 @@
           <p class="card-text">Check Spring Tension (Bulanan) : {{ $data_sewingsample ->check_spring_tension_bulanan }}</p>
           <p class="card-text">Check Jalur Benang (Bulanan) : {{ $data_sewingsample ->check_jalur_benang_bulanan }}</p>
           <p class="card-text">Pengecekan Bulanan dilakukan Tanggal : {{ $data_sewingsample ->dicek_tanggal }}</p>
-          <p class="card-text">Tahun Pembelian : {{ $data_sewingsample ->tahun_pembelian }}</p>
           <p class="card-text">Jahitan Loncat (Harian) : {{ $data_sewingsample ->jahitan_loncat_harian }}</p>
           <p class="card-text">Benang Putusan (Harian): {{ $data_sewingsample ->benang_putusan_harian }}</p>
           <p class="card-text">Ganti Gunting/Pisau (Harian) : {{ $data_sewingsample ->ganti_gunting_pisau_harian }}</p>
@@ -63,6 +63,7 @@
           <p class="card-text">Kebersihan Mesin (Harian) : {{ $data_sewingsample ->kebersihan_mesin_harian}}</p>
           <p class="card-text">Cek Kondisi Minyak Mesin (Harian) : {{ $data_sewingsample ->cek_kondisi_minyak_mesin_harian }}</p>
           <p class="card-text">Ganti Sparepart Lainnya (Harian) : {{ $data_sewingsample ->ganti_sparepart_lainnya_harian }}</p>
+          <p class="card-text">Tanggal Sparepart Diganti : {{$data_sewingsample->sparepart->sparepart_keluar ?? 'N/A'}}</p>
           <p class="card-text">Jenis Sparepart yang Diganti : {{$data_sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Harga Sparepart : {{$data_sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Indikator Kesehatan Mesin : {{ $data_sewingsample ->indikator_mesin }}</p>

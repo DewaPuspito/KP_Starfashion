@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="{{ asset('dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dashboard/dist/css/adminlte.min.css') }}">
+  <style>
+    .password-toggle-btn {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -35,10 +40,10 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" id="password" placeholder="Password">
           <div class="input-group-append"> 
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+            <div class="input-group-text password-toggle-btn">
+              <span class="fas fa-eye"></span>
             </div>
           </div>
         </div>
@@ -67,12 +72,33 @@
   <!-- /.card -->
 </div>
 <!-- /.login-box -->
-
-<!-- jQuery -->
-<script src="{{ asset('dashboard/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
+ <!-- jQuery -->
+ <script src="{{ asset('dashboard/plugins/jquery/jquery.min.js') }}"></script>
+  <!-- Font Awesome -->
+<script src="{{ asset('dashboard/plugins/fontawesome-free/js/all.min.js') }}"></script>
+  <!-- Bootstrap 4 -->
 <script src="{{ asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dashboard/dist/js/adminlte.min.js') }}"></script>
+<!-- JavaScript to handle password visibility toggle -->
+<script>
+    // Wait for the document to be ready
+    $(document).ready(function() {
+      // Target the password input field and the toggle button
+      var passwordField = $("#password");
+      var toggleButton = $(".password-toggle-btn");
+
+      // Attach a click event to the toggle button
+      toggleButton.click(function() {
+        // Change the input type to 'text' or 'password' to show or hide the password
+        var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+        passwordField.attr('type', type);
+
+        // Change the icon of the toggle button to show an eye or an eye-slash
+        var iconClass = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+        toggleButton.find('span').removeClass().addClass(iconClass);
+      });
+    });
+  </script>
 </body>
 </html>

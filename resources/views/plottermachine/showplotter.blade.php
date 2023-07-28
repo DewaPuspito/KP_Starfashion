@@ -31,7 +31,8 @@
           <p class="card-text">Label : {{ $data_plotter->label }}</p>
           <p class="card-text">Merk Mesin : {{ $data_plotter->merk_mesin }}</p>
           <p class="card-text">Bagian : {{ $data_plotter->bagian }}</p>
-          <p class="card-text">Tahun : {{ $data_plotter->tahun }}</p>
+          <p class="card-text">Tahun Pembelian : {{ $data_plotter->tahun_pembelian }}</p>
+          <p class="card-text">Tahun Terkini : {{ $data_plotter->tahun }}</p>
           <p class="card-text">Check Plotter Head (Bulanan) : {{ $data_plotter->check_plotter_head_bulanan }}</p>
           <p class="card-text">Check Stand Pole (Bulanan) : {{ $data_plotter->check_stand_pole_bulanan }}</p>
           <p class="card-text">Check Foot Bar (Bulanan): {{ $data_plotter->check_foot_bar_bulanan }}</p>
@@ -44,7 +45,6 @@
           <p class="card-text">Check Print Head (Bulanan) : {{ $data_plotter->check_print_head_bulanan }}</p>
           <p class="card-text">Check Kebersihan (Bulanan) : {{ $data_plotter->check_kebersihan_bulanan }}</p>
           <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_plotter->dicek_tanggal }}</p>
-          <p class="card-text">Tahun Pembelian : {{ $data_plotter->tahun_pembelian }}</p>
           <p class="card-text">Perbaikan Plotter Head (Harian) : {{ $data_plotter->perbaikan_plotter_head_harian }}</p>
           <p class="card-text">Perbaikan Stand Pole (Harian): {{ $data_plotter->perbaikan_stand_pole_harian }}</p>
           <p class="card-text">Perbaikan Foot Bar (Harian) : {{ $data_plotter->perbaikan_foot_bar_harian }}</p>
@@ -56,6 +56,7 @@
           <p class="card-text">Perbaikan Connection Cable (Harian) : {{ $data_plotter->perbaikan_connection_cable_harian}}</p>
           <p class="card-text">Perbaikan/Ganti Print Head (Harian) : {{ $data_plotter->perbaikan_ganti_print_head_harian }}</p>
           <p class="card-text">Kebersihan Mesin (Harian) : {{ $data_plotter->kebersihan_mesin_harian}}</p>
+          <p class="card-text">Tanggal Sparepart Diganti : {{$data_plotter->sparepart->sparepart_keluar ?? 'N/A'}}</p>
           <p class="card-text">Jenis Sparepart yang Diganti : {{$data_plotter->sparepart->nama_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Harga Sparepart : {{$data_plotter ->sparepart->harga_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Indikator Kesehatan Mesin : {{ $data_plotter ->indikator_mesin }}</p>

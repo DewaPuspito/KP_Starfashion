@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_fuse ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_fuse ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_fuse ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_fuse->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_fuse ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_fuse->tahun }}</p>
         <p class="card-text">Check Belt Atas (Bulanan) : {{ $data_fuse ->check_belt_atas_bulanan }}</p>
         <p class="card-text">Check Belt Bawah (Bulanan) : {{ $data_fuse ->check_belt_bawah_bulanan }}</p>
         <p class="card-text">Tension Belt Atas (Bulanan): {{ $data_fuse ->tension_belt_atas_bulanan }}</p>
@@ -46,7 +47,6 @@
         <p class="card-text">Check Kontrol Temperatur (Bulanan) : {{ $data_fuse ->check_kontrol_temperatur_bulanan }}</p>
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_fuse ->komponen_lainnya_bulanan }}</p>  
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_fuse ->dicek_tanggal }}</p>
-        <p class="card-text">Tahun Pembelian : {{ $data_fuse ->tahun_pembelian }}</p>
         <p class="card-text">Ganti Belt Atas (Harian) : {{ $data_fuse ->ganti_belt_atas_harian }}</p>
         <p class="card-text">Ganti Belt Bawah (Harian): {{ $data_fuse ->ganti_belt_bawah_harian }}</p>
         <p class="card-text">Perbaikan Tension Belt Atas (Harian) : {{ $data_fuse ->perbaikan_tension_belt_atas_harian }}</p>

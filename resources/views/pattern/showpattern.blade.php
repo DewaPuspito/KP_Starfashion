@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_pattern ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_pattern ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_pattern ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_pattern ->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_pattern ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_pattern ->tahun }}</p>
         <p class="card-text">Pemberian Minyak pada Ril (Bulanan) : {{ $data_pattern ->pemberian_minyak_pada_ril_bulanan}}</p>
         <p class="card-text">Check Pulpen (Bulanan) : {{ $data_pattern ->check_pulpen_bulanan }}</p>
         <p class="card-text">Check Pisau (Bulanan): {{ $data_pattern ->check_pisau_bulanan }}</p>
@@ -41,7 +42,6 @@
         <p class="card-text">Check Vacum (Bulanan) : {{ $data_pattern ->check_vacum_bulanan }}</p>
         <p class="card-text">Check Belt (Bulanan) : {{ $data_pattern ->check_belt_bulanan }}</p>
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_pattern ->dicek_tanggal }}</p>
-        <p class="card-text">Tahun Pembelian : {{ $data_pattern ->tahun_pembelian }}</p>
         <p class="card-text">Pemberian Minyak pada Ril (Harian) : {{ $data_pattern ->pemberian_minyak_pada_ril_harian }}</p>
         <p class="card-text">Ganti Pulpen (Harian): {{ $data_pattern ->ganti_pulpen_harian }}</p>
         <p class="card-text">Ganti Pisau (Harian) : {{ $data_pattern ->ganti_pisau_harian }}</p>

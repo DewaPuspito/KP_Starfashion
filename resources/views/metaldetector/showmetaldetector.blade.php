@@ -32,7 +32,8 @@
         <p class="card-text">Label : {{ $data_metaldetector ->label }}</p>
         <p class="card-text">Merk Mesin : {{ $data_metaldetector ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_metaldetector ->bagian }}</p>
-        <p class="card-text">Tahun : {{ $data_metaldetector ->tahun }}</p>
+        <p class="card-text">Tahun Pembelian : {{ $data_metaldetector ->tahun_pembelian }}</p>
+        <p class="card-text">Tahun Terkini : {{ $data_metaldetector ->tahun }}</p>
         <p class="card-text">Check Instalasi Electrical (Bulanan) : {{ $data_metaldetector ->check_instalasi_electrical_bulanan}}</p>
         <p class="card-text">Check Switch Auto Stop (Bulanan) : {{ $data_metaldetector ->check_switch_auto_stop_bulanan }}</p>
         <p class="card-text">Check Belt (Bulanan): {{ $data_metaldetector ->check_belt_bulanan }}</p>
