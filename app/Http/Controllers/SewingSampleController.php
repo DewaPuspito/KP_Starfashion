@@ -765,7 +765,7 @@ class SewingSampleController extends Controller
             ->get();
 
         } else {
-            $data_sewingsample = SewingSample::all();
+            $data_sewingsample = SewingSample::sortable()->get();
         }
 
         return view('sewingsamplemachine.sewingsamples', compact('data_sewingsample'));

@@ -56,11 +56,11 @@
     <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th scope="col">Serial Number</th>
-      <th scope="col">Tipe</th>
-      <th scope="col">Jenis Mesin</th>
-      <th scope="col">Merk Mesin</th>
-      <th scope="col">Bagian</th>
+      <th scope="col">@sortablelink('serial_number', 'Serial Number')</th>
+      <th scope="col">@sortablelink('tipe', 'Tipe')</th>
+      <th scope="col">@sortablelink('jenis_mesin', 'Jenis Mesin')</th>
+      <th scope="col">@sortablelink('merk_mesin', 'Merk Mesin')</th>
+      <th scope="col">@sortablelink('bagian', 'Bagian')</th>
       <th scope="col">Tahun Pembelian</th>
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
