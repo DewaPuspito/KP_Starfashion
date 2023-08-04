@@ -18,77 +18,11 @@ class FuseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        $jumlahBeltAtas = $request->query('belt-atas');
-        $jumlahBeltBawah = $request->query('belt-bawah');
-        $jumlahBearingAtas = $request->query('bearing-atas');
-        $jumlahBearingBawah = $request->query('bearing-bawah');
-        $jumlahRollpressAtas = $request->query('rollpress-atas');
-        $jumlahRollpressBawah = $request->query('rollpress-bawah');
-        $jumlahSwitchKontrol = $request->query('switch');
-        $jumlahKontrolSpeed = $request->query('speed');
-        $jumlahTemperatur = $request->query('temperatur');
-        
+    {        
         // if($request->has('search')) {
         //     $data_fuse = Fuse::where('serial_number','LIKE', '%' .$request->search.'%')->get();
         // } 
-        if ($jumlahBeltAtas) {
-            $data_fuse = Fuse::whereNotNull($jumlahBeltAtas)
-                ->whereMonth($jumlahBeltAtas, now()->format('m'))
-                ->whereYear($jumlahBeltAtas, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahBeltBawah) {
-            $data_fuse = Fuse::whereNotNull($jumlahBeltBawah)
-                ->whereMonth($jumlahBeltBawah, now()->format('m'))
-                ->whereYear($jumlahBeltBawah, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahBearingAtas) {
-            $data_fuse = Fuse::whereNotNull($jumlahBearingAtas)
-                ->whereMonth($jumlahBearingAtas, now()->format('m'))
-                ->whereYear($jumlahBearingAtas, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahBearingBawah) {
-            $data_fuse = Fuse::whereNotNull($jumlahBearingBawah)
-                ->whereMonth($jumlahBearingBawah, now()->format('m'))
-                ->whereYear($jumlahBearingBawah, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahRollpressAtas) {
-            $data_fuse = Fuse::whereNotNull($jumlahRollpressAtas)
-                ->whereMonth($jumlahRollpressAtas, now()->format('m'))
-                ->whereYear($jumlahRollpressAtas, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahRollpressBawah) {
-            $data_fuse = Fuse::whereNotNull($jumlahRollpressBawah)
-                ->whereMonth($jumlahRollpressBawah, now()->format('m'))
-                ->whereYear($jumlahRollpressBawah, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahSwitchKontrol) {
-            $data_fuse = Fuse::whereNotNull($jumlahSwitchKontrol)
-                ->whereMonth($jumlahSwitchKontrol, now()->format('m'))
-                ->whereYear($jumlahSwitchKontrol, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahKontrolSpeed) {
-            $data_fuse = Fuse::whereNotNull($jumlahKontrolSpeed)
-                ->whereMonth($jumlahKontrolSpeed, now()->format('m'))
-                ->whereYear($jumlahKontrolSpeed, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahTemperatur) {
-            $data_fuse = Fuse::whereNotNull($jumlahTemperatur)
-                ->whereMonth($jumlahTemperatur, now()->format('m'))
-                ->whereYear($jumlahTemperatur, now()->format('Y'))
-                ->get();
-
-        } else {
         $data_fuse = Fuse::all(); 
-        }
         return view ('fusemachine.fuses', compact('data_fuse'));
     }
 

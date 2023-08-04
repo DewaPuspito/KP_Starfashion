@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_fabric ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_fabric ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_fabric ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_fabric->tahun }}</p>
         <p class="card-text">Check Gear Box (Bulanan) : {{ $data_fabric ->check_gear_box_bulanan }}</p>
         <p class="card-text">Ganti Oli Gear Box (Bulanan) : {{ $data_fabric ->ganti_oli_gear_box_bulanan }}</p>
         <p class="card-text">Check Tegangan Rantai (Bulanan): {{ $data_fabric ->check_tegangan_rantai_bulanan }}</p>
@@ -54,7 +53,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_fabric->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fabric ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_fabric ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_fabric ->indikator_mesin }}</p>
         <div class= text-center>
         <td><a class="btn btn-secondary" href="/historyfabric/{{$data_fabric->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilfabric/{{$data_fabric->serial_number}}" role="button">Update</a>

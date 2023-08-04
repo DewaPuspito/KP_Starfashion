@@ -14,54 +14,10 @@ class FabricController extends Controller
 {
     public function index(Request $request)
     {
-        $jumlahGearBox = $request->query('gear');
-        $jumlahOliGear = $request->query('oli');
-        $jumlahRantai = $request->query('rantai');
-        $jumlahMotor = $request->query('motor');
-        $jumlahGrease = $request->query('grease');
-        $jumlahKaret = $request->query('karet');
-        
         // if($request->has('search')) {
         //     $data_fabric = Fabric::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        if ($jumlahGearBox) {
-            $data_fabric = Fabric::whereNotNull($jumlahGearBox)
-                ->whereMonth($jumlahGearBox, now()->format('m'))
-                ->whereYear($jumlahGearBox, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahOliGear) {
-            $data_fabric = Fabric::whereNotNull($jumlahOliGear)
-                ->whereMonth($jumlahOliGear, now()->format('m'))
-                ->whereYear($jumlahOliGear, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahRantai) {
-            $data_fabric = Fabric::whereNotNull($jumlahRantai)
-                ->whereMonth($jumlahRantai, now()->format('m'))
-                ->whereYear($jumlahRantai, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahMotor) {
-            $data_fabric = Fabric::whereNotNull($jumlahMotor)
-                ->whereMonth($jumlahMotor, now()->format('m'))
-                ->whereYear($jumlahMotor, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahGrease) {
-            $data_fabric = Fabric::whereNotNull($jumlahGrease)
-                ->whereMonth($jumlahGrease, now()->format('m'))
-                ->whereYear($jumlahGrease, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahKaret) {
-            $data_fabric = Fabric::whereNotNull($jumlahKaret)
-                ->whereMonth($jumlahKaret, now()->format('m'))
-                ->whereYear($jumlahKaret, now()->format('Y'))
-                ->get();
-
-        } else {
-        $data_fabric = Fabric::all(); 
-        }
+        // }
+        $data_fabric = Fabric::all();
         return view ('fabric.fabrics', compact('data_fabric'));
     }
 

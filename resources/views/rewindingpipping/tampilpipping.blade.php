@@ -47,10 +47,6 @@
       <label for="Input" class="form-label">Tahun Pembelian</label>
       <input type="year" name="tahun_pembelian" class="form-control" value = "{{$data_pipping->tahun_pembelian}}">
     </div>
-    <div class="mb-3">
-      <label for="Input" class="form-label">Tahun Terkini</label>
-      <input type="year" name="tahun" class="form-control" value = "{{$data_pipping->tahun}}">
-    </div>
     @endif
     <div class="mb-3">
       <label for="Input" class="form-label">Pengecekan Roll Press (Bulanan)</label>
@@ -135,15 +131,6 @@
         @foreach ($data_sparepart as $sparepart )
         <option value="{{$sparepart->id_sparepart}}">{{$sparepart->nama_sparepart}}</option>
         @endforeach
-      </select>
-    </div>
-    <div class="mb-3">
-    <label for="Input" class="form-label">Indikator Kesehatan Mesin</label>
-      <select class="form-select" name="indikator_mesin" aria-label="Default select example">
-        <option selected>{{ $data_pipping ->indikator_mesin }}</option>
-        <option value="Sehat">Sehat</option>
-        <option value="Moderate">Moderate</option>
-        <option value="Tidak Sehat">Tidak Sehat</option>
       </select>
     </div>
     <div class=text-center>

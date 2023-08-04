@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_pattern ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_pattern ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_pattern ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_pattern ->tahun }}</p>
         <p class="card-text">Pemberian Minyak pada Ril (Bulanan) : {{ $data_pattern ->pemberian_minyak_pada_ril_bulanan}}</p>
         <p class="card-text">Check Pulpen (Bulanan) : {{ $data_pattern ->check_pulpen_bulanan }}</p>
         <p class="card-text">Check Pisau (Bulanan): {{ $data_pattern ->check_pisau_bulanan }}</p>
@@ -53,7 +52,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_pattern->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_pattern ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_pattern ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_pattern ->indikator_mesin }}</p>
         <div class=text-center>
         <td><a class="btn btn-secondary" href="/historypattern/{{$data_pattern->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilpattern/{{$data_pattern ->serial_number}}" role="button">Update</a>

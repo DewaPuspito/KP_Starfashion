@@ -19,54 +19,9 @@ class MetalDetectorController extends Controller
      */
     public function index(Request $request)
     {
-        $jumlahInstalasiElectrical = $request->query('electrical');
-        $jumlahSwitchAutoStop = $request->query('autostop');
-        $jumlahBelts = $request->query('belts');
-        $jumlahDinamoMotor = $request->query('dinamo');
-        $jumlahSensitifitas = $request->query('sensitifitas');
-        $jumlahSparepartLainnya = $request->query('sparepartss');
-
         // if($request->has('search')) {
         //     $data_metaldetector = MetalDetector::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        if ($jumlahInstalasiElectrical) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahInstalasiElectrical)
-                ->whereMonth($jumlahInstalasiElectrical, now()->format('m'))
-                ->whereYear($jumlahInstalasiElectrical, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahSwitchAutoStop) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahSwitchAutoStop)
-                ->whereMonth($jumlahSwitchAutoStop, now()->format('m'))
-                ->whereYear($jumlahSwitchAutoStop, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahBelts) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahBelts)
-                ->whereMonth($jumlahBelts, now()->format('m'))
-                ->whereYear($jumlahBelts, now()->format('Y'))
-                ->get();
-                
-        } elseif ($jumlahDinamoMotor) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahDinamoMotor)
-                ->whereMonth($jumlahDinamoMotor, now()->format('m'))
-                ->whereYear($jumlahDinamoMotor, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahSensitifitas) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahSensitifitas)
-                ->whereMonth($jumlahSensitifitas, now()->format('m'))
-                ->whereYear($jumlahSensitifitas, now()->format('Y'))
-                ->get();
-
-        } elseif ($jumlahSparepartLainnya) {
-            $data_metaldetector = MetalDetector::whereNotNull($jumlahSparepartLainnya)
-                ->whereMonth($jumlahSparepartLainnya, now()->format('m'))
-                ->whereYear($jumlahSparepartLainnya, now()->format('Y'))
-                ->get();
-
-        } else {
         $data_metaldetector = MetalDetector::all();
-        }
         return view ('metaldetector.metaldetectors', compact('data_metaldetector'));
     }
 

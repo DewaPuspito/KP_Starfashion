@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_km_cutting ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_km_cutting ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_km_cutting ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_km_cutting ->tahun }}</p>
         <p class="card-text">Automatic Cut Out Switch (Bulanan) : {{ $data_km_cutting ->automatic_cutout_switch_bulanan}}</p>
         <p class="card-text">Insulate Plate (Bulanan) : {{ $data_km_cutting ->insulate_plate_bulanan }}</p>
         <p class="card-text">Oil Tank (Bulanan): {{ $data_km_cutting ->oil_tank_bulanan }}</p>
@@ -57,7 +56,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_km_cutting->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_km_cutting ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_km_cutting ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_km_cutting ->indikator_mesin }}</p>
         <div class=text-center>
         <td><a class="btn btn-secondary" href="/historykmcutting/{{$data_km_cutting->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilkmcutting/{{$data_km_cutting ->serial_number}}" role="button">Update</a>

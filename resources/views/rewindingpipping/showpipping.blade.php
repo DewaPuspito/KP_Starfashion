@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_pipping ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_pipping ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_pipping ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_pipping->tahun }}</p>
         <p class="card-text">Pengecekan Roll Press (Bulanan) : {{ $data_pipping ->pengecekan_rollpress_bulanan }}</p>
         <p class="card-text">Pengecekan Counter (Bulanan) : {{ $data_pipping ->pengecekan_counter_bulanan }}</p>
         <p class="card-text">Pengecekan Pisau Potong (Bulanan): {{ $data_pipping ->pengecekan_pisau_potong_bulanan }}</p>
@@ -56,7 +55,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_pipping->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_pipping->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_pipping ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_pipping ->indikator_mesin }}</p>
         <div class= text-center>
         <td><a class="btn btn-secondary" href="/historypipping/{{$data_pipping->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilpipping/{{$data_pipping->serial_number}}" role="button">Update</a>

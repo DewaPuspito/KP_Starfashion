@@ -32,7 +32,6 @@
           <p class="card-text">Merk Mesin : {{ $data_plotter->merk_mesin }}</p>
           <p class="card-text">Bagian : {{ $data_plotter->bagian }}</p>
           <p class="card-text">Tahun Pembelian : {{ $data_plotter->tahun_pembelian }}</p>
-          <p class="card-text">Tahun Terkini : {{ $data_plotter->tahun }}</p>
           <p class="card-text">Check Plotter Head (Bulanan) : {{ $data_plotter->check_plotter_head_bulanan }}</p>
           <p class="card-text">Check Stand Pole (Bulanan) : {{ $data_plotter->check_stand_pole_bulanan }}</p>
           <p class="card-text">Check Foot Bar (Bulanan): {{ $data_plotter->check_foot_bar_bulanan }}</p>
@@ -59,7 +58,6 @@
           <p class="card-text">Tanggal Sparepart Diganti : {{$data_plotter->sparepart->sparepart_keluar ?? 'N/A'}}</p>
           <p class="card-text">Jenis Sparepart yang Diganti : {{$data_plotter->sparepart->nama_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Harga Sparepart : {{$data_plotter ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-          <p class="card-text">Indikator Kesehatan Mesin : {{ $data_plotter ->indikator_mesin }}</p>
           <div class=text-center>
           <td><a class="btn btn-secondary" href="/historyplotter/{{$data_plotter->serial_number}}" role="button">See History</a>
           <a class="btn btn-warning" href="/tampilplotter/{{$data_plotter->serial_number}}" role="button">Update</a>

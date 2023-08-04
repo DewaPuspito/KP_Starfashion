@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_fuse ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_fuse ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_fuse ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_fuse->tahun }}</p>
         <p class="card-text">Check Belt Atas (Bulanan) : {{ $data_fuse ->check_belt_atas_bulanan }}</p>
         <p class="card-text">Check Belt Bawah (Bulanan) : {{ $data_fuse ->check_belt_bawah_bulanan }}</p>
         <p class="card-text">Tension Belt Atas (Bulanan): {{ $data_fuse ->tension_belt_atas_bulanan }}</p>
@@ -63,7 +62,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_fuse->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_fuse ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_fuse ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_fuse ->indikator_mesin }}</p>
         <div class= text-center>
         <td><a class="btn btn-secondary" href="/historyfuse/{{$data_fuse->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilfuse/{{$data_fuse->serial_number}}" role="button">Update</a>

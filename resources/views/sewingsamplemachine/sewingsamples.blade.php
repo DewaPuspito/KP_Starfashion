@@ -33,7 +33,6 @@
                 <option value="jenis">Jenis Mesin</option>
                 <option value="bagian">Bagian</option>
                 <option value="sparepart-diganti">Sparepart Diganti</option>
-                <option value="indikator-mesin">Indikator Mesin</option>
             </select>
         </div>
         <div class="col-auto">
@@ -65,7 +64,6 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
-      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -81,7 +79,6 @@
       <td>{{$sewingsample ->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</td>
-      <td>{{$sewingsample ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showsewingsample/{{$sewingsample->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

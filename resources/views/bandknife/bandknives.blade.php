@@ -44,7 +44,6 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
-      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -59,7 +58,6 @@
       <td>{{$bandknife->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$bandknife ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$bandknife ->sparepart->harga_sparepart ?? 'N/A'}}</td>
-      <td>{{$bandknife ->indikator_mesin}}</td>
 
       <td><a class="btn btn-info" href="/showbandknife/{{$bandknife ->serial_number}}" role="button">Details</a></td>
     </tr>

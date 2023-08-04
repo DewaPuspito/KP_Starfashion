@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_strip ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_strip ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_strip ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_strip ->tahun }}</p>
         <p class="card-text">Check Pisau Potong (Bulanan) : {{ $data_strip ->check_pisau_potong_bulanan }}</p>
         <p class="card-text">Check Asahan (Bulanan) : {{ $data_strip ->check_asahan_bulanan }}</p>
         <p class="card-text">Check Fungsi Jalur Air Asahan (Bulanan): {{ $data_strip ->check_fungsi_jalur_air_asahan_bulanan }}</p>
@@ -56,7 +55,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_strip->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_strip->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_strip ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_strip ->indikator_mesin }}</p>
         <div class= text-center>
         <td><a class="btn btn-secondary" href="/historystrip/{{$data_strip->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilstrip/{{$data_strip->serial_number}}" role="button">Update</a>

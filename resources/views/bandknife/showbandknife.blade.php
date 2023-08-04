@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_bandknife ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_bandknife ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_bandknife ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_bandknife->tahun }}</p>
         <p class="card-text">Check Electrical Instalasi (Bulanan) : {{ $data_bandknife ->check_electrical_instalasi_bulanan }}</p>
         <p class="card-text">Check Motor Bearing Pully (Bulanan) : {{ $data_bandknife ->check_motor_bearing_pully_bulanan }}</p>
         <p class="card-text">Check Kekencangan Pisau (Bulanan): {{ $data_bandknife ->check_kekencangan_pisau_bulanan }}</p>
@@ -51,7 +50,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_bandknife->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_bandknife ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_bandknife ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_bandknife ->indikator_mesin }}</p>
         <div class= text-center>
         <td><a class="btn btn-secondary" href="/historybandknife/{{$data_bandknife->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilbandknife/{{$data_bandknife->serial_number}}" role="button">Update</a>

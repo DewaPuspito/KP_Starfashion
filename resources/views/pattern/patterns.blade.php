@@ -45,7 +45,6 @@
       <th scope="col">Tanggal Sparepart Diganti</th>
       <th scope="col">Jenis Sparepart yang Diganti</th>
       <th scope="col">Harga Sparepart</th>
-      <th scope="col">Indikator Kesehatan Mesin</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -60,7 +59,6 @@
       <td>{{$pattern ->sparepart->sparepart_keluar ?? 'N/A'}}</td>
       <td>{{$pattern ->sparepart->nama_sparepart ?? 'N/A'}}</td>
       <td>{{$pattern ->sparepart->harga_sparepart ?? 'N/A'}}</td>
-      <td>{{$pattern ->indikator_mesin}}</td>
       <td><a class="btn btn-info" href="/showpattern/{{$pattern ->serial_number}}" role="button">Details</a></td>
     </tr>
     @endforeach

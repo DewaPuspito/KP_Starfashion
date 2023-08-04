@@ -33,7 +33,6 @@
         <p class="card-text">Merk Mesin : {{ $data_metaldetector ->merk_mesin }}</p>
         <p class="card-text">Bagian : {{ $data_metaldetector ->bagian }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_metaldetector ->tahun_pembelian }}</p>
-        <p class="card-text">Tahun Terkini : {{ $data_metaldetector ->tahun }}</p>
         <p class="card-text">Check Instalasi Electrical (Bulanan) : {{ $data_metaldetector ->check_instalasi_electrical_bulanan}}</p>
         <p class="card-text">Check Switch Auto Stop (Bulanan) : {{ $data_metaldetector ->check_switch_auto_stop_bulanan }}</p>
         <p class="card-text">Check Belt (Bulanan): {{ $data_metaldetector ->check_belt_bulanan }}</p>
@@ -53,7 +52,6 @@
         <p class="card-text">Tanggal Sparepart Diganti : {{$data_metaldetector->sparepart->sparepart_keluar ?? 'N/A'}}</p>
         <p class="card-text">Jenis Sparepart yang Diganti : {{$data_metaldetector ->sparepart->nama_sparepart ?? 'N/A'}}</p>
         <p class="card-text">Harga Sparepart : {{$data_metaldetector ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-        <p class="card-text">Indikator Kesehatan Mesin : {{ $data_metaldetector ->indikator_mesin }}</p>
         <div class=text-center>
         <td><a class="btn btn-secondary" href="/historymetaldetector/{{$data_metaldetector->serial_number}}" role="button">See History</a>
         <a class="btn btn-warning" href="/tampilmetaldetector/{{$data_metaldetector ->serial_number}}" role="button">Update</a>

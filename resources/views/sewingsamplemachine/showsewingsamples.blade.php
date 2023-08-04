@@ -34,7 +34,6 @@
           <p class="card-text">Merk Mesin : {{ $data_sewingsample ->merk_mesin }}</p>
           <p class="card-text">Bagian : {{ $data_sewingsample ->bagian }}</p>
           <p class="card-text">Tahun Pembelian : {{ $data_sewingsample ->tahun_pembelian }}</p>
-          <p class="card-text">Tahun Terkini : {{ $data_sewingsample->tahun }}</p>
           <p class="card-text">Check Bobbin Case (Bulanan) : {{ $data_sewingsample ->check_bobin_chase_bulanan }}</p>
           <p class="card-text">Needle Guard (Bulanan) : {{ $data_sewingsample ->needle_guard_bulanan }}</p>
           <p class="card-text">Check Belt Cover (Bulanan): {{ $data_sewingsample ->check_belt_cover_bulanan }}</p>
@@ -66,7 +65,6 @@
           <p class="card-text">Tanggal Sparepart Diganti : {{$data_sewingsample->sparepart->sparepart_keluar ?? 'N/A'}}</p>
           <p class="card-text">Jenis Sparepart yang Diganti : {{$data_sewingsample ->sparepart->nama_sparepart ?? 'N/A'}}</p>
           <p class="card-text">Harga Sparepart : {{$data_sewingsample ->sparepart->harga_sparepart ?? 'N/A'}}</p>
-          <p class="card-text">Indikator Kesehatan Mesin : {{ $data_sewingsample ->indikator_mesin }}</p>
           <div class= text-center>
           <td><a class="btn btn-secondary" href="/historysewingsample/{{$data_sewingsample->serial_number}}" role="button">See History</a>
           <a class="btn btn-warning" href="/tampilsewingsample/{{$data_sewingsample->serial_number}}" role="button">Update</a>
