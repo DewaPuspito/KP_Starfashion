@@ -20,9 +20,6 @@ class KMController extends Controller
      */
     public function index(Request $request)
     {   
-        // if($request->has('search')) {
-        //     $data_km_cutting = KM::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } 
         $data_km_cutting = KM::all();
         return view ('kmcutting.kmcuttings', compact('data_km_cutting'));
     }

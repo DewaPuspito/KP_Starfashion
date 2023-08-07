@@ -19,11 +19,7 @@ class StripController extends Controller
     */
     public function index(Request $request)
     {
-        // if($request->has('search')) {
-        //     $data_strip = Strip::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } else {
         $data_strip = Strip::all();
-        // }
         return view ('stripcutter.strips', compact('data_strip'));
     }
 

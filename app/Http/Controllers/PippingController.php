@@ -19,11 +19,7 @@ class PippingController extends Controller
     */
     public function index(Request $request)
     {
-        // if($request->has('search')) {
-        //     $data_pipping = Pipping::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } else {
         $data_pipping = Pipping::all();
-        // }
         return view ('rewindingpipping.pippings', compact('data_pipping'));
     }
 

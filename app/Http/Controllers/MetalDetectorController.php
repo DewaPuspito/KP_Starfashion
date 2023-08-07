@@ -19,8 +19,6 @@ class MetalDetectorController extends Controller
      */
     public function index(Request $request)
     {
-        // if($request->has('search')) {
-        //     $data_metaldetector = MetalDetector::where('serial_number','LIKE', '%' .$request->search.'%')->get();
         $data_metaldetector = MetalDetector::all();
         return view ('metaldetector.metaldetectors', compact('data_metaldetector'));
     }

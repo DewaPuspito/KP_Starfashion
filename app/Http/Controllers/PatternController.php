@@ -19,11 +19,7 @@ class PatternController extends Controller
      */
     public function index(Request $request)
     {
-        // if($request->has('search')) {
-        //     $data_pattern = Pattern::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } else {
         $data_pattern = Pattern::all();
-        // }
         return view ('pattern.patterns', compact('data_pattern'));
     }
 

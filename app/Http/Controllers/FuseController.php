@@ -19,9 +19,6 @@ class FuseController extends Controller
      */
     public function index(Request $request)
     {        
-        // if($request->has('search')) {
-        //     $data_fuse = Fuse::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // } 
         $data_fuse = Fuse::all(); 
         return view ('fusemachine.fuses', compact('data_fuse'));
     }

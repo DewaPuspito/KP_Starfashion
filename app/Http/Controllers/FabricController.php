@@ -14,9 +14,6 @@ class FabricController extends Controller
 {
     public function index(Request $request)
     {
-        // if($request->has('search')) {
-        //     $data_fabric = Fabric::where('serial_number','LIKE', '%' .$request->search.'%')->get();
-        // }
         $data_fabric = Fabric::all();
         return view ('fabric.fabrics', compact('data_fabric'));
     }
