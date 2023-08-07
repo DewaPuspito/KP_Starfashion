@@ -51,12 +51,18 @@ class FuseController extends Controller
     public function editfuse(Request $request, string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
+        if (!$data_fuse) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_fuse->serial_number;
         $data_fuse->update($request->all());
+        $new_serial_number = $data_fuse->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('fuse');
+        return redirect()->route('showfuse', ['serial_number' => $new_serial_number]);
     }
 
     public function deletefuse(string $serial_number)

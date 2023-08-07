@@ -51,12 +51,18 @@ class MetalDetectorController extends Controller
     public function editmetaldetector(Request $request, string $serial_number)
     {
         $data_metaldetector = MetalDetector::find($serial_number);
+        if (!$data_metaldetector) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_metaldetector->serial_number;
         $data_metaldetector->update($request->all());
+        $new_serial_number = $data_metaldetector->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('metal-detector');
+        return redirect()->route('showmetaldetector', ['serial_number' => $new_serial_number]);
     }
 
     public function deletemetaldetector(string $serial_number)

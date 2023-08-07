@@ -51,12 +51,18 @@ class PippingController extends Controller
     public function editpipping(Request $request, string $serial_number)
     {
         $data_pipping = Pipping::find($serial_number);
+        if (!$data_pipping) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_pipping->serial_number;
         $data_pipping->update($request->all());
+        $new_serial_number = $data_pipping->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('pipping')->with('success', 'Data Berhasil Diperbarui');
+        return redirect()->route('showpipping', ['serial_number' => $new_serial_number]);
     }
 
     public function deletepipping(string $serial_number)

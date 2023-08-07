@@ -52,12 +52,18 @@ class BandKnifeController extends Controller
     public function editbandknife(Request $request, string $serial_number)
     {
         $data_bandknife = BandKnife::find($serial_number);
+        if (!$data_bandknife) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_bandknife->serial_number;
         $data_bandknife->update($request->all());
+        $new_serial_number = $data_bandknife->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('band-knife');
+        return redirect()->route('showbandknife', ['serial_number' => $new_serial_number]);
     }
 
     public function deletebandknife(string $serial_number)

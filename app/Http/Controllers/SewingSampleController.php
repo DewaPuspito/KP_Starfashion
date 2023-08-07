@@ -232,19 +232,19 @@ class SewingSampleController extends Controller
 
     public function editsewingsample(Request $request, string $serial_number)
     {
-    $data_sewingsample = SewingSample::find($serial_number);
-    if (!$data_sewingsample) {
-        return redirect()->back()->with('error', 'Invalid serial number or record not found.');
-    }
-    $old_serial_number = $data_sewingsample->serial_number;
-    $data_sewingsample->update($request->all());
-    $new_serial_number = $data_sewingsample->serial_number;
-    $returnRoute = Session::pull('url', null);
-    if ($returnRoute) {
-        $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
-    }
-    return redirect()->route('showsewingsamples', ['serial_number' => $new_serial_number]);
+        $data_sewingsample = SewingSample::find($serial_number);
+        if (!$data_sewingsample) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_sewingsample->serial_number;
+        $data_sewingsample->update($request->all());
+        $new_serial_number = $data_sewingsample->serial_number;
+        $returnRoute = Session::pull('url', null);
+        if ($returnRoute) {
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+        }
+        return redirect()->route('showsewingsamples', ['serial_number' => $new_serial_number]);
     }
 
 

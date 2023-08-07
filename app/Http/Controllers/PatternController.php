@@ -51,12 +51,18 @@ class PatternController extends Controller
     public function editpattern(Request $request, string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
+        if (!$data_pattern) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_pattern->serial_number;
         $data_pattern->update($request->all());
+        $new_serial_number = $data_pattern->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('pattern');
+        return redirect()->route('showpattern', ['serial_number' => $new_serial_number]);
     }
 
     public function deletepattern(string $serial_number)

@@ -51,12 +51,18 @@ class PlotterController extends Controller
     public function editplotter(Request $request, string $serial_number)
     {
         $data_plotter = Plotter::find($serial_number);
+        if (!$data_plotter) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_plotter->serial_number;
         $data_plotter->update($request->all());
+        $new_serial_number = $data_plotter->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('plotter')->with('success', 'Data Berhasil Diperbarui');
+        return redirect()->route('showplotter', ['serial_number' => $new_serial_number]);
     }
 
     public function deleteplotter(string $serial_number)

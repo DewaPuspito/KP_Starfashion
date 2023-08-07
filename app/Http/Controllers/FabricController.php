@@ -32,9 +32,8 @@ class FabricController extends Controller
     public function showfabric(string $serial_number)
     {
         $data_fabric = Fabric::find($serial_number);
-        $audits = $data_fabric->audits; // Retrieve audits for the sewing sample
         Session::put('url', request()->fullUrl());
-        return view ('fabric.showfabric', compact('data_fabric', 'audits'));
+        return view ('fabric.showfabric', compact('data_fabric'));
     }
 
     public function tampilfabric(string $serial_number)
@@ -47,12 +46,18 @@ class FabricController extends Controller
     public function editfabric(Request $request, string $serial_number)
     {
         $data_fabric = Fabric::find($serial_number);
+        if (!$data_fabric) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_fabric->serial_number;
         $data_fabric->update($request->all());
+        $new_serial_number = $data_fabric->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('fabric');
+        return redirect()->route('showfabric', ['serial_number' => $new_serial_number]);
     }
 
     public function deletefabric(string $serial_number)
@@ -75,8 +80,8 @@ class FabricController extends Controller
 
     public function deletehistoryfabric(string $id)
     {
-    $audit = Audit::findOrFail($id);
-    $audit->delete();
-    return redirect()->back()->with('success', 'History Log Deleted Successfully');
+        $audit = Audit::findOrFail($id);
+        $audit->delete();
+        return redirect()->back()->with('success', 'History Log Deleted Successfully');
     }
 }

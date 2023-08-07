@@ -52,12 +52,18 @@ class KMController extends Controller
     public function editkmcutting(Request $request, string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
+        if (!$data_km_cutting) {
+            return redirect()->back()->with('error', 'Invalid serial number or record not found.');
+        }
+        $old_serial_number = $data_km_cutting->serial_number;
         $data_km_cutting->update($request->all());
+        $new_serial_number = $data_km_cutting->serial_number;
         $returnRoute = Session::pull('url', null);
         if ($returnRoute) {
-        return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
+            $returnRoute = str_replace($old_serial_number, $new_serial_number, $returnRoute);
+            return redirect($returnRoute)->with('success', 'Data Berhasil Diperbarui');
         }
-        return redirect()->route('km-cutting');
+        return redirect()->route('showkmcutting', ['serial_number' => $new_serial_number]);
     }
 
     public function deletekmcutting(string $serial_number)
