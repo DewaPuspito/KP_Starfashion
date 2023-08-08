@@ -9,6 +9,17 @@
 </head>
 <body>
     <div class="mb-3">
+    <div class="row">
+    @if ($message = Session::get('error'))
+      <div class="alert alert-success" role="alert">
+        {{ $message }}
+      </div>
+      @endif
+    @if ($message = Session::get('info'))
+      <div class="alert alert-success" role="alert">
+        {{ $message }}
+      </div>
+      @endif
         <label for="InputOTP" class="form-label">Email address</label>
         <form action="{{ route('otp-verify') }}" method="post">
             @csrf

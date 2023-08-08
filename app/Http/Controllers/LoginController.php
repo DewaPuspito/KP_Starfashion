@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Jobs\SendOTPEmail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +30,7 @@ class LoginController extends Controller
     function generateOTP($length = 6)
     {
         $otp = "";
-        $characters = "0123456789"; // You can add more characters for alphanumeric OTP
+        $characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         $charLength = strlen($characters);
         for ($i = 0; $i < $length; $i++) {
@@ -43,7 +42,7 @@ class LoginController extends Controller
 
     public function showOtpVerification()
     {
-        return view('loginregister.otp'); // Create a view file for OTP verification
+        return view('loginregister.otp');
     }
 
     public function verifyOTP(Request $request)
@@ -53,13 +52,9 @@ class LoginController extends Controller
         ]);
 
         $user = Auth::user();
-
-        // Check if the submitted OTP matches the user's stored OTP
         if ($user->otp == $request->otp) {
-            // Valid OTP, log in the user
             return redirect('/main-menu');
         } else {
-            // Invalid OTP
             return redirect()->route('otp-verification')->with('error', 'Invalid OTP');
         }
     }
@@ -67,16 +62,11 @@ class LoginController extends Controller
     public function postlogin(Request $request) {
         $remember = $request->has('remember');
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
-            // Get all users who successfully logged in
             $users = User::where('email', $request->input('email'))->get();
-    
-            // Generate and send OTP email to each user
             foreach ($users as $user) {
                 $otp = $this->generateOTP();
                 $user->otp = $otp;
                 $user->save();
-    
-                SendOTPEmail::dispatch($user, $otp);
             }
         return redirect()->route('otp-verification')->with('info', 'Please enter the OTP sent to your email.');  
        } else {

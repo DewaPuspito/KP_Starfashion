@@ -196,8 +196,6 @@ class SewingSampleController extends Controller
             $data_sewingsample = SewingSample::where('bagian', 'LIKE', '%' . $searchTerm . '%')->get();
         } elseif ($searchType === 'sparepart-diganti') {
             $data_sparepart = Sparepart::where('nama_sparepart', 'LIKE', '%' . $searchTerm . '%')->get();
-        }  elseif ($searchType === 'indikator-mesin') {
-            $data_sewingsample = SewingSample::where('indikator_mesin', 'LIKE', '%' . $searchTerm . '%')->get();      
         } else {
         $data_sewingsample = SewingSample::all();
     }

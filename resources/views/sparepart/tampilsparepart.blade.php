@@ -63,18 +63,5 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#inputJumlahMasuk, #inputJumlahKeluar').on('input', function() {
-      var jumlahMasuk = parseFloat($('#inputJumlahMasuk').val()) || 0;
-      var jumlahKeluar = parseFloat($('#inputJumlahKeluar').val()) || 0;
-      var sisaSparepart = jumlahMasuk - jumlahKeluar;
-      $('#inputSisa').val(sisaSparepart.toFixed(2));
-    });
-  });
-</script>
-
 </body>
 </html>
