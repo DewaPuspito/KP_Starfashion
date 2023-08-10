@@ -39,7 +39,7 @@ Route::get('/dashboardexport', [DashboardController::class, 'dashboardexport'])-
 
 
 // Main Menu
-Route::group(['middleware' => 'auth'], function ()  {
+Route::group(['middleware' => 'auth', 'otp_verified'], function ()  {
 Route::get("/main-menu", [MainController::class, 'index'])->name('main-menu');
 Route::get("/cutting-menu", [CuttingMenuController::class, 'cuttingindex'])->name('cutting-menu');
 });
@@ -56,7 +56,7 @@ Route::get('/otp-verification', [LoginController::class, 'showOtpVerification'])
 Route::post('/otp-verification', [LoginController::class, 'verifyOTP'])->name('otp-verify');
 
 // Sewing and Sample
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/sewing-sample", [SewingSampleController::class, 'index'])->name('sewing-sample');
 Route::get("/addsewingsample", [SewingSampleController::class, 'addsewingsample'])->name('addsewingsample');
 Route::post("/insertsewingsample", [SewingSampleController::class, 'insertsewingsample'])->name('insertsewingsample');
@@ -71,7 +71,7 @@ Route::post("/editsewingsample/{id}", [SewingSampleController::class, 'editsewin
 Route::get("/historysewingsample/{id}", [SewingSampleController::class, 'historysewingsample'])->name('historysewingsample');  
 
 // Fuse Machine
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/fuse", [FuseController::class, 'index'])->name('fuse');
 Route::get("/addfuse", [FuseController::class, 'addfuse'])->name('addfuse');
 Route::post("/insertfuse", [FuseController::class, 'insertfuse'])->name('insertfuse');
@@ -85,7 +85,7 @@ Route::post("/editfuse/{id}", [FuseController::class, 'editfuse'])->name('editfu
 Route::get("/historyfuse/{id}", [FuseController::class, 'historyfuse'])->name('historyfuse');  
 
 // KM Cutting Machine
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/km-cutting", [KMController::class, 'index'])->name('km-cutting');
 Route::get("/addkmcutting", [KMController::class, 'addkmcutting'])->name('addkmcutting');
 Route::post("/insertkmcutting", [KMController::class, 'insertkmcutting'])->name('insertkmcutting');
@@ -100,7 +100,7 @@ Route::get("/historykmcutting/{id}", [KMController::class, 'historykmcutting'])-
 
 
 // Band Knife Machine
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/band-knife", [BandKnifeController::class, 'index'])->name('band-knife');
 Route::get("/addbandknife", [BandKnifeController::class, 'addbandknife'])->name('addbandknife');
 Route::post("/insertbandknife", [BandKnifeController::class, 'insertbandknife'])->name('insertbandknife');
@@ -114,7 +114,7 @@ Route::post("/editbandknife/{id}", [BandKnifeController::class, 'editbandknife']
 Route::get("/historybandknife/{id}", [BandKnifeController::class, 'historybandknife'])->name('historybandknife'); 
 
 // Plotter
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/plotter", [PlotterController::class, 'index'])->name('plotter');
 Route::get("/addplotter", [PlotterController::class, 'addplotter'])->name('addplotter');
 Route::post("/insertplotter", [PlotterController::class, 'insertplotter'])->name('insertplotter');
@@ -128,7 +128,7 @@ Route::post("/editplotter/{id}", [PlotterController::class, 'editplotter'])->nam
 Route::get("/historyplotter/{id}", [PlotterController::class, 'historyplotter'])->name('historyplotter');
 
 // Metal Detector
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/metal-detector", [MetalDetectorController::class, 'index'])->name('metal-detector');
 Route::get("/addmetaldetector", [MetalDetectorController::class, 'addmetaldetector'])->name('addmetaldetector');
 Route::post("/insertmetaldetector", [MetalDetectorController::class, 'insertmetaldetector'])->name('insertmetaldetector');
@@ -142,7 +142,7 @@ Route::post("/editmetaldetector/{id}", [MetalDetectorController::class, 'editmet
 Route::get("/historymetaldetector/{id}", [MetalDetectorController::class, 'historymetaldetector'])->name('historymetaldetector');
 
 // Cutter Pattern
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/pattern", [PatternController::class, 'index'])->name('pattern');
 Route::get("/addpattern", [PatternController::class, 'addpattern'])->name('addpattern');
 Route::post("/insertpattern", [PatternController::class, 'insertpattern'])->name('insertpattern');
@@ -156,7 +156,7 @@ Route::post("/editpattern/{id}", [PatternController::class, 'editpattern'])->nam
 Route::get("/historypattern/{id}", [PatternController::class, 'historypattern'])->name('historypattern');
 
 // Rewinding Pipping
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/pipping", [PippingController::class, 'index'])->name('pipping');
 Route::get("/addpipping", [PippingController::class, 'addpipping'])->name('addpipping');
 Route::post("/insertpipping", [PippingController::class, 'insertpipping'])->name('insertpipping');
@@ -170,7 +170,7 @@ Route::post("/editpipping/{id}", [PippingController::class, 'editpipping'])->nam
 Route::get("/historypipping/{id}", [PippingController::class, 'historypipping'])->name('historypipping');
 
 // Strip Cutter
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/strip", [StripController::class, 'index'])->name('strip');
 Route::get("/addstrip", [StripController::class, 'addstrip'])->name('addstrip');
 Route::post("/insertstrip", [StripController::class, 'insertstrip'])->name('insertstrip');
@@ -185,7 +185,7 @@ Route::post("/editstrip/{id}", [StripController::class, 'editstrip'])->name('edi
 Route::get("/historystrip/{id}", [StripController::class, 'historystrip'])->name('historystrip');
 
 // Fabric Warehouse
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/fabric", [FabricController::class, 'index'])->name('fabric');
 Route::get("/addfabric", [FabricController::class, 'addfabric'])->name('addfabric');
 Route::post("/insertfabric", [FabricController::class, 'insertfabric'])->name('insertfabric');
@@ -199,7 +199,7 @@ Route::post("/editfabric/{id}", [FabricController::class, 'editfabric'])->name('
 Route::get("/historyfabric/{id}", [FabricController::class, 'historyfabric'])->name('historyfabric');
 
 // Sparepart
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'otp_verified'], function () {
 Route::get("/sparepart", [SparepartController::class, 'index'])->name('sparepart');
 Route::get("/addsparepart", [SparepartController::class, 'addsparepart'])->name('addsparepart');
 Route::post("/insertsparepart", [SparepartController::class, 'insertsparepart'])->name('insertsparepart');

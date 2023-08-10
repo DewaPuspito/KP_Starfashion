@@ -17,16 +17,6 @@ class LoginController extends Controller
         return view ('loginregister.register');
     }
 
-    public function postregister(Request $request){
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'remember_token' => Str::random(60),
-        ]);
-        return redirect ('/login');
-    }
-
     function generateOTP($length = 6)
     {
         $otp = "";
@@ -51,24 +41,43 @@ class LoginController extends Controller
             'otp' => 'required|string',
         ]);
 
-        $user = Auth::user();
-        if ($user->otp == $request->otp) {
-            return redirect('/main-menu');
+        $user = User::where('otp', $request->otp)->first();
+
+        if ($user) {
+        $user->otp_verified = true;
+        $user->otp = null; // Clear OTP after successful verification
+        $user->save();
+        return redirect('/login')->with('info', 'OTP verified. You can now log in.');
         } else {
             return redirect()->route('otp-verification')->with('error', 'Invalid OTP');
         }
     }
 
+    public function postregister(Request $request){
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+            'otp_verified' => false,
+        ]);
+
+        if ($user) {
+            $otp = $this->generateOTP();
+            $user->otp = $otp;
+            $user->save();
+
+            return redirect()->route('otp-verification')->with('info', 'Account registered successfully. Please enter the OTP sent to your email.');
+        } else {
+            return redirect('register')->with('error', 'Error creating user');
+        }
+    }
+
+
     public function postlogin(Request $request) {
         $remember = $request->has('remember');
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
-            $users = User::where('email', $request->input('email'))->get();
-            foreach ($users as $user) {
-                $otp = $this->generateOTP();
-                $user->otp = $otp;
-                $user->save();
-            }
-        return redirect()->route('otp-verification')->with('info', 'Please enter the OTP sent to your email.');  
+            return redirect()->route('main-menu');  
        } else {
         return redirect('login')->with('error', 'Invalid credentials');    
        }
