@@ -30,7 +30,10 @@ class MetalDetectorController extends Controller
     
     public function insertmetaldetector(Request $request)
     {
-        MetalDetector::create($request->all());   
+        MetalDetector::create($request->all());
+        if (!$data_metaldetector) {
+            abort(404);
+        }   
         return redirect()->route('metal-detector')->with('success', 'Data Berhasil Dimasukkan');
     }
 

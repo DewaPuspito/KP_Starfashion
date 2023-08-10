@@ -37,6 +37,9 @@ class FuseController extends Controller
     public function showfuse(string $serial_number)
     {
         $data_fuse = Fuse::find($serial_number);
+        if (!$data_fuse) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('fusemachine.showfuse', compact('data_fuse'));
     }

@@ -38,6 +38,9 @@ class PlotterController extends Controller
     {
         $data_plotter = Plotter::find($serial_number);
         Session::put('url', request()->fullUrl());
+        if (!$data_plotter) {
+            abort(404);
+        }
         return view ('plottermachine.showplotter', compact('data_plotter'));
     }
 

@@ -38,6 +38,9 @@ class BandKnifeController extends Controller
     public function showbandknife(string $serial_number)
     {
         $data_bandknife = BandKnife::find($serial_number);
+        if (!$data_bandknife) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('bandknife.showbandknife', compact('data_bandknife'));
     }

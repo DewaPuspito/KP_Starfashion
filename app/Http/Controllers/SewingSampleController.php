@@ -217,6 +217,9 @@ class SewingSampleController extends Controller
     public function showsewingsample(string $serial_number)
     {
         $data_sewingsample = SewingSample::find($serial_number);
+        if (!$data_sewingsample) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view('sewingsamplemachine.showsewingsamples', compact('data_sewingsample'));
     }

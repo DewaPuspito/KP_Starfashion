@@ -37,6 +37,9 @@ class StripController extends Controller
     public function showstrip(string $serial_number)
     {
         $data_strip= Strip::find($serial_number);
+        if (!$data_strip) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('stripcutter.showstrip', compact('data_strip'));
     }

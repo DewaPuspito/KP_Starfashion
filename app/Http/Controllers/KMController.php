@@ -38,6 +38,9 @@ class KMController extends Controller
     public function showkmcutting(string $serial_number)
     {
         $data_km_cutting = KM::find($serial_number);
+        if (!$data_km_cutting) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('kmcutting.showkmcutting', compact('data_km_cutting'));
     }

@@ -32,6 +32,9 @@ class FabricController extends Controller
     public function showfabric(string $serial_number)
     {
         $data_fabric = Fabric::find($serial_number);
+        if (!$data_fabric) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('fabric.showfabric', compact('data_fabric'));
     }

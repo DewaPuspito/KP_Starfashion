@@ -37,6 +37,9 @@ class PatternController extends Controller
     public function showpattern(string $serial_number)
     {
         $data_pattern = Pattern::find($serial_number);
+        if (!$data_pattern) {
+            abort(404);
+        }
         Session::put('url', request()->fullUrl());
         return view ('pattern.showpattern', compact('data_pattern'));
     }

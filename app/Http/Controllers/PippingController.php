@@ -38,6 +38,9 @@ class PippingController extends Controller
     {
         $data_pipping= Pipping::find($serial_number);
         Session::put('url', request()->fullUrl());
+        if (!$data_pipping) {
+            abort(404);
+        }
         return view ('rewindingpipping.showpipping', compact('data_pipping'));
     }
 
