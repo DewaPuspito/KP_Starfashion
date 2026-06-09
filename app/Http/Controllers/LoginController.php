@@ -75,12 +75,19 @@ class LoginController extends Controller
 
 
     public function postlogin(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         $remember = $request->has('remember');
         if (Auth::attempt($request->only('email', 'password'), $remember)) {
-            return redirect()->route('main-menu');  
-       } else {
-        return redirect('login')->with('error', 'Invalid credentials');    
-       }
+            return redirect()->route('main-menu');
+        }
+
+        return redirect()->back()
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors(['email' => 'Email or password is incorrect']);
     }
 
     public function logout() {
