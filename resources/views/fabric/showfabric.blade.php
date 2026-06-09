@@ -39,6 +39,7 @@
         <p class="card-text">Check Electrical dan Motor (Bulanan) : {{ $data_fabric ->check_electrical_dan_motor_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_fabric ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pemberian Grease pada Roller (Bulanan) : {{ $data_fabric ->pemberian_grease_pada_roller_bulanan }}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_fabric ->check_karat_mesin_bulanan }}</p> 
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_fabric ->komponen_lainnya_bulanan }}</p>  
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_fabric ->dicek_tanggal }}</p>
         <p class="card-text">Tahun Pembelian : {{ $data_fabric ->tahun_pembelian }}</p>

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('jenis_mesin');
             $table->string('merk_mesin');
             $table->string('bagian');
+            $table->unsignedBigInteger('id_sparepart')->nullable();
+            $table->foreign('id_sparepart')->references('id_sparepart')->on('sparepart');
             $table->year('tahun');
             $table->string('check_bobin_chase_bulanan');
             $table->string('needle_guard_bulanan');

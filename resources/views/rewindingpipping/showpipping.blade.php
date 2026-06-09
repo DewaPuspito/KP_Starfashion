@@ -40,6 +40,7 @@
         <p class="card-text">Pengecekan Motor Kompresor (Bulanan) : {{ $data_pipping ->pengecekan_motor_kompresor_bulanan }}</p>
         <p class="card-text">Check Kondisi Rantai (Bulanan) : {{ $data_pipping ->check_kondisi_rantai_bulanan }}</p>
         <p class="card-text">Check Instalasi Electrical dan Sensor (Bulanan) : {{ $data_pipping ->check_instalasi_electrical_dan_sensor_bulanan }}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_pipping ->check_karat_mesin_bulanan }}</p>
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_pipping ->komponen_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_pipping ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_pipping ->dicek_tanggal }}</p>

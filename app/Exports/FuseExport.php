@@ -36,6 +36,7 @@ class FuseExport implements FromCollection, WithHeadings
         'Check Switch Control Belt (Bulanan)', 
         'Check Kontrol Speed (Bulanan)', 
         'Check Kontrol Temperatur (Bulanan)', 
+        'Check Karat Mesin (Bulanan)', 
         'Komponen Lainnya (Bulanan)', 
         'Dicek Tanggal', 
         'Tahun Pembelian', 

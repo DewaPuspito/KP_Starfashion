@@ -73,6 +73,10 @@
       <input type="text" name="pemberian_grease_pada_roller_bulanan" class="form-control" value="{{$data_fabric->pemberian_grease_pada_roller_bulanan}}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value="{{$data_fabric->check_karat_mesin_bulanan}}">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Komponen Lainnya (Bulanan)</label>
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value="{{$data_fabric->komponen_lainnya_bulanan}}">
     </div>

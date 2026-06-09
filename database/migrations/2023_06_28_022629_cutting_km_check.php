@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('label');
             $table->string('merk_mesin');
             $table->string('bagian');
+            $table->unsignedBigInteger('id_sparepart')->nullable();
+            $table->foreign('id_sparepart')->references('id_sparepart')->on('sparepart');
             $table->year('tahun');
             $table->string('automatic_cutout_switch_bulanan');
             $table->string('insulate_plate_bulanan');
@@ -50,6 +52,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('cutting_km_check');
     }
 };

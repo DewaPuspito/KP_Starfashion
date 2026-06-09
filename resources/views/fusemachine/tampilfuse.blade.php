@@ -93,6 +93,10 @@
       <input type="text" name="check_kontrol_temperatur_bulanan" class="form-control" value= "{{ $data_fuse ->check_kontrol_temperatur_bulanan }}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value= "{{ $data_fuse ->check_karat_mesin_bulanan }}">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Komponen Lainnya (Bulanan)</label>
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value= "{{ $data_fuse ->komponen_lainnya_bulanan }}">
     </div>

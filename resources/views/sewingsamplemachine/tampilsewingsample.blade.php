@@ -105,6 +105,10 @@
       <input type="text" name="check_jalur_benang_bulanan" class="form-control" value="{{$data_sewingsample->check_jalur_benang_bulanan}}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value="{{$data_sewingsample->check_karat_mesin_bulanan}}">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>
       <input type="date" name="dicek_tanggal" class="form-control" value="{{$data_sewingsample->dicek_tanggal}}">
     </div>

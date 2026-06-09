@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('label');
             $table->string('merk_mesin');
             $table->string('bagian');
+            $table->unsignedBigInteger('id_sparepart')->nullable();
+            $table->foreign('id_sparepart')->references('id_sparepart')->on('sparepart');
             $table->year('tahun');
             $table->string('check_belt_atas_bulanan');
             $table->string('check_belt_bawah_bulanan');
@@ -56,6 +58,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('fuse_machine_check');
     }
 };

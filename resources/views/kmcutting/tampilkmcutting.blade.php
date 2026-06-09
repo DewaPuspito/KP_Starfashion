@@ -92,6 +92,7 @@
       <label for="Input" class="form-label">Thread Guide (Bulanan)</label>
       <input type="text" name="thread_guide_bulanan" class="form-control" value = "{{$data_km_cutting->thread_guide_bulanan}}">
     </div>
+    
     <div class="mb-3">
       <label for="Input" class="form-label">Sparepart Lainnya (Bulanan)</label>
       <input type="text" name="sparepart_lainnya_bulanan" class="form-control" value = "{{$data_km_cutting->sparepart_lainnya_bulanan}}">

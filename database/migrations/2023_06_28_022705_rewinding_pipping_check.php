@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('label');
             $table->string('merk_mesin');
             $table->string('bagian');
+            $table->unsignedBigInteger('id_sparepart')->nullable();
+            $table->foreign('id_sparepart')->references('id_sparepart')->on('sparepart');
             $table->year('tahun');
             $table->string('pengecekan_rollpress_bulanan');
             $table->string('pengecekan_counter_bulanan');
@@ -29,7 +31,6 @@ return new class extends Migration
             $table->string('kebersihan_mesin_bulanan');
             $table->date('dicek_tanggal');
             $table->year('tahun_pembelian');
-            $table->date('perbaikan_rollpress_harian');
             $table->date('perbaikan_rollpress_harian');
             $table->date('ganti_pisau_potong_harian');
             $table->date('ganti_motor_penggerak_harian');
@@ -49,6 +50,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('rewinding_pipping_check');
     }
 };

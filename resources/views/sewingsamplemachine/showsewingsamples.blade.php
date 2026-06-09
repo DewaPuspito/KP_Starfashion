@@ -47,6 +47,7 @@
           <p class="card-text">Check Tiang Benang (Bulanan) : {{ $data_sewingsample ->check_tiang_benang_bulanan }}</p>
           <p class="card-text">Check Spring Tension (Bulanan) : {{ $data_sewingsample ->check_spring_tension_bulanan }}</p>
           <p class="card-text">Check Jalur Benang (Bulanan) : {{ $data_sewingsample ->check_jalur_benang_bulanan }}</p>
+          <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_sewingsample ->check_karat_mesin_bulanan }}</p>
           <p class="card-text">Pengecekan Bulanan dilakukan Tanggal : {{ $data_sewingsample ->dicek_tanggal }}</p>
           <p class="card-text">Jahitan Loncat (Harian) : {{ $data_sewingsample ->jahitan_loncat_harian }}</p>
           <p class="card-text">Benang Putusan (Harian): {{ $data_sewingsample ->benang_putusan_harian }}</p>

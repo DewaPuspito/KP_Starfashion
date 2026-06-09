@@ -38,6 +38,7 @@ class SewingSampleExport implements FromCollection, WithHeadings
         'Check Tiang Benang (Bulanan)', 
         'Check Spring Tension (Bulanan)', 
         'Check Jalur Benang (Bulanan)', 
+        'Check Karat Mesin (Bulanan)',
         'Dicek Tanggal', 
         'Tahun Pembelian', 
         'Jahitan Loncat (Harian)', 

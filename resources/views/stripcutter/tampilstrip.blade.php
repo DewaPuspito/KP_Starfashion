@@ -75,14 +75,22 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Check Instalasi Electrical (Bulanan)</label>
       <input type="text" name="check_instalasi_elektrikal_bulanan" class="form-control" value = "{{$data_strip->check_instalasi_elektrikal_bulanan}}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value = "{{$data_strip->check_karat_mesin_bulanan}}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Komponen Lainnya (Bulanan)</label>
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value = "{{$data_strip->komponen_lainnya_bulanan}}">
-      </div>
-      <div class="mb-3">
-    <label for="Input" class="form-label">Kebersihan Mesin (Bulanan)</label>
-    <input type="text" name="kebersihan_mesin_bulanan" class="form-control" value = "{{$data_strip->kebersihan_mesin_bulanan}}"> 
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value = "{{$data_strip->check_karat_mesin_bulanan}}">
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Kebersihan Mesin (Bulanan)</label>
+      <input type="text" name="kebersihan_mesin_bulanan" class="form-control" value = "{{$data_strip->kebersihan_mesin_bulanan}}"> 
     </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Pengecekan Bulanan dilakukan Tanggal</label>

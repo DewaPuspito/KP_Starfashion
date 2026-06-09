@@ -44,6 +44,7 @@
         <p class="card-text">Screwshaft LH RH Extension (Bulanan) : {{ $data_km_cutting ->screwshaft_lh_rh_extension_bulanan }}</p>
         <p class="card-text">LH Square Shaft (Bulanan) : {{ $data_km_cutting ->lh_square_shaft_bulanan }}</p>
         <p class="card-text">Thread Guide (Bulanan) : {{ $data_km_cutting ->thread_guide_bulanan }}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_km_cutting ->check_karat_mesin_bulanan }}</p> 
         <p class="card-text">Sparepart Lainnya (Bulanan) : {{ $data_km_cutting ->sparepart_lainnya_bulanann }}</p>  
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_km_cutting ->dicek_tanggal }}</p>
         <p class="card-text">Pisau Tumpul (Harian) : {{ $data_km_cutting ->pisau_tumpul_harian }}</p>

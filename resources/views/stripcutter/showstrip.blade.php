@@ -40,6 +40,7 @@
         <p class="card-text">Check Motor Vakum (Bulanan) : {{ $data_strip ->check_motor_vakum_bulanan }}</p>
         <p class="card-text">Check Kondisi Vanbelt Penggerak (Bulanan) : {{ $data_strip ->check_kondisi_vanbelt_penggerak_bulanan }}</p>
         <p class="card-text">Check Instalasi Electrical (Bulanan) : {{ $data_strip ->check_instalasi_elektrikal_bulanan}}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_strip ->check_karat_mesin_bulanan }}</p>
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_strip ->komponen_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_strip ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal : {{ $data_strip ->dicek_tanggal }}</p>

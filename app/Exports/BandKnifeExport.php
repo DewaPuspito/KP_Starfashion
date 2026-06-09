@@ -30,6 +30,7 @@ class BandKnifeExport implements FromCollection, WithHeadings
         'Check Pully Atas Bearing (Bulanan)', 
         'Check Gerinda/Asahan Pisau (Bulanan)', 
         'Check Dinamo Kompresor (Bulanan)',
+        'Check Karat Mesin (Bulanan)',
         'Dicek Tanggal', 
         'Tahun Pembelian', 
         'Perbaikan Electrical Instalasi (Harian)', 

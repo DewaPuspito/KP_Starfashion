@@ -30,6 +30,7 @@ class MetalDetectorExport implements FromCollection, WithHeadings
         'Check Dinamo Motor (Bulanan)', 
         'Check Sensifitas Metal (Bulanan)', 
         'Check Spare Parts Lainnya (Bulanan)', 
+        'Check Karat Mesin (Bulanan)',
         'Kebersihan Mesin (Bulanan)', 
         'Dicek Tanggal', 
         'Tahun Pembelian', 

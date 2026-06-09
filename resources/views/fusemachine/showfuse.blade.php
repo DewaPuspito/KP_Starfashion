@@ -44,6 +44,7 @@
         <p class="card-text">Check Switch Control Belt (Bulanan) : {{ $data_fuse ->check_switchkontrol_belt_bulanan }}</p>
         <p class="card-text">Check Kontrol Speed (Bulanan) : {{ $data_fuse ->check_kontrol_speed_bulanan}}</p>
         <p class="card-text">Check Kontrol Temperatur (Bulanan) : {{ $data_fuse ->check_kontrol_temperatur_bulanan }}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_fuse ->check_karat_mesin_bulanan }}</p> 
         <p class="card-text">Komponen Lainnya (Bulanan) : {{ $data_fuse ->komponen_lainnya_bulanan }}</p>  
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_fuse ->dicek_tanggal }}</p>
         <p class="card-text">Ganti Belt Atas (Harian) : {{ $data_fuse ->ganti_belt_atas_harian }}</p>

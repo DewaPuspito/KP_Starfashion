@@ -69,6 +69,10 @@
       <input type="text" name="check_sensitifitas_metal_bulanan" class="form-control" value = "{{$data_metaldetector->check_sensitifitas_metal_bulanan}}">
     </div>
     <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value = "{{$data_metaldetector->check_karat_mesin_bulanan}}">
+    </div>
+    <div class="mb-3">
       <label for="Input" class="form-label">Check Spare Parts Lainnya (Bulanan)</label>
       <input type="text" name="check_spare_parts_lainnya_bulanan" class="form-control" value = "{{$data_metaldetector->check_spare_parts_lainnya_bulanan}}">
     </div>

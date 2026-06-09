@@ -38,6 +38,7 @@
         <p class="card-text">Check Belt (Bulanan): {{ $data_metaldetector ->check_belt_bulanan }}</p>
         <p class="card-text">Check Dinamo Motor (Bulanan) : {{ $data_metaldetector ->check_dinamo_motor_bulanan }}</p>
         <p class="card-text">Check Sensifitas Metal (Bulanan) : {{ $data_metaldetector ->check_sensitifitas_metal_bulanan }}</p>
+        <p class="card-text">Check Karat Mesin (Bulanan) : {{ $data_metaldetector ->check_karat_mesin_bulanan }}</p> 
         <p class="card-text">Check Spare Parts Lainnya (Bulanan) : {{ $data_metaldetector ->check_spare_parts_lainnya_bulanan }}</p>
         <p class="card-text">Kebersihan Mesin (Bulanan) : {{ $data_metaldetector ->kebersihan_mesin_bulanan }}</p>
         <p class="card-text">Pengecekan Bulanan dilakukan Tanggal: {{ $data_metaldetector ->dicek_tanggal }}</p>

@@ -75,7 +75,11 @@
     <div class="mb-3">
       <label for="Input" class="form-label">Check Instalasi Electrical dan Sensor (Bulanan)</label>
       <input type="text" name="check_instalasi_electrical_dan_sensor_bulanan" class="form-control" value = "{{$data_pipping->check_instalasi_electrical_dan_sensor_bulanan}}">
-      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Input" class="form-label">Check Karat Mesin (Bulanan)</label>
+      <input type="text" name="check_karat_mesin_bulanan" class="form-control" value = "{{$data_pipping->check_karat_mesin_bulanan}}">
+    </div>
     <div class="mb-3">
       <label for="Input" class="form-label">Komponen Lainnya (Bulanan)</label>
       <input type="text" name="komponen_lainnya_bulanan" class="form-control" value = "{{$data_pipping->komponen_lainnya_bulanan}}">

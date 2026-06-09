@@ -34,6 +34,7 @@ class PlotterExport implements FromCollection, WithHeadings
         'Check Paper Roller Hoop (Bulanan)', 
         'Check Connection Cable (Bulanan)', 
         'Check Print Head (Bulanan)', 
+        'Check Karat Mesin (Bulanan)',
         'Check Kebersihan (Bulanan)',
         'Dicek Tanggal', 
         'Tahun Pembelian', 
